@@ -1,7 +1,7 @@
 const fs = require("fs")
 
 const lua = fs.readFileSync("scripts/recipes_data/hof_foodrecipes.lua", "utf8")
-const recipeRegex = /(\w+)\s*=\s*\{([\s\S]*?)\},/g
+
 const recipes = []
 
 const TEMPERATURE_DURATION_MAP = {
@@ -26,6 +26,25 @@ const PERISH_MAP = {
   PERISH_SUPERSLOW: 19200,
 }
 
+const BLOCKED_RECIPES = new Set([
+  "kyno_foods", // The actual table is being extracted...
+])
+
+const IGNORE_DEBUFF_RECIPES = new Set([
+  "soulstew",
+  "hornocupia",
+  "monstermuffin",
+  "duriansplit",
+  "duriansoup",
+  "durianmeated",
+  "durianchicken",
+  "antslog",
+  "purplewobstersoup",
+  "wobstermonster",
+  "spidercake",
+  "lazypurrito",
+])
+
 function extractNumber(block, key) {
   const match = block.match(new RegExp(`${key}\\s*=\\s*([\\d\\.\\-]+)`))
   return match ? Number(match[1]) : null
@@ -36,10 +55,39 @@ function extractString(block, key) {
   return match ? match[1].trim() : null
 }
 
-let match
-while ((match = recipeRegex.exec(lua)) !== null) {
-  const name = match[1]
-  const block = match[2]
+function extractRecipesFromLua(luaText) {
+  const results = []
+  const nameRegex = /(\w+)\s*=\s*\{/g
+
+  let match
+
+  while ((match = nameRegex.exec(luaText)) !== null) {
+    const name = match[1]
+    let index = match.index + match[0].length
+    let braceCount = 1
+
+    while (braceCount > 0 && index < luaText.length) {
+      if (luaText[index] === "{") braceCount++
+      if (luaText[index] === "}") braceCount--
+      index++
+    }
+
+    const block = luaText.slice(match.index, index)
+
+    results.push({ name, block })
+  }
+
+  return results
+}
+
+const rawRecipes = extractRecipesFromLua(lua)
+
+for (const recipe of rawRecipes) {
+  const { name, block } = recipe
+
+  if (BLOCKED_RECIPES.has(name)) {
+    continue
+  }
 
   if (
     !block.includes("foodtype") ||
@@ -78,7 +126,10 @@ while ((match = recipeRegex.exec(lua)) !== null) {
     spoilage = perishValue
   }
 
-  const debuff = block.includes("oneatenfn")
+  const hasOneatenfn = /oneatenfn\s*=\s*function/.test(block)
+
+  const debuff =
+    hasOneatenfn && !IGNORE_DEBUFF_RECIPES.has(name)
 
   recipes.push({
     name,

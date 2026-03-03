@@ -2,12 +2,56 @@ const en = {
   title: "Crock Pot Recipes",
   close: "Back",
 
+  footer: {
+    backtotop: "Back to Top",
+    mainpage: "Main Page",
+    discord: "Join our Discord",
+    workshop: "Workshop Page",
+    kofi: "Support Me!",
+    description: `Heap of Foods is a mod for the game Don't Starve Together made by Kyno.
+    It is not affiliated with Klei Entertainment.
+
+    A special thanks to everyone who made this mod possible! ❤️`
+  },
+
   time: {
     second: "Second",
     seconds: "Seconds",
     minute: "Minute",
     minutes: "Minutes",
     oneday: "1 Day",
+  },
+
+  filters: {
+    title: "Filters",
+    temperature: "Temperatures",
+    foodtype: "Food Types",
+    debuff: {
+      title: "Side Effects",
+      hasdebuff: "Has Side Effect",
+    },
+    clear: "Clear All Filters",
+  },
+
+  sorting: {
+    title: "Sort Order",
+    directiontype: "Sort Type",
+    direction: {
+      up: "Ascending",
+      down: "Descending",
+    },
+    ordertype: "Order Type",
+    type: {
+      default: "Default",
+      alphabet: "Alphabetical",
+      health: "Health",
+      hunger: "Hunger",
+      sanity: "Sanity",
+      priority: "Cooking Priority",
+      cooktime: "Cooking Time",
+      spoilage: "Spoilage Time",
+    },
+    clear: "Reset to Default",
   },
 
   tooltips: {
@@ -20,6 +64,7 @@ const en = {
     stacksize: "Cooking Stack",
     temperature: "Temperature",
     foodtype: "Food Type",
+    debuff: "Side Effect",
   },
 
   foodtypes: {
@@ -31,6 +76,7 @@ const en = {
     ROUGHAGE: "Roughage",
     ELEMENTAL: "Elemental",
     HORRIBLE: "Horrible",
+    GEARS: "Gears",
     PREPAREDPOOP: "Horrible",
     PREPAREDSOUL: "Soul",
     ALCOHOLIC: "Alcoholic",
@@ -241,7 +287,46 @@ const en = {
     chickenburger: "Chicken Burger",
     chickeneggsoup: "Egg Drop Soup",
     chickeneggstew: "Chicken Stew",
-    chickenrotisserie: "Rotisserie Chicken"
+    chickenrotisserie: "Rotisserie Chicken",
+    jawsbreaker: "Jawsbreaker",
+  },
+
+  recipes_debuff: {
+    coffee: "Speeds the body",
+    sharkfinsoup: "Increases naughtiness",
+    tropicalbouillabaisse: "Speeds the body",
+    snakebonesoup: "Increased damage to worms",
+    gorge_carrot_cake: "The cake is a lie",
+    gorge_candy: "Speeds the hands",
+    cucumbersalad: "Dissipates moisture",
+    bowlofgears: "Upgrades the chassis",
+    longpigmeal: "Hurts the body",
+    duckyouglermz: "Stimulates bloomness",
+    eyeballspaghetti: "Calls the monster",
+    fortunecookie: "Tells your fortune",
+    honeyjar: "Pacifies nearby bees",
+    watercup: "Cleanses all side effects",
+    poisonfrogglebunwich: "Pacifies nearby frogs",
+    gummybeargers: "Calls the monster",
+    gummyworms: "Grants night vision",
+    sea_pudding: "Increases fishing yields",
+    parznip_soup: "Speeds digestion",
+    livingsandwich: "Stimulates the curse",
+    lunarsoup: "Wards off fear and sleep",
+    meatwaltz: "Slightly boosts inspiration",
+    completebreakfast: "Slightly boosts mightiness",
+    crabkingfeast: "Increased damage to crabs",
+    sharksushi: "Increases naughtiness",
+    fltsandwich: "Increases planar defense",
+    trufflesgrinder: "Allures pigs",
+    sporecappie: "Grants poison immunity",
+    sporecap_skewers: "Grants acid immunity",
+    swordfishfeast: "Exquisite meal",
+    monkeyislandmeal: "Breaks monkey curse",
+    brainmettersoup: "Stimulates the brain",
+    chickenwings: "Stimulates aggression",
+    chickenrotisserie: "Decreases hunger loss",
+    jawsbreaker: "Allures ocean creatures"
   }
 }
 
