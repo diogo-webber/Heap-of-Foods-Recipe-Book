@@ -87,19 +87,19 @@ export default function Settings({
   const currentLang = LANGUAGES.find((l) => l.code === language);
 
   return (
-    <div className="fixed top-4 right-4 z-50">
+    <div className="fixed top-4 right-4 z-50 select-none text-white">
       {/* SETTINGS BUTTON */}
       <button
         onClick={() => setSettingsOpen(!settingsOpen)}
-        className="bg-zinc-800 hover:bg-zinc-700 px-4 py-2 rounded-xl flex items-center gap-2"
+        className="bg-z800 hover:bg-z700 px-4 py-2 rounded-xl flex items-center gap-2 cursor-pointer"
       >
         <FontAwesomeIcon icon={faGear} />
       </button>
 
       {settingsOpen && (
-        <div className="absolute right-0 mt-2 w-56 bg-zinc-900 border border-zinc-700 rounded-xl shadow-lg px-5 py-4 flex flex-col gap-3">
+        <div className="absolute right-0 mt-2 w-56 bg-z900 rounded-xl shadow-lg px-5 py-4 flex flex-col gap-3">
           {/* THEMES */}
-          {/*
+          
           <div className="flex items-center justify-between">
             <span className="flex items-center gap-2 font-bold">
               <FontAwesomeIcon icon={darkMode ? faMoon : faSun} />
@@ -111,7 +111,8 @@ export default function Settings({
               className={`
                 relative w-14 h-7 rounded-full
                 transition-colors
-                ${darkMode ? "bg-zinc-700" : "bg-zinc-600"}
+                cursor-pointer
+                ${darkMode ? "bg-z800" : "bg-z800"}
               `}
             >
               <span
@@ -125,14 +126,14 @@ export default function Settings({
               >
                 <FontAwesomeIcon
                   icon={darkMode ? faMoon : faSun}
-                  className="text-zinc-800 text-xs"
+                  className="text-z800 text-xs"
                 />
               </span>
             </button>
           </div>
 
           <div className="w-full h-1 bg-white/20" />
-          */}
+          
           {/* LANGUAGE */}
           <div className="flex flex-col gap-2" ref={langRef}>
             <label className="flex items-center gap-2 font-bold">
@@ -142,7 +143,7 @@ export default function Settings({
 
             <button
               onClick={() => setLangOpen(!langOpen)}
-              className="w-full bg-zinc-800 hover:bg-zinc-700 border border-zinc-700 rounded-lg px-3 py-2 flex items-center justify-between transition"
+              className="w-full bg-z800 hover:bg-z700 rounded-lg px-3 py-2 flex items-center justify-between transition cursor-pointer"
             >
               <span>{currentLang?.label}</span>
 
@@ -154,12 +155,12 @@ export default function Settings({
 
             {/* LANGUAGE LIST */}
             {langOpen && (
-              <div className="bg-zinc-800 border border-zinc-700 rounded-lg overflow-hidden">
+              <div className="bg-z800 rounded-lg overflow-hidden">
                 {LANGUAGES.map((lang) => (
                   <button
                     key={lang.code}
                     onClick={() => handleLanguageChange(lang.code as Lang)}
-                    className="w-full text-left px-3 py-2 hover:bg-zinc-700 transition"
+                    className="w-full text-left px-3 py-2 hover:bg-z700 transition cursor-pointer"
                   >
                     {lang.label}
                   </button>
