@@ -15,7 +15,10 @@ import {
 
 const PERISH_MAP = {
   PERISH_ONEDAY: 480,
+  PERISH_TWODAY: 960,
+  PERISH_FOURDAY: 1920,
   PERISH_SUPERFAST: 1440,
+  PERISH_MEDFAST: 2400,
   PERISH_FAST: 2880,
   PERISH_FASTISH: 3840,
   PERISH_MED: 4800,
@@ -75,7 +78,10 @@ export default function Ingredients() {
   const SPOILAGE_LABELS = useMemo(
     () => ({
       PERISH_ONEDAY: t("spoilagetime.oneday"),
+      PERISH_TWODAY: t("spoilagetime.twoday"),
+      PERISH_FOURDAY: t("spoilagetime.fourday"),
       PERISH_SUPERFAST: t("spoilagetime.superfast"),
+      PERISH_MEDFAST: t("spoilagetime.medfast"),
       PERISH_FAST: t("spoilagetime.fast"),
       PERISH_FASTISH: t("spoilagetime.fastish"),
       PERISH_MED: t("spoilagetime.med"),
@@ -172,14 +178,41 @@ export default function Ingredients() {
   // SEARCHED INGREDIENTS
   const searchedIngredients = useMemo(() => {
     if (!search.trim()) return [];
-    return sortedIngredients
-      .filter((ingredient: any) =>
-        t(`ingredients.${ingredient.name}`)
-          .toLowerCase()
-          .includes(search.toLowerCase()),
+
+    const expanded = sortedIngredients.flatMap((ingredient: any) => {
+      const list = [
+        {
+          ...ingredient,
+          variant: "normal",
+          searchName: t(`ingredients.${ingredient.name}`),
+        },
+      ];
+
+      if (ingredient.cooked) {
+        list.push({
+          ...ingredient,
+          variant: "cooked",
+          searchName: t(`ingredients.${ingredient.name}_cooked`),
+        });
+      }
+
+      if (ingredient.dried) {
+        list.push({
+          ...ingredient,
+          variant: "dried",
+          searchName: t(`ingredients.${ingredient.name}_dried`),
+        });
+      }
+
+      return list;
+    });
+
+    return expanded
+      .filter((item: any) =>
+        item.searchName.toLowerCase().includes(search.toLowerCase()),
       )
       .slice(0, 8);
-  }, [search, sortedIngredients]);
+  }, [search, sortedIngredients, t]);
 
   // OUTSIDE CLICK
   useEffect(() => {
@@ -293,20 +326,20 @@ export default function Ingredients() {
                 )}
                 {searchedIngredients.map((ingredient, idx) => (
                   <div
-                    key={ingredient.name}
+                    key={`${ingredient.name}-${ingredient.variant}`}
                     onClick={() => selectIngredient(ingredient)}
                     className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition ${
                       highlightIndex === idx
-                        ? "bg-zinc-100 dark:bg-zinc-800"
-                        : "hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                      ? "bg-zinc-100 dark:bg-zinc-800"
+                      : "hover:bg-zinc-100 dark:hover:bg-zinc-800"
                     }`}
                   >
                     <img
-                      src={`/icons/ingredients/ingredient_${ingredient.name}.png`}
+                      src={`/icons/ingredients/ingredient_${ingredient.name}${ingredient.variant === "normal" ? "" : `_${ingredient.variant}`}.png`}
                       className="w-10 h-10 object-contain"
                     />
                     <span className="text-sm font-semibold">
-                      {t(`ingredients.${ingredient.name}`)}
+                      {ingredient.searchName}
                     </span>
                   </div>
                 ))}
@@ -505,17 +538,17 @@ export default function Ingredients() {
         </div>
       </div>
       {/* CARD GRID */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5 font-bold m-6 select-none">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 font-bold m-6 select-none">
         {sortedIngredients.map((ingredient, index) => (
           <div
             key={index}
             id={`ingredient-${ingredient.name}`}
             onClick={() => setSelected(ingredient)}
-            className="bg-white dark:bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-100 transition shadow-sm dark:shadow-none"
+            className="bg-white dark:bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-105 transition shadow-sm dark:shadow-none"
           >
             <img
               src={`/icons/ingredients/ingredient_${ingredient.name}.png`}
-              className="w-24"
+              className="w-15"
             />
             <h2 className="text-center font-semibold text-lg text-zinc-900 dark:text-white">
               {t(`ingredients.${ingredient.name}`)}
@@ -588,7 +621,7 @@ export default function Ingredients() {
                     >
                       <img
                         src={`/icons/ingredients/ingredient_${selected.name}${variant.type === "normal" ? "" : `_${variant.type}`}.png`}
-                        className="w-28 h-28 object-contain"
+                        className="w-20 h-20 object-contain"
                       />
                       <span className="text-sm font-semibold text-zinc-900 dark:text-white mt-1 text-center">
                         {variant.type === "normal"
