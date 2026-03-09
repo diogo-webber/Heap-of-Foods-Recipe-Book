@@ -6,6 +6,7 @@ const en = {
     cookpot_warly: "Chef's Specials",
     cookpot_keg: "Wooden Keg",
     cookpot_jar: "Preserves Jar",
+    ingredients: "Ingredients",
   },
 
   search: {
@@ -89,12 +90,13 @@ const en = {
     stacksize: "Cooking Stack",
     temperature: "Temperature",
     foodtype: "Food Type",
-    cooktype: "Ingredient Type",
+    cooktype: "Ingredient Value",
     debuff: "Side Effect",
   },
 
   foodtypes: {
     RAW: "Raw",
+    SEEDS: "Seed",
     VEGGIE: "Veggie",
     MEAT: "Meat",
     MONSTER: "Monster",
@@ -110,7 +112,7 @@ const en = {
   },
 
   cooktypes : {
-    SEED: "Seeds",
+    SEEDS: "Seed",
     VEGGIE: "Veggie",
     FRUIT: "Fruit",
     MEAT: "Meat",
@@ -154,6 +156,7 @@ const en = {
   },
 
   spoilagetime: {
+    oneday: "1 Day",
     superfast: "3 Days",
     fast: "6 Days",
     fastish: "8 Days",
@@ -165,12 +168,16 @@ const en = {
   },
 
   card: {
+    values: {
+      raw: "Raw Ingredient Values",
+      cooked: "Cooked Ingredient Values",
+      dried: "Dried Ingredient Values",
+    },
     temperature: {
       hot: "Hot",
       cold: "Cold",
       none: "None",
     },
-
     debuff: {
       hasEffect: "Side Effect"
     },
@@ -402,6 +409,44 @@ const en = {
   },
 
   ingredients: {
+    shark_fin: "Shark Fin",
+    kokonut_halved: "Halved Coconut",
+    kokonut_halved_cooked: "Roasted Coconut",
+    coffeebeans: "Coffee Beans",
+    coffeebeans_cooked: "Roasted Coffee Beans",
+    mussel: "Mussel",
+    mussel_cooked: "Cooked Mussel",
+    limpets: "Limpets",
+    limpets_cooked: "Roasted Limpets",
+    seaweeds: "Seaweeds",
+    seaweeds_cooked: "Cooked Seaweeds",
+    seaweeds_dried: "Dried Seaweeds",
+    blubber: "Blubber",
+    brainrock_coral: "Brainy Matter",
+    dogfish_dead: "Dead Dogfish",
+    swordfish_dead: "Dead Swordfish",
+    beanbugs: "Bean Bugs",
+    beanbugs_cooked: "Cooked Bean Bugs",
+    gummybug: "Gummy Slug",
+    gummybug_cooked: "Cooked Gummy Slug",
+    worm_bone: "Worm Bone",
+    piko: "Piko",
+    piko_orange: "Orange Piko",
+    lotus_flower: "Lotus Flower",
+    lotus_flower_cooked: "Cooked Lotus Root",
+    taroroot: "Taro Root",
+    taroroot_cooked: "Cooked Taro Root",
+    waterycress: "Watercress",
+    twiggynuts: "Nuts",
+    humanmeat: "Long Pig",
+    humanmeat_cooked: "Cooked Long Pig",
+    humanmeat_dried: "Long Pig Jerky",
+    flour: "Flour",
+    spotspice_leaf: "Spotty Sprig",
+    spotspice: "Spot Spice",
+    salt: "Salt",
+    sugar: "Sugar",
+    oil: "Oil",
     aloe: "Aloe",
     aloe_cooked: "Cooked Aloe",
     aloe_dried: "Dried Aloe",

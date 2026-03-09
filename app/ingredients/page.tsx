@@ -14,6 +14,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const PERISH_MAP = {
+  PERISH_ONEDAY: 480,
   PERISH_SUPERFAST: 1440,
   PERISH_FAST: 2880,
   PERISH_FASTISH: 3840,
@@ -73,6 +74,7 @@ export default function Ingredients() {
 
   const SPOILAGE_LABELS = useMemo(
     () => ({
+      PERISH_ONEDAY: t("spoilagetime.oneday"),
       PERISH_SUPERFAST: t("spoilagetime.superfast"),
       PERISH_FAST: t("spoilagetime.fast"),
       PERISH_FASTISH: t("spoilagetime.fastish"),
@@ -96,6 +98,11 @@ export default function Ingredients() {
       if (spoilage <= value) return SPOILAGE_LABELS[key];
     }
     return SPOILAGE_LABELS.PERISH_SUPERSLOW;
+  };
+
+  const getVariantValue = (value: any, index: number) => {
+    if (Array.isArray(value)) return value[index];
+    return index === 0 ? value : undefined;
   };
 
   const [selected, setSelected] = useState<any>(null);
@@ -295,7 +302,7 @@ export default function Ingredients() {
                     }`}
                   >
                     <img
-                      src={`/foods_cookpot/ingredient_${ingredient.name}.png`}
+                      src={`/icons/ingredients/ingredient_${ingredient.name}.png`}
                       className="w-10 h-10 object-contain"
                     />
                     <span className="text-sm font-semibold">
@@ -504,7 +511,7 @@ export default function Ingredients() {
             key={index}
             id={`ingredient-${ingredient.name}`}
             onClick={() => setSelected(ingredient)}
-            className="bg-white dark:bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-105 transition shadow-sm dark:shadow-none"
+            className="bg-white dark:bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-100 transition shadow-sm dark:shadow-none"
           >
             <img
               src={`/icons/ingredients/ingredient_${ingredient.name}.png`}
@@ -529,9 +536,17 @@ export default function Ingredients() {
       {selected &&
         (() => {
           const variants = [
-            { type: "normal", enabled: true },
-            { type: "cooked", enabled: selected.cooked },
-            { type: "dried", enabled: selected.dried },
+            { type: "normal", enabled: true, label: t("card.values.raw") },
+            {
+              type: "cooked",
+              enabled: selected.cooked,
+              label: t("card.values.cooked"),
+            },
+            {
+              type: "dried",
+              enabled: selected.dried,
+              label: t("card.values.dried"),
+            },
           ].filter((v) => v.enabled);
 
           return (
@@ -594,36 +609,56 @@ export default function Ingredients() {
                     <FoodType type={selected.foodtype} t={t} />
                   )}
                   {selected.cooktype && (
-                    <CookType types={selected.cooktype} t={t} />
+                    <CookType
+                      types={selected.cooktype}
+                      values={selected.cookvalue}
+                      t={t}
+                    />
                   )}
                 </div>
-
                 {/* STATUS */}
-                <Block>
-                  <Stat
-                    icon="/icons/cooking/icon_health.png"
-                    value={selected.health}
-                    tooltip={t("tooltips.health")}
-                    isStatus
-                  />
-                  <Stat
-                    icon="/icons/cooking/icon_hunger.png"
-                    value={selected.hunger}
-                    tooltip={t("tooltips.hunger")}
-                    isStatus
-                  />
-                  <Stat
-                    icon="/icons/cooking/icon_sanity.png"
-                    value={selected.sanity}
-                    tooltip={t("tooltips.sanity")}
-                    isStatus
-                  />
-                  <Stat
-                    icon="/icons/cooking/icon_spoilage.png"
-                    value={GetSpoilageLabel(selected.spoilage)}
-                    tooltip={t("tooltips.spoilage")}
-                  />
-                </Block>
+                {variants.map((variant, i) => (
+                  <div
+                    key={variant.type}
+                    className="flex flex-col items-center w-full"
+                  >
+                    {/* TITLE */}
+                    <span className="text-sm font-bold text-zinc-700 dark:text-zinc-300 mb-2">
+                      {variant.label}
+                    </span>
+
+                    <Block>
+                      <Stat
+                        icon="/icons/cooking/icon_health.png"
+                        value={getVariantValue(selected.health, i)}
+                        tooltip={t("tooltips.health")}
+                        isStatus
+                      />
+
+                      <Stat
+                        icon="/icons/cooking/icon_hunger.png"
+                        value={getVariantValue(selected.hunger, i)}
+                        tooltip={t("tooltips.hunger")}
+                        isStatus
+                      />
+
+                      <Stat
+                        icon="/icons/cooking/icon_sanity.png"
+                        value={getVariantValue(selected.sanity, i)}
+                        tooltip={t("tooltips.sanity")}
+                        isStatus
+                      />
+
+                      <Stat
+                        icon="/icons/cooking/icon_spoilage.png"
+                        value={GetSpoilageLabel(
+                          getVariantValue(selected.spoilage, i),
+                        )}
+                        tooltip={t("tooltips.spoilage")}
+                      />
+                    </Block>
+                  </div>
+                ))}
               </div>
             </div>
           );
@@ -766,9 +801,11 @@ function FoodType({ type, t }: { type: string; t: (key: string) => string }) {
 
 function CookType({
   types,
+  values,
   t,
 }: {
   types: string | string[];
+  values?: number[];
   t: (key: string) => string;
 }) {
   const list = Array.isArray(types) ? types : [types];
@@ -781,7 +818,13 @@ function CookType({
       />
 
       <span className="text-zinc-900 dark:text-white">
-        {list.map((type) => t(`cooktypes.${type}`)).join(" | ")}
+        {list
+          .map((type, i) => {
+            const value = values?.[i];
+            const label = t(`cooktypes.${type}`);
+            return value !== undefined ? `${value} ${label}` : label;
+          })
+          .join("  —  ")}
       </span>
 
       <div className="absolute bottom-full mb-2 left-1/2 -translate-x-1/2 hidden group-hover:block bg-black text-white dark:bg-white dark:text-black text-xs px-3 py-1 rounded whitespace-nowrap shadow-lg z-50 pointer-events-none">

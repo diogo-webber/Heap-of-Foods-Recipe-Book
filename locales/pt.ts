@@ -6,6 +6,7 @@ const pt = {
     cookpot_warly: "Especiais do Chef",
     cookpot_keg: "Barril de Madeira",
     cookpot_jar: "Jarra de Conserva",
+    ingredients: "Ingredientes",
   },
 
   search: {
@@ -154,6 +155,7 @@ const pt = {
   },
 
   spoilagetime: {
+    oneday: "1 Dia",
     superfast: "3 Dias",
     fast: "6 Dias",
     fastish: "8 Dias",
@@ -165,12 +167,16 @@ const pt = {
   },
 
   card: {
+    values: {
+      raw: "Valores do Ingrediente Cru",
+      cooked: "Valores do Ingrediente Cozido",
+      dried: "Valores do Ingrediente Seco",
+    },
     temperature: {
       hot: "Quente",
       cold: "Frio",
       none: "Nenhuma",
     },
-
     debuff: {
       hasEffect: "Efeito Especial"
     },
