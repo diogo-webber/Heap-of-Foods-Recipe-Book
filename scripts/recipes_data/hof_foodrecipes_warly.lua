@@ -1,4 +1,4 @@
-local kyno_warly_foods =
+local kyno_foods_warly =
 {
 	musselbouillabaise =
 	{
@@ -252,7 +252,7 @@ local kyno_warly_foods =
 		health = 20,
 		hunger = 8,
 		sanity = 60,
-		cooktime = .10,
+		cooktime = 1.0,
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_warly",
 		floater = TUNING.HOF_FLOATER,
@@ -292,7 +292,7 @@ local kyno_warly_foods =
 		health = 60,
 		hunger = 12.5,
 		sanity = 60,
-		cooktime = .10,
+		cooktime = 1.0,
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_GLOW,
 		potlevel = "med",
 		overridebuild = "kyno_foodrecipes_warly",
@@ -411,7 +411,7 @@ local kyno_warly_foods =
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_MED,
 		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
-		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
+		temperatureduration = TUNING.BUFF_FOOD_TEMP_DURATION,
 		health = 20,
 		hunger = 12.5,
 		sanity = 5,
@@ -430,7 +430,7 @@ local kyno_warly_foods =
 		perishtime = TUNING.PERISH_MED,
 		perishproduct = "warlyicedtea",
 		temperature = TUNING.HOT_FOOD_BONUS_TEMP,
-		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
+		temperatureduration = TUNING.BUFF_FOOD_TEMP_DURATION,
 		health = 40,
 		hunger = 25,
 		sanity = 10,
@@ -463,6 +463,9 @@ local kyno_warly_foods =
 		floater = TUNING.HOF_FLOATER,
 		tags = {"masterfood", "honeyed", "nospice"},
 		card_def = {ingredients = {{"townportaltalisman", 1}, {"rocks", 2}, {"honey", 1}}},
+		oneatenfn = function(inst, eater)
+
+		end,
 	},
 	
 	lavaeeggboiled =
@@ -488,7 +491,7 @@ local kyno_warly_foods =
 		end,
 	},
 	
-	tiramisu = -- Dry + Small Speed buffs.
+	tiramisu =
 	{
 		test = function(cooker, names, tags) return names.kyno_coffeebeans_cooked and tags.chocolate and tags.dairy and not names.kyno_coffeebeans end,
 		priority = 30,
@@ -511,12 +514,11 @@ local kyno_warly_foods =
 	},
 }
 
-for k, recipe in pairs(kyno_warly_foods) do
+for k, recipe in pairs(kyno_foods_warly) do
 	recipe.name = k
 	recipe.weight = 1
-	-- recipe.cookbook_category = "portablecookpot" -- check "hof_cooking.lua" for details.
 	recipe.cookbook_atlas = "images/cookbookimages/hof_cookbookimages_warly.xml"
 	recipe.cookbook_tex = k..".tex"
 end
 
-return kyno_warly_foods
+return kyno_foods_warly

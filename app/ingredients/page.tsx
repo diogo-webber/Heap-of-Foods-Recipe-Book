@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
   faFilter,
+  faFilterCircleXmark,
   faArrowDownAZ,
   faCircleChevronUp,
   faArrowRightFromBracket,
@@ -135,15 +136,40 @@ export default function Ingredients() {
   // FILTERED INGREDIENTS
   const filteredIngredients = ingredients.filter((ingredient: any) => {
     if (filterFoodType.length > 0) {
-      if (!filterFoodType.includes(ingredient.foodtype)) return false;
+      if (!ingredient.foodtype || !filterFoodType.includes(ingredient.foodtype))
+        return false;
     }
 
     if (filterCookType.length > 0) {
-      if (!filterCookType.includes(ingredient.cooktype)) return false;
+      const cooktypes = Array.isArray(ingredient.cooktype)
+        ? ingredient.cooktype
+        : [ingredient.cooktype];
+
+      if (!cooktypes.some((type: string) => filterCookType.includes(type)))
+        return false;
     }
 
     return true;
   });
+
+  const uniqueFoodTypes = useMemo<string[]>(() => {
+    return [
+      ...new Set(ingredients.map((i: any) => i.foodtype).filter(Boolean)),
+    ].sort();
+  }, []);
+
+  const uniqueCookTypes = useMemo<string[]>(() => {
+    return [
+      ...new Set(
+        ingredients
+          .map((i: any) =>
+            Array.isArray(i.cooktype) ? i.cooktype : [i.cooktype],
+          )
+          .flat()
+          .filter(Boolean),
+      ),
+    ].sort();
+  }, []);
 
   // SORTED INGREDIENTS
   const invertOrderFor = ["health", "hunger", "sanity"];
@@ -317,32 +343,34 @@ export default function Ingredients() {
             {searchOpen && search && (
               <div
                 ref={dropdownRef}
-                className="absolute top-full mt-2 w-full bg-white dark:bg-zinc-900 rounded-xl shadow-xl max-h-80 overflow-y-auto overscroll-contain z-50 hide-scrollbar"
+                className="absolute top-full mt-2 w-full bg-white dark:bg-zinc-900 rounded-xl shadow-xl overflow-hidden z-50"
               >
-                {searchedIngredients.length === 0 && (
-                  <div className="px-4 py-3 text-sm text-zinc-500 dark:text-white italic">
-                    {t("search.notfound")}
-                  </div>
-                )}
-                {searchedIngredients.map((ingredient, idx) => (
-                  <div
-                    key={`${ingredient.name}-${ingredient.variant}`}
-                    onClick={() => selectIngredient(ingredient)}
-                    className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition ${
-                      highlightIndex === idx
-                      ? "bg-zinc-100 dark:bg-zinc-800"
-                      : "hover:bg-zinc-100 dark:hover:bg-zinc-800"
-                    }`}
-                  >
-                    <img
-                      src={`/icons/ingredients/ingredient_${ingredient.name}${ingredient.variant === "normal" ? "" : `_${ingredient.variant}`}.png`}
-                      className="w-10 h-10 object-contain"
-                    />
-                    <span className="text-sm font-semibold">
-                      {ingredient.searchName}
-                    </span>
-                  </div>
-                ))}
+                <div className="max-h-80 overflow-y-auto overscroll-contain">
+                  {searchedIngredients.length === 0 && (
+                    <div className="px-4 py-3 text-sm text-zinc-500 dark:text-white italic">
+                      {t("search.notfound")}
+                    </div>
+                  )}
+                  {searchedIngredients.map((ingredient, idx) => (
+                    <div
+                      key={`${ingredient.name}-${ingredient.variant}`}
+                      onClick={() => selectIngredient(ingredient)}
+                      className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition ${
+                        highlightIndex === idx
+                          ? "bg-zinc-100 dark:bg-zinc-800"
+                          : "hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                      }`}
+                    >
+                      <img
+                        src={`/icons/ingredients/ingredient_${ingredient.name}${ingredient.variant === "normal" ? "" : `_${ingredient.variant}`}.png`}
+                        className="w-10 h-10 object-contain"
+                      />
+                      <span className="text-sm font-semibold">
+                        {ingredient.searchName}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -351,7 +379,7 @@ export default function Ingredients() {
             <div className="relative group">
               <button
                 onClick={() => setFiltersOpen(!filtersOpen)}
-                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-2 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faFilter} />
               </button>
@@ -367,7 +395,7 @@ export default function Ingredients() {
             <div className="relative group">
               <button
                 onClick={() => setSortingOpen(!sortingOpen)}
-                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-2 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faArrowDownAZ} />
               </button>
@@ -386,7 +414,7 @@ export default function Ingredients() {
                   onClick={() =>
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }
-                  className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-2 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                  className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
                 >
                   <FontAwesomeIcon icon={faCircleChevronUp} />
                 </button>
@@ -402,15 +430,13 @@ export default function Ingredients() {
               <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 flex items-start gap-4 z-50">
                 {/* FILTER PANEL */}
                 {filtersOpen && (
-                  <div className="w-[300px] bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl p-4 flex flex-col gap-4 font-bold shadow-sm dark:shadow-none">
+                  <div className="w-[700px] max-h-[420px] overflow-y-auto overscroll-contain bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl p-4 flex flex-col gap-2 font-bold shadow-sm dark:shadow-none hide-scrollbar">
                     <DropdownGroup
                       title={t("filters.foodtype")}
                       icon="/icons/cooking/icon_foodtype.png"
                     >
-                      {[...new Set(ingredients.map((r: any) => r.foodtype))]
-                        .filter(Boolean)
-                        .sort()
-                        .map((type) => (
+                      <div className="grid grid-cols-[max-content_max-content] gap-x-9 gap-y-2">
+                        {uniqueFoodTypes.map((type: string) => (
                           <CheckboxFilter
                             key={type}
                             label={t(`foodtypes.${type}`)}
@@ -424,15 +450,15 @@ export default function Ingredients() {
                             }
                           />
                         ))}
+                      </div>
+                      <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20 my-1" />
                     </DropdownGroup>
                     <DropdownGroup
                       title={t("filters.cooktype")}
                       icon="/icons/cooking/icon_cooktype.png"
                     >
-                      {[...new Set(ingredients.map((r: any) => r.cooktype))]
-                        .filter(Boolean)
-                        .sort()
-                        .map((value) => (
+                      <div className="grid grid-cols-5 gap-x-0 gap-y-2">
+                        {uniqueCookTypes.map((value: string) => (
                           <CheckboxFilter
                             key={value}
                             label={t(`cooktypes.${value}`)}
@@ -446,9 +472,9 @@ export default function Ingredients() {
                             }
                           />
                         ))}
+                      </div>
+                      <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20 my-1" />
                     </DropdownGroup>
-
-                    <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20" />
 
                     <button
                       onClick={() => {
@@ -464,7 +490,7 @@ export default function Ingredients() {
 
                 {/* SORT PANEL */}
                 {sortingOpen && (
-                  <div className="w-[300px] bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl p-4 flex flex-col gap-4 font-bold shadow-sm dark:shadow-none">
+                  <div className="w-[300px] bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl p-4 flex flex-col gap-3 font-bold shadow-sm dark:shadow-none">
                     <DropdownGroup
                       title={t("sorting.directiontype")}
                       icon="/icons/cooking/icon_priority.png"
@@ -497,6 +523,7 @@ export default function Ingredients() {
                         checked={sortType === "alphabet"}
                         onChange={() => setSortType("alphabet")}
                       />
+                      {/*
                       <CheckboxFilter
                         label={t("sorting.type.health")}
                         checked={sortType === "health"}
@@ -517,6 +544,7 @@ export default function Ingredients() {
                         checked={sortType === "spoilage"}
                         onChange={() => setSortType("spoilage")}
                       />
+                      */}
                     </DropdownGroup>
 
                     <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20" />
@@ -538,10 +566,33 @@ export default function Ingredients() {
         </div>
       </div>
       {/* CARD GRID */}
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 font-bold m-6 select-none">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 font-bold m-6 select-none relative">
+        {sortedIngredients.length === 0 && (
+          <div className="col-span-full flex flex-col items-center justify-center text-center py-40">
+            <FontAwesomeIcon
+              icon={faFilterCircleXmark}
+              className="text-7xl mb-4 text-zinc-700 dark:text-zinc-500 opacity-80"
+            />
+            <h2 className="text-xl font-semibold mt-4 text-zinc-900 dark:text-zinc-100">
+              {t("filters.noresults")}
+            </h2>
+            <p className="text-sm text-zinc-700 dark:text-zinc-400 mt-2">
+              {t("filters.trydifferent")}
+            </p>
+            <button
+              onClick={() => {
+                setFilterFoodType([]);
+                setFilterCookType([]);
+              }}
+              className="mt-4 px-4 py-2 bg-zinc-500 dark:bg-zinc-700 rounded-lg hover:bg-zinc-400 dark:hover:bg-zinc-600 text-white"
+            >
+              {t("filters.clear")}
+            </button>
+          </div>
+        )}        
         {sortedIngredients.map((ingredient, index) => (
           <div
-            key={index}
+            key={ingredient.name}
             id={`ingredient-${ingredient.name}`}
             onClick={() => setSelected(ingredient)}
             className="bg-white dark:bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-105 transition shadow-sm dark:shadow-none"

@@ -6,7 +6,7 @@ import { faHouse, faGear, faUtensils } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 
 export default function TopHotBar() {
-  const { t, locale } = useTranslation();
+  const { t, locale, setLocale } = useTranslation();
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 bg-zinc-200 dark:bg-zinc-900 shadow-md flex items-center justify-between p-2">
@@ -26,15 +26,19 @@ export default function TopHotBar() {
           </button>
         </Link>
 
-        <button className="flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 opacity-50 cursor-not-allowed">
-          <img src="/icons/misc/icon_cookpot_warly.png" className="w-6 h-6 object-contain"/>
-          {t("main.cookpot_warly")}
-        </button>
+        <Link href="/cookpot_warly">
+          <button className="flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
+            <img src="/icons/misc/icon_cookpot_warly.png" className="w-6 h-6 object-contain"/>
+            {t("main.cookpot_warly")}
+          </button>
+        </Link>
 
-        <button className="flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 opacity-50 cursor-not-allowed">
-          <img src="/icons/misc/icon_cookpot_keg.png" className="w-6 h-6 object-contain"/>
-          {t("main.cookpot_keg")}
-        </button>
+        <Link href="/cookpot_keg">
+          <button className="flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
+            <img src="/icons/misc/icon_cookpot_keg.png" className="w-6 h-6 object-contain"/>
+            {t("main.cookpot_keg")}
+          </button>
+        </Link>
 
         <button className="flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 opacity-50 cursor-not-allowed">
           <img src="/icons/misc/icon_cookpot_jar.png" className="w-6 h-6 object-contain"/>

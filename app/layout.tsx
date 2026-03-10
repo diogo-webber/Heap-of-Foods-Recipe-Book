@@ -16,7 +16,6 @@ const plusJakarta = Plus_Jakarta_Sans({
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-// TO DO: META DATA
 export const metadata: Metadata = {
   title: "Heap of Foods - Recipes Sheet",
   description: "A complete recipes sheet for the Heap of Foods Mod!",

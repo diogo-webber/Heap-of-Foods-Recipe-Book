@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "recipes_cookpot": "node scripts/extract_recipes.js"
+    "recipes_cookpot": "node scripts/extract_recipes.js",
+    "recipes_cookpot_warly": "node scripts/extract_recipes_warly.js",
+    "recipes_cookpot_keg": "node scripts/extract_recipes_keg.js",
+    "recipes_cookpot_jar": "node scripts/extract_recipes_jar.js",
+    "recipes_cookpot_seasonal": "node scripts/extract_recipes_seasonal.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^7.2.0",

@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
   faFilter,
+  faFilterCircleXmark,
   faArrowDownAZ,
   faCircleChevronUp,
   faArrowRightFromBracket,
@@ -278,7 +279,7 @@ export default function CookPot() {
             <input
               ref={inputRef}
               type="text"
-              placeholder={t("search.title")}
+              placeholder={t("search.title.recipe")}
               value={search}
               onChange={(e) => {
                 setSearch(e.target.value);
@@ -317,32 +318,34 @@ export default function CookPot() {
             {searchOpen && search && (
               <div
                 ref={dropdownRef}
-                className="absolute top-full mt-2 w-full bg-white dark:bg-zinc-900 rounded-xl shadow-xl max-h-80 overflow-y-auto overscroll-contain z-50 hide-scrollbar"
+                className="absolute top-full mt-2 w-full bg-white dark:bg-zinc-900 rounded-xl shadow-xl overflow-hidden z-50"
               >
-                {searchedRecipes.length === 0 && (
-                  <div className="px-4 py-3 text-sm text-zinc-500 dark:text-white italic">
-                    {t("search.notfound")}
-                  </div>
-                )}
-                {searchedRecipes.map((recipe, idx) => (
-                  <div
-                    key={recipe.name}
-                    onClick={() => selectRecipe(recipe)}
-                    className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition ${
-                      highlightIndex === idx
-                        ? "bg-zinc-100 dark:bg-zinc-800"
-                        : "hover:bg-zinc-100 dark:hover:bg-zinc-800"
-                    }`}
-                  >
-                    <img
-                      src={`/foods_cookpot/${recipe.name}.png`}
-                      className="w-10 h-10 object-contain"
-                    />
-                    <span className="text-sm font-semibold">
-                      {t(`recipes.${recipe.name}`)}
-                    </span>
-                  </div>
-                ))}
+                <div className="max-h-80 overflow-y-auto overscroll-contain">
+                  {searchedRecipes.length === 0 && (
+                    <div className="px-4 py-3 text-sm text-zinc-500 dark:text-white italic">
+                      {t("search.notfound")}
+                    </div>
+                  )}
+                  {searchedRecipes.map((recipe, idx) => (
+                    <div
+                      key={recipe.name}
+                      onClick={() => selectRecipe(recipe)}
+                      className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition ${
+                        highlightIndex === idx
+                          ? "bg-zinc-100 dark:bg-zinc-800"
+                          : "hover:bg-zinc-100 dark:hover:bg-zinc-800"
+                      }`}
+                    >
+                      <img
+                        src={`/foods_cookpot/${recipe.name}.png`}
+                        className="w-10 h-10 object-contain"
+                      />
+                      <span className="text-sm font-semibold">
+                        {t(`recipes.${recipe.name}`)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             )}
           </div>
@@ -351,7 +354,7 @@ export default function CookPot() {
             <div className="relative group">
               <button
                 onClick={() => setFiltersOpen(!filtersOpen)}
-                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-2 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faFilter} />
               </button>
@@ -367,7 +370,7 @@ export default function CookPot() {
             <div className="relative group">
               <button
                 onClick={() => setSortingOpen(!sortingOpen)}
-                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-2 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faArrowDownAZ} />
               </button>
@@ -386,7 +389,7 @@ export default function CookPot() {
                   onClick={() =>
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }
-                  className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-2 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                  className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
                 >
                   <FontAwesomeIcon icon={faCircleChevronUp} />
                 </button>
@@ -570,7 +573,31 @@ export default function CookPot() {
         </div>
       </div>
       {/* CARD GRID */}
-      <div className="grid grid-cols-4 gap-5 font-bold m-6 select-none">
+      <div className="grid grid-cols-4 gap-5 font-bold m-6 select-none relative">
+        {sortedRecipes.length === 0 && (
+          <div className="col-span-4 flex flex-col items-center justify-center text-center py-40">
+            <FontAwesomeIcon
+              icon={faFilterCircleXmark}
+              className="text-7xl mb-4 text-zinc-700 dark:text-zinc-500 opacity-80"
+            />
+            <h2 className="text-xl font-semibold mt-4 text-zinc-900 dark:text-zinc-100">
+              {t("filters.noresults")}
+            </h2>
+            <p className="text-sm text-zinc-700 dark:text-zinc-400 mt-2">
+              {t("filters.trydifferent")}
+            </p>
+            <button
+              onClick={() => {
+                setFilterTemp(null);
+                setFilterFoodType([]);
+                setFilterDebuff(null);
+              }}
+              className="mt-4 px-4 py-2 bg-zinc-500 dark:bg-zinc-700 rounded-lg hover:bg-zinc-400 dark:hover:bg-zinc-600 text-white"
+            >
+              {t("filters.clear")}
+            </button>
+          </div>
+        )}
         {sortedRecipes.map((recipe, index) => (
           <div
             key={index}
@@ -849,7 +876,10 @@ function Stat({ icon, value, tooltip, isStatus = false }: any) {
 function FoodType({ type, t }: { type: string; t: (key: string) => string }) {
   return (
     <div className="relative group flex items-center gap-2 bg-zinc-100 dark:bg-zinc-800 px-3 py-1 rounded-full text-xs tracking-wide cursor-default">
-      <img src="/icons/cooking/icon_foodtype.png" className="w-5 h-5 object-contain" />
+      <img
+        src="/icons/cooking/icon_foodtype.png"
+        className="w-5 h-5 object-contain"
+      />
       <span className="text-zinc-900 dark:text-white">
         {t(`foodtypes.${type}`)}
       </span>
