@@ -105,6 +105,7 @@ const pt = {
     VEGGIE: "Vegetal",
     MEAT: "Carne",
     MONSTER: "Monstro",
+    MONSTERGOODIES: "Guloseimas de Monstro",
     GENERIC: "Genérico",
     GOODIES: "Guloseima",
     ROUGHAGE: "Fibra",
@@ -114,6 +115,7 @@ const pt = {
     PREPAREDPOOP: "Horrível",
     PREPAREDSOUL: "Alma",
     ALCOHOLIC: "Guloseimas Alcoólicas",
+    ALCOHOLICMONSTER: "Guloseimas Alcoólicas de Monstro"
   },
 
   cooktypes : {

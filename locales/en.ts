@@ -107,6 +107,7 @@ const en = {
     VEGGIE: "Veggie",
     MEAT: "Meat",
     MONSTER: "Monster",
+    MONSTERGOODIES: "Monster Goodies",
     GENERIC: "Generic",
     GOODIES: "Goodies",
     ROUGHAGE: "Roughage",
@@ -116,6 +117,7 @@ const en = {
     PREPAREDPOOP: "Horrible",
     PREPAREDSOUL: "Soul",
     ALCOHOLIC: "Alcoholic Goodies",
+    ALCOHOLICMONSTER: "Alcoholic Monster Goodies",
   },
 
   cooktypes : {
@@ -498,7 +500,7 @@ const en = {
     juice_seaweeds: "Seaweed Juice",
     juice_avocado: "Stone Fruit Juice",
     juice_lichen: "Lichen Juice",
-    juice_lotus: "Lotus Flower Juice",
+    juice_lotus: "Lotus Root Juice",
     juice_taroroot: "Taro Root Juice",
     juice_waterycress: "Watercress Juice",
     juice_cactus: "Cactus Juice",

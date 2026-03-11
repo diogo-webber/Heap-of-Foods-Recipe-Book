@@ -11,7 +11,74 @@
     "hunger": 12.5,
     "sanity": 15,
     "cooktime": 24,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [
+      {
+        "items": [
+          "tag_chickenegg"
+        ],
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tallbirdegg"
+        ],
+        "comparator": "equal"
+      }
+    ],
+    "card_def": [
+      {
+        "items": [
+          "bird_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "mayonnaise_chicken",
@@ -25,7 +92,61 @@
     "hunger": 25,
     "sanity": 25,
     "cooktime": 24,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_chickenegg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_chicken_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "mayonnaise_tallbird",
@@ -39,7 +160,61 @@
     "hunger": 12.5,
     "sanity": 5,
     "cooktime": 24,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tallbirdegg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "tallbirdegg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_oil"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "mayonnaise_nightmare",
@@ -53,7 +228,61 @@
     "hunger": 62.5,
     "sanity": -5,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "nightmarefuel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "bird_egg"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "nightmarefuel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "tartarsauce",
@@ -67,7 +296,61 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tag_mayonnaise"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_cucumber"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "mayonnaise"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_cucumber"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "butter_beefalo",
@@ -81,7 +364,47 @@
     "hunger": 25,
     "sanity": 40,
     "cooktime": 96,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_milk_beefalo"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_milk_beefalo"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "butter_koalefant",
@@ -95,7 +418,47 @@
     "hunger": 25,
     "sanity": 20,
     "cooktime": 96,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_milk_koalefant"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_milk_koalefant"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "butter_goat",
@@ -109,7 +472,47 @@
     "hunger": 40,
     "sanity": 0,
     "cooktime": 96,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "goatmilk"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "truffleoil",
@@ -123,7 +526,61 @@
     "hunger": 12.5,
     "sanity": -20,
     "cooktime": 24,
-    "stacksize": 2
+    "stacksize": 2,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_truffles"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "seeds"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_truffles"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "seeds"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_sturgeon",
@@ -137,7 +594,61 @@
     "hunger": 37.5,
     "sanity": 33,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_sturgeon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_sturgeon"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_berries",
@@ -151,7 +662,47 @@
     "hunger": 20,
     "sanity": 20,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "berries"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_berries_juicy",
@@ -165,7 +716,47 @@
     "hunger": 20,
     "sanity": 20,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "berries_juicy"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "berries_juicy"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_pomegranate",
@@ -179,7 +770,47 @@
     "hunger": 25,
     "sanity": 30,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pomegranate"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_dragonfruit",
@@ -193,7 +824,47 @@
     "hunger": 40,
     "sanity": 40,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "dragonfruit"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "dragonfruit"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_banana",
@@ -207,7 +878,47 @@
     "hunger": 20,
     "sanity": 33,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_banana"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_banana"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_cave_banana",
@@ -221,12 +932,52 @@
     "hunger": 25,
     "sanity": 25,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "cave_banana"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "cave_banana"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_durian",
     "priority": 30,
-    "foodtype": "VEGGIE",
+    "foodtype": "MONSTER",
     "spoilage": 4800,
     "temperature": null,
     "temperatureDuration": null,
@@ -235,7 +986,47 @@
     "hunger": 35,
     "sanity": -20,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": true,
+    "mermhealth": 5,
+    "mermhunger": 70,
+    "mermsanity": 20,
+    "monsterfood": true,
+    "monsterhealth": 5,
+    "monstersanity": 20,
+    "requires": [
+      {
+        "items": [
+          "durian"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "durian"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_watermelon",
@@ -249,7 +1040,47 @@
     "hunger": 35,
     "sanity": 20,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "watermelon"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "watermelon"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_fig",
@@ -263,7 +1094,47 @@
     "hunger": 25,
     "sanity": 20,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "fig"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "fig"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_glowberry",
@@ -277,7 +1148,48 @@
     "hunger": 40,
     "sanity": -10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "wormlight_lesser",
+          "wormlight"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "wormlight_lesser"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_nightberry",
@@ -291,7 +1203,47 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "ancientfruit_nightvision"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "ancientfruit_nightvision"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_kokonut",
@@ -305,7 +1257,47 @@
     "hunger": 20,
     "sanity": 33,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_kokonut_halved"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_kokonut_halved"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "jelly_pineapple",
@@ -319,7 +1311,47 @@
     "hunger": 25,
     "sanity": 15,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_pineapple_halved"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_sweetener"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_pineapple_halved"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "honey"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_cucumber",
@@ -333,7 +1365,47 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_cucumber"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_cucumber"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_carrot",
@@ -347,7 +1419,47 @@
     "hunger": 30,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "carrot"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_corn",
@@ -361,7 +1473,47 @@
     "hunger": 35,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "corn"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_eggplant",
@@ -375,7 +1527,47 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "eggplant"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "eggplant"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_pumpkin",
@@ -389,7 +1581,47 @@
     "hunger": 20,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "pumpkin"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pumpkin"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_garlic",
@@ -403,7 +1635,47 @@
     "hunger": 30,
     "sanity": -10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "garlic"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_onion",
@@ -417,7 +1689,47 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "onion"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_pepper",
@@ -431,7 +1743,47 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "pepper"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_tomato",
@@ -445,7 +1797,47 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "tomato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_potato",
@@ -459,7 +1851,47 @@
     "hunger": 70,
     "sanity": -10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "potato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_asparagus",
@@ -473,7 +1905,47 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "asparagus"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "asparagus"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_aloe",
@@ -487,7 +1959,47 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_aloe"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_aloe"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_radish",
@@ -501,7 +2013,47 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_radish"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_radish"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_fennel",
@@ -515,7 +2067,47 @@
     "hunger": 40,
     "sanity": -15,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_fennel"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_fennel"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_sweetpotato",
@@ -529,7 +2121,47 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_sweetpotato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sweetpotato"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_parznip",
@@ -543,7 +2175,48 @@
     "hunger": 75,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_parznip",
+          "kyno_parznip_eaten"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_parznip"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_turnip",
@@ -557,7 +2230,47 @@
     "hunger": 32.5,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_turnip"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_turnip"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_rice",
@@ -571,7 +2284,47 @@
     "hunger": 62.5,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_rice"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_kelp",
@@ -585,7 +2338,47 @@
     "hunger": 20,
     "sanity": -5,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kelp"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kelp"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_seaweeds",
@@ -599,7 +2392,47 @@
     "hunger": 62.5,
     "sanity": -10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_seaweeds"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_seaweeds"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_avocado",
@@ -613,7 +2446,47 @@
     "hunger": 35,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "rock_avocado_fruit_ripe"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "rock_avocado_fruit_ripe"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_lichen",
@@ -627,7 +2500,47 @@
     "hunger": 15,
     "sanity": -15,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "cutlichen"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "cutlichen"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_lotus",
@@ -641,7 +2554,47 @@
     "hunger": 33,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_lotus_flower"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_lotus_flower"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_taroroot",
@@ -655,7 +2608,47 @@
     "hunger": 20,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_taroroot"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_taroroot"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_waterycress",
@@ -669,7 +2662,47 @@
     "hunger": 40,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_waterycress"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_waterycress"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_cactus",
@@ -683,7 +2716,48 @@
     "hunger": 25,
     "sanity": -10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "cactus_meat",
+          "cactus_flower"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "cactus_meat"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_redcap",
@@ -697,7 +2771,47 @@
     "hunger": 62.5,
     "sanity": -15,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "red_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "red_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_greencap",
@@ -711,7 +2825,47 @@
     "hunger": 50,
     "sanity": -10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "green_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "green_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_bluecap",
@@ -725,7 +2879,47 @@
     "hunger": 20,
     "sanity": -5,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "blue_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "blue_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_mooncap",
@@ -739,7 +2933,47 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "moon_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "moon_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_whitecap",
@@ -753,7 +2987,47 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_white_cap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_truffles",
@@ -767,12 +3041,52 @@
     "hunger": 62.5,
     "sanity": 33,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_truffles"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_truffles"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_sporecap",
     "priority": 30,
-    "foodtype": "VEGGIE",
+    "foodtype": "MONSTER",
     "spoilage": 4800,
     "temperature": null,
     "temperatureDuration": null,
@@ -781,12 +3095,52 @@
     "hunger": 40,
     "sanity": -20,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": true,
+    "monsterhealth": 20,
+    "monstersanity": 20,
+    "requires": [
+      {
+        "items": [
+          "kyno_sporecap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sporecap"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "pickles_sporecap_dark",
     "priority": 30,
-    "foodtype": "VEGGIE",
+    "foodtype": "MONSTER",
     "spoilage": 4800,
     "temperature": null,
     "temperatureDuration": null,
@@ -795,7 +3149,47 @@
     "hunger": 55,
     "sanity": -30,
     "cooktime": 72,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": true,
+    "monsterhealth": 30,
+    "monstersanity": 30,
+    "requires": [
+      {
+        "items": [
+          "kyno_sporecap_dark"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_sporecap_dark"
+        ],
+        "amount": 2,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_pondfish",
@@ -809,7 +3203,61 @@
     "hunger": 15,
     "sanity": 5,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_pondfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_pondfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_pondeel",
@@ -823,7 +3271,61 @@
     "hunger": 20,
     "sanity": 15,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_pondeel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_pondeel"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_wobster",
@@ -837,7 +3339,61 @@
     "hunger": 25,
     "sanity": 5,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_wobster"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_wobster"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_wobster_moonglass",
@@ -851,7 +3407,61 @@
     "hunger": 30,
     "sanity": 10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_wobster_moonglass"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_wobster_moonglass"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_wobster_monkeyisland",
@@ -865,7 +3475,61 @@
     "hunger": 30,
     "sanity": 30,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_wobster_monkeyisland"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_wobster_monkeyisland"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_small_1",
@@ -879,7 +3543,61 @@
     "hunger": 20,
     "sanity": 5,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_1"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_1"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_small_2",
@@ -893,7 +3611,61 @@
     "hunger": 20,
     "sanity": 10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_2"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_2"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_small_3",
@@ -907,7 +3679,61 @@
     "hunger": 5,
     "sanity": 10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_3"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_3"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_small_4",
@@ -921,7 +3747,61 @@
     "hunger": 5,
     "sanity": 20,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_4"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_4"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_small_5",
@@ -935,7 +3815,61 @@
     "hunger": 20,
     "sanity": 10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_5"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_5"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_small_6",
@@ -949,7 +3883,61 @@
     "hunger": 10,
     "sanity": 10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_6"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_6"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_small_7",
@@ -963,7 +3951,61 @@
     "hunger": 10,
     "sanity": 20,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_7"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_7"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_small_8",
@@ -977,7 +4019,61 @@
     "hunger": 20,
     "sanity": 5,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_8"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_8"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_small_9",
@@ -991,7 +4087,61 @@
     "hunger": 20,
     "sanity": 5,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_9"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_small_9"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_pufferfish",
@@ -1005,7 +4155,61 @@
     "hunger": 25,
     "sanity": 20,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_pufferfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_pufferfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_medium_1",
@@ -1019,7 +4223,61 @@
     "hunger": 15,
     "sanity": 10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_1"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_1"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_medium_2",
@@ -1033,7 +4291,61 @@
     "hunger": 30,
     "sanity": 10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_2"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_2"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_medium_3",
@@ -1047,7 +4359,61 @@
     "hunger": 10,
     "sanity": 30,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_3"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_3"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_medium_4",
@@ -1061,7 +4427,61 @@
     "hunger": 30,
     "sanity": 15,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_4"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_4"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_medium_5",
@@ -1075,7 +4495,61 @@
     "hunger": 30,
     "sanity": 15,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_5"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_5"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_medium_6",
@@ -1089,7 +4563,61 @@
     "hunger": 15,
     "sanity": 20,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_6"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_6"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_medium_7",
@@ -1103,7 +4631,61 @@
     "hunger": 20,
     "sanity": 15,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_7"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_7"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_medium_8",
@@ -1117,7 +4699,61 @@
     "hunger": 15,
     "sanity": 30,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_8"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_8"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_medium_9",
@@ -1131,7 +4767,61 @@
     "hunger": 20,
     "sanity": 30,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_9"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_medium_9"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_oceanfish_midnight_carp",
@@ -1145,7 +4835,61 @@
     "hunger": 25,
     "sanity": 10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_midnight_carp"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_oceanfish_midnight_carp"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_tropicalfish",
@@ -1159,7 +4903,61 @@
     "hunger": 15,
     "sanity": 15,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_tropicalfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_tropicalfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_pierrotfish",
@@ -1173,7 +4971,61 @@
     "hunger": 15,
     "sanity": 10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_pierrotfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_pierrotfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_neonfish",
@@ -1187,7 +5039,61 @@
     "hunger": 20,
     "sanity": 10,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_neonfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_neonfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_grouper",
@@ -1201,7 +5107,61 @@
     "hunger": 20,
     "sanity": 25,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_grouper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_grouper"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_koi",
@@ -1215,7 +5175,61 @@
     "hunger": 20,
     "sanity": 25,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_koi"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_koi"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_salmonfish",
@@ -1229,7 +5243,61 @@
     "hunger": 15,
     "sanity": 15,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_salmonfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_salmonfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_jellyfish",
@@ -1243,7 +5311,61 @@
     "hunger": 15,
     "sanity": 0,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_jellyfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_jellyfish"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_jellyfish_rainbow",
@@ -1257,7 +5379,61 @@
     "hunger": 15,
     "sanity": 15,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_jellyfish_rainbow"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_jellyfish_rainbow"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_antchovy",
@@ -1271,7 +5447,61 @@
     "hunger": 10,
     "sanity": 5,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_antchovy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_antchovy"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   },
   {
     "name": "agedroe_swordfish_blue",
@@ -1285,6 +5515,60 @@
     "hunger": 25,
     "sanity": 25,
     "cooktime": 48,
-    "stacksize": null
+    "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
+    "requires": [
+      {
+        "items": [
+          "kyno_roe_swordfish_blue"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "tag_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ],
+    "excluded": [],
+    "card_def": [
+      {
+        "items": [
+          "kyno_roe_swordfish_blue"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_spotspice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "kyno_salt"
+        ],
+        "amount": 1,
+        "comparator": "equal"
+      }
+    ]
   }
 ]

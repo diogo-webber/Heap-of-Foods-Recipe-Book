@@ -37,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html 
       lang="en"
+      suppressHydrationWarning
     >
       <body className={`${plusJakarta.className} antialiased flex flex-col min-h-screen`}>
         <ThemeProvider>

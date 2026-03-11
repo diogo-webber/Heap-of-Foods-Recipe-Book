@@ -33,6 +33,13 @@ const TEMPERATURE_DURATION_MAP = {
   FOOD_TEMP_DURATION: 480,
 };
 
+const FOODTYPE_ORDER = [
+  "MEAT",
+  "VEGGIE",
+  "GOODIES",
+  "ELEMENTAL",
+];
+
 interface SortOptionProps {
   value: string;
   label: string;
@@ -185,6 +192,7 @@ export default function CookPotWarly() {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const controlsRef = useRef<HTMLDivElement>(null);
   const bothOpen = filtersOpen && sortingOpen;
 
   // FILTERED RECIPES
@@ -262,6 +270,51 @@ export default function CookPotWarly() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    if (!filtersOpen && !sortingOpen) return;
+
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        controlsRef.current &&
+        !controlsRef.current.contains(e.target as Node)
+      ) {
+        setFiltersOpen(false);
+        setSortingOpen(false);
+      }
+    }
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setFiltersOpen(false);
+        setSortingOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [filtersOpen, sortingOpen]);
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setSelected(null);
+      }
+    }
+
+    if (selected) {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selected]);
 
   // HIDE BACK TO TOP BUTTON
   useEffect(() => {
@@ -379,7 +432,10 @@ export default function CookPotWarly() {
               </div>
             )}
           </div>
-          <div className="flex items-center justify-center gap-3 select-none relative">
+          <div
+            ref={controlsRef}
+            className="flex items-center justify-center gap-3 select-none relative"
+          >
             {/* FILTER BUTTON */}
             <div className="relative group">
               <button
@@ -469,9 +525,9 @@ export default function CookPotWarly() {
                       title={t("filters.foodtype")}
                       icon="/icons/cooking/icon_foodtype.png"
                     >
-                      {[...new Set(recipes.map((r: any) => r.foodtype))]
-                        .filter(Boolean)
-                        .map((type) => (
+                      {FOODTYPE_ORDER.filter((type) =>
+                        recipes.some((r: any) => r.foodtype === type)
+                        ).map((type) => (
                           <CheckboxFilter
                             key={type}
                             label={t(`foodtypes.${type}`)}
@@ -635,7 +691,10 @@ export default function CookPotWarly() {
             onClick={() => setSelected(recipe)}
             className="bg-white dark:bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-105 transition shadow-sm dark:shadow-none"
           >
-            <img src={`/foods_cookpot_warly/${recipe.name}.png`} className="w-24" />
+            <img
+              src={`/foods_cookpot_warly/${recipe.name}.png`}
+              className="w-24"
+            />
             <h2 className="text-center font-semibold text-lg text-zinc-900 dark:text-white">
               {t(`recipes_warly.${recipe.name}`)}
             </h2>

@@ -33,6 +33,17 @@ const TEMPERATURE_DURATION_MAP = {
   FOOD_TEMP_DURATION: 480,
 };
 
+const FOODTYPE_ORDER = [
+  "MEAT",
+  "VEGGIE",
+  "GOODIES",
+  "MONSTER",
+  "ELEMENTAL",
+  "PREPAREDPOOP",
+  "GEARS",
+  "PREPAREDSOUL",
+];
+
 interface SortOptionProps {
   value: string;
   label: string;
@@ -53,6 +64,15 @@ interface Recipe {
   debuff?: boolean;
   foodtype?: string;
   stacksize?: number;
+
+  mermfood?: boolean;
+  mermhealth?: number;
+  mermhunger?: number;
+  mermsanity?: number;
+
+  monsterfood?: boolean;
+  monsterhealth?: number;
+  monstersanity?: number;
 
   example?: string[];
   excluded?: string[];
@@ -185,6 +205,7 @@ export default function CookPot() {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const controlsRef = useRef<HTMLDivElement>(null);
   const bothOpen = filtersOpen && sortingOpen;
 
   // FILTERED RECIPES
@@ -262,6 +283,51 @@ export default function CookPot() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    if (!filtersOpen && !sortingOpen) return;
+
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        controlsRef.current &&
+        !controlsRef.current.contains(e.target as Node)
+      ) {
+        setFiltersOpen(false);
+        setSortingOpen(false);
+      }
+    }
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setFiltersOpen(false);
+        setSortingOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [filtersOpen, sortingOpen]);
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setSelected(null);
+      }
+    }
+
+    if (selected) {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selected]);
 
   // HIDE BACK TO TOP BUTTON
   useEffect(() => {
@@ -379,7 +445,10 @@ export default function CookPot() {
               </div>
             )}
           </div>
-          <div className="flex items-center justify-center gap-3 select-none relative">
+          <div
+            ref={controlsRef}
+            className="flex items-center justify-center gap-3 select-none relative"
+          >
             {/* FILTER BUTTON */}
             <div className="relative group">
               <button
@@ -469,9 +538,9 @@ export default function CookPot() {
                       title={t("filters.foodtype")}
                       icon="/icons/cooking/icon_foodtype.png"
                     >
-                      {[...new Set(recipes.map((r: any) => r.foodtype))]
-                        .filter(Boolean)
-                        .map((type) => (
+                      {FOODTYPE_ORDER.filter((type) =>
+                        recipes.some((r: any) => r.foodtype === type)
+                        ).map((type) => (
                           <CheckboxFilter
                             key={type}
                             label={t(`foodtypes.${type}`)}
@@ -774,18 +843,24 @@ export default function CookPot() {
                 value={selected.health}
                 tooltip={t("tooltips.health")}
                 isStatus
+                recipe={selected}
+                stat="health"
               />
               <Stat
                 icon="/icons/cooking/icon_hunger.png"
                 value={selected.hunger}
                 tooltip={t("tooltips.hunger")}
                 isStatus
+                recipe={selected}
+                stat="hunger"
               />
               <Stat
                 icon="/icons/cooking/icon_sanity.png"
                 value={selected.sanity}
                 tooltip={t("tooltips.sanity")}
                 isStatus
+                recipe={selected}
+                stat="sanity"
               />
             </Block>
 
@@ -938,7 +1013,7 @@ function Block({ children, showInfo = false, infoText, infoLink }: BlockProps) {
   );
 }
 
-function Stat({ icon, value, tooltip, isStatus = false }: any) {
+function Stat({ icon, value, tooltip, isStatus = false, recipe, stat }: any) {
   if (value === undefined || value === null) return null;
 
   let displayValue = value;
@@ -961,13 +1036,61 @@ function Stat({ icon, value, tooltip, isStatus = false }: any) {
     }
   }
 
+  const extrasMap: Record<number, string[]> = {};
+
+  if (recipe?.monsterfood) {
+    const monsterValue = recipe[`monster${stat}`];
+    if (monsterValue !== undefined) {
+      extrasMap[monsterValue] ??= [];
+      extrasMap[monsterValue].push("webber", "wortox");
+    }
+  }
+
+  if (recipe?.mermfood) {
+    const mermValue = recipe[`merm${stat}`];
+    if (mermValue !== undefined) {
+      extrasMap[mermValue] ??= [];
+      extrasMap[mermValue].push("wurt");
+    }
+  }
+
+  const extraValues = Object.entries(extrasMap).map(([value, chars]) => ({
+    value: Number(value),
+    characters: [...new Set(chars)],
+  }));
+
   return (
     <div className="relative group flex items-center gap-3 min-w-[120px] justify-center">
       <img src={icon} className="w-9 h-9 object-contain" />
 
-      <span className={`text-base font-semibold ${colorClass}`}>
-        {displayValue}
+      <div className="flex flex-col items-center leading-tight">
+  <span className={`text-base font-semibold ${colorClass}`}>
+    {displayValue}
+  </span>
+
+  {extraValues.map((extra, i) => (
+    <span
+      key={i}
+      className=" font-semibold flex items-center gap-1 text-zinc-600 dark:text-zinc-400"
+    >
+      (
+      <span className="text-green-500 font-semibold">
+        {extra.value > 0 ? `+${extra.value}` : extra.value}
       </span>
+
+      {extra.characters.map((char, index) => (
+        <span key={char} className="flex items-center font-bold">
+          <img
+            src={`/icons/characters/character_${char}.png`}
+            className="w-7 h-7"
+          />
+          {index < extra.characters.length - 1 && ""}
+        </span>
+      ))}
+      )
+    </span>
+  ))}
+</div>
 
       <div
         className="

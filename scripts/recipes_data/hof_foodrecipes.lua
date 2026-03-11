@@ -54,7 +54,7 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		required = 
 		{
-			{ items = { "tag_limpet" }, amount = 3, comparator = "morethan" },
+			{ items = { "kyno_limpets" }, amount = 3, comparator = "morethan" },
 			{ items = { "ice" }, amount = 1 },
 		},
 		excluded = 
@@ -63,7 +63,7 @@ local kyno_foods =
 		},
 		card_def = 
 		{
-			{ items = { "tag_limpet" }, amount = 3 },
+			{ items = { "kyno_limpets" }, amount = 3 },
 			{ items = { "ice" }, amount = 1},
 		},
 	},
@@ -174,7 +174,6 @@ local kyno_foods =
 		end,
 	},
 	
-	-- Hamlet Foods.
 	feijoada =
 	{
 		test = function(cooker, names, tags) return (tags.beanbug and tags.beanbug >= 3) and tags.meat end,
@@ -190,7 +189,7 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		required = 
 		{
-			{ items = { "tag_beanbug" }, amount = 3, comparator = "morethan" },
+			{ items = { "kyno_beanbugs" }, amount = 3, comparator = "morethan" },
 			{ items = { "tag_meat" }, amount = 1 },
 		},
 		excluded = 
@@ -199,7 +198,7 @@ local kyno_foods =
 		},
 		card_def = 
 		{
-			{ items = { "tag_beanbug" }, amount = 3 },
+			{ items = { "kyno_beanbugs" }, amount = 3 },
 			{ items = { "smallmeat" }, amount = 1 },
 		},
 	},
@@ -220,7 +219,7 @@ local kyno_foods =
 		tags = {"honeyed"},
 		required = 
 		{
-			{ items = { "tag_gummybug" }, amount = 1 },
+			{ items = { "kyno_gummybug" }, amount = 1 },
 			{ items = { "tag_sweetener" }, amount = 1 },
 		},
 		excluded = 
@@ -229,7 +228,7 @@ local kyno_foods =
 		},
 		card_def = 
 		{
-			{ items = { "tag_gummybug" }, amount = 1 },
+			{ items = { "kyno_gummybug" }, amount = 1 },
 			{ items = { "honey" }, amount = 3 },
 		},
 	},
@@ -757,7 +756,7 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		required = 
 		{
-			{ items = { "tag_bacon" }, amount = 2, comparator = "morethan" },
+			{ items = { "kyno_bacon" }, amount = 2, comparator = "morethan" },
 			{ items = { "twigs" }, amount = 1 },
 			{ items = { "tag_spotspice" }, amount = 1 },
 		},
@@ -882,7 +881,7 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		required = 
 		{
-			{ items = { "tag_bacon" }, amount = 2, comparator = "morethan" },
+			{ items = { "kyno_bacon" }, amount = 2, comparator = "morethan" },
 			{ items = { "tag_flour" }, amount = 1 },
 			{ items = { "tag_veggie" }, amount = 1 },
 		},
@@ -1015,7 +1014,7 @@ local kyno_foods =
 		{
     		{ items = { "potato", "potato_cooked" } },
 			{ items = { "onion", "onion" } },
-			{ items = { "tag_bacon" } },
+			{ items = { "kyno_bacon", "kyno_bacon_cooked" } },
 		},
 		card_def = 
 		{
@@ -1040,7 +1039,7 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		required = 
 		{
-			{ items = { "tag_bacon" }, amount = 2, comparator = "morethan" },
+			{ items = { "kyno_bacon" }, amount = 2, comparator = "morethan" },
 			{ items = { "littlebread" }, amount = 1 },
 			{ items = { "tag_foliage" }, amount = 1 },
 		},
@@ -1050,7 +1049,7 @@ local kyno_foods =
 		},
 		card_def = 
 		{
-			{ items = { "tag_bacon" }, amount = 2 },
+			{ items = { "kyno_bacon" }, amount = 2 },
 			{ items = { "littlebread" }, amount = 1 },
 			{ items = { "foliage" }, amount = 1 },
 		},
@@ -1232,7 +1231,7 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		required = 
 		{
-			{ items = { "tag_bacon" }, amount = 3, comparator = "morethan" },
+			{ items = { "kyno_bacon" }, amount = 3, comparator = "morethan" },
 			{ items = { "tag_spotspice" }, amount = 1 },
 		},
 		excluded = 
@@ -1357,14 +1356,14 @@ local kyno_foods =
 		{
 			{ items = { "tag_bread" }, amount = 1 },
 			{ items = { "tag_meat" }, amount = 1 },
-			{ items = { "tag_bacon" }, amount = 1 },
+			{ items = { "kyno_bacon" }, amount = 1 },
 			{ items = { "tag_foliage" }, amount = 1 },
 		},
 		excluded = 
 		{
     		{ items = { "tag_fish" } },
 			{ items = { "tag_dairy" } },
-			{ items = { "tag_bacon" }, amount = 1, comparator = "morethan" },
+			{ items = { "kyno_bacon", "kyno_bacon_cooked" }, amount = 1, comparator = "morethan" },
 		},
 		card_def = 
 		{
@@ -2106,7 +2105,7 @@ local kyno_foods =
 		required = 
 		{
 			{ items = { "tag_meat" }, amount = 1, comparator = "morethan" },
-			{ items = { "tag_bacon" }, amount = 2, comparator = "morethan" },
+			{ items = { "kyno_bacon" }, amount = 2, comparator = "morethan" },
 		},
 		excluded = 
 		{
@@ -3557,7 +3556,7 @@ local kyno_foods =
 		required = 
 		{
 			{ items = { "bearger_fur" }, amount = 1 },
-			{ items = { "tag_gummybug" }, amount = 1 },
+			{ items = { "kyno_gummybug" }, amount = 1 },
 			{ items = { "tag_sweetener" }, amount = 2, comparator = "morethan" },
 		},
 		excluded = 
@@ -3592,7 +3591,7 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		required = 
 		{
-			{ items = { "tag_gummybug" }, amount = 1 },
+			{ items = { "kyno_gummybug" }, amount = 1 },
 			{ items = { "kyno_sugar" }, amount = 1 },
 			{ items = { "ancientfruit_nightvision" }, amount = 1 },
 		},
@@ -3746,7 +3745,7 @@ local kyno_foods =
 	{
 		test = function(cooker, names, tags) return tags.flour and names.nightmarefuel and (tags.sweetener and tags.sweetener >= 2) end,
 		priority = 30,
-		foodtype = FOODTYPE.GOODIES,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_SUPERSLOW,
 		health = -10,
 		hunger = 50,
@@ -3780,6 +3779,13 @@ local kyno_foods =
 				eater.components.sanity:DoDelta(15)
 			end
 		end,
+		mermfood = true,
+		mermhealth = 10,
+		mermhunger = 67,
+		mermsanity = 15,
+		monsterfood = true,
+		monsterhealth = 10,
+		monstersanity = 15,
 	},
 	
 	pinkcake =
@@ -3994,7 +4000,7 @@ local kyno_foods =
 		required = 
 		{
 			{ items = { "pondeel" }, amount = 1 },
-			{ items = { "tag_mussel" }, amount = 1 },
+			{ items = { "kyno_mussel" }, amount = 1 },
 			{ items = { "kyno_grouper" }, amount = 1 },
 			{ items = { "tag_algae" }, amount = 1 },
 		},
@@ -4176,7 +4182,7 @@ local kyno_foods =
 	{
 		test = function(cooker, names, tags) return (names.durian or names.durian_cooked) and tags.banana and tags.frozen and tags.fruit end,
 		priority = 30,
-		foodtype = FOODTYPE.VEGGIE,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_FAST,
 		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
 		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
@@ -4212,13 +4218,20 @@ local kyno_foods =
 				eater.components.sanity:DoDelta(15)
 			end
 		end,
+		mermfood = true,
+		mermhealth = 5,
+		mermhunger = 65,
+		mermsanity = 15,
+		monsterfood = true,
+		monsterhealth = 5,
+		monstersanity = 15,
 	},
 	
 	duriansoup =
 	{
 		test = function(cooker, names, tags) return (names.durian or names.durian_cooked) and (tags.veggie and tags.veggie >= 3) and not tags.inedible end,
 		priority = 35,
-		foodtype = FOODTYPE.VEGGIE,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_MED,
 		temperature = TUNING.HOT_FOOD_BONUS_TEMP,
 		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
@@ -4251,6 +4264,11 @@ local kyno_foods =
 				eater.components.health:DoDelta(15)
 			end
 		end,
+		mermfood = true,
+		mermhealth = 15,
+		mermhunger = 75,
+		monsterfood = true,
+		monsterhealth = 15,
 	},
 	
 	durianmeated =
@@ -4258,7 +4276,7 @@ local kyno_foods =
 		test = function(cooker, names, tags) return (names.monstermeat or names.monstermeat_cooked or names.monstermeat_dried) 
 		and (names.durian or names.durian_cooked) end,
 		priority = 40,
-		foodtype = FOODTYPE.MEAT,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_SLOW,
 		health = -20,
 		hunger = 37.5,
@@ -4290,6 +4308,9 @@ local kyno_foods =
 				eater.components.sanity:DoDelta(5)
 			end
 		end,
+		monsterfood = true,
+		monsterhealth = 20,
+		monstersanity = 5,
 	},
 	
 	durianchicken =
@@ -4297,7 +4318,7 @@ local kyno_foods =
 		test = function(cooker, names, tags) return names.durian and (names.cactus_meat and names.cactus_meat >= 2) 
 		and names.cactus_flower and not names.durian_cooked and not names.cactus_meat_cooked end,
 		priority = 30,
-		foodtype = FOODTYPE.VEGGIE,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_FASTISH,
 		health = -10,
 		hunger = 45,
@@ -4332,6 +4353,13 @@ local kyno_foods =
 				eater.components.sanity:DoDelta(30)
 			end
 		end,
+		mermfood = true,
+		mermhealth = 10,
+		mermhunger = 90,
+		mermsanity = 30,
+		monsterfood = true,
+		monsterhealth = 10,
+		monstersanity = 30,
 	},
 	
 	berrybombs =
@@ -4565,7 +4593,7 @@ local kyno_foods =
 	{
 		test = function(cooker, names, tags) return tags.wobster and names.kyno_grouper and (names.kyno_turnip or names.kyno_turnip_cooked) end,
 		priority = 30,
-		foodtype = FOODTYPE.MEAT,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_SLOW,
 		health = -60,
 		hunger = 62.5,
@@ -4598,6 +4626,9 @@ local kyno_foods =
 				eater.components.sanity:DoDelta(5)
 			end
 		end,
+		monsterfood = true,
+		monsterhealth = 60,
+		monstersanity = 5,
 	},
 	
 	wobstermonster =
@@ -4605,7 +4636,7 @@ local kyno_foods =
 		test = function(cooker, names, tags) return tags.wobster and (names.monstermeat or names.monstermeat_cooked
 		or names.monstermeat_dried) and (tags.veggie and tags.veggie >= 2) end,
 		priority = 35,
-		foodtype = FOODTYPE.MEAT,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_MED,
 		temperature = TUNING.HOT_FOOD_BONUS_TEMP,
 		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
@@ -4641,6 +4672,9 @@ local kyno_foods =
 				eater.components.sanity:DoDelta(20)
 			end
 		end,
+		monsterfood = true,
+		monsterhealth = 60,
+		monstersanity = 20,
 	},
 	
 	spidercake =
@@ -4648,7 +4682,7 @@ local kyno_foods =
 		test = function(cooker, names, tags) return names.spider and (names.monstermeat or names.monstermeat_cooked 
 		or names.monstermeat_dried) and tags.egg and tags.flour end,
 		priority = 1,
-		foodtype = FOODTYPE.MEAT,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_SUPERSLOW,
 		health = -20,
 		hunger = 37.5,
@@ -4684,6 +4718,9 @@ local kyno_foods =
 				eater.components.sanity:DoDelta(20)
 			end
 		end,
+		monsterfood = true,
+		monsterhealth = 20,
+		monstersanity = 20,
 	},
 	
 	sugarbombs =
@@ -4800,7 +4837,7 @@ local kyno_foods =
 		required = 
 		{
 			{ items = { "kyno_rice" }, amount = 1 },
-			{ items = { "tag_mussel" }, amount = 1 },
+			{ items = { "kyno_mussel" }, amount = 1 },
 			{ items = { "tag_spotspice" }, amount = 1 },
 			{ items = { "tag_fish" }, amount = 1 },
 		},
@@ -5336,7 +5373,7 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		required = 
 		{
-			{ items = { "tag_beanbug" }, amount = 1 },
+			{ items = { "kyno_beanbugs" }, amount = 1 },
 			{ items = { "kyno_rice" }, amount = 1 },
 			{ items = { "tag_flour" }, amount = 1 },
 		},
@@ -5707,7 +5744,7 @@ local kyno_foods =
 		required = 
 		{
 			{ items = { "kyno_rice" }, amount = 1},
-			{ items = { "tag_beanbug" }, amount = 2, comparator = "morethan" },
+			{ items = { "kyno_beanbugs" }, amount = 2, comparator = "morethan" },
 		},
 		excluded = 
 		{
@@ -5764,7 +5801,7 @@ local kyno_foods =
 		test = function(cooker, names, tags) return ((names.kyno_sporecap or 0) + (names.kyno_sporecap_cooked or 0) >= 2) and
 		tags.flour and tags.sweetener end,
 		priority = 35,
-		foodtype = FOODTYPE.VEGGIE,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_PRESERVED,
 		health = -20,
 		hunger = 37.5,
@@ -5801,6 +5838,9 @@ local kyno_foods =
 			
 			eater:AddDebuff("kyno_poisonimmunitybuff", "kyno_poisonimmunitybuff")
 		end,
+		monsterfood = true,
+		monsterhealth = 20,
+		monstersanity = 10,
 	},
 	
 	sporecap_skewers =
@@ -5808,7 +5848,7 @@ local kyno_foods =
 		test = function(cooker, names, tags) return ((names.kyno_sporecap_dark or 0) + (names.kyno_sporecap_dark_cooked or 0) >= 2) and
 		tags.veggie and names.twigs end,
 		priority = 35,
-		foodtype = FOODTYPE.VEGGIE,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_MED,
 		health = -30,
 		hunger = 45,
@@ -5844,6 +5884,9 @@ local kyno_foods =
 			
 			eater:AddDebuff("kyno_acidimmunitybuff", "kyno_acidimmunitybuff")
 		end,
+		monsterfood = true,
+		monsterhealth = 30,
+		monstersanity = 20,
 	},
 	
 	swordfishfeast =

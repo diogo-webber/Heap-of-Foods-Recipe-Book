@@ -17,7 +17,20 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
-		card_def = {ingredients = {{"berries", 2}, {"honey", 2}}},
+		required = 
+		{
+			{ items = { "tag_berries" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_sweetener" }, amount = 2 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "berries" }, amount = 2 },
+			{ items = { "honey" }, amount = 2 },
+		},
 	},
 	
 	festive_bibingka =
@@ -37,7 +50,22 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"succulent_picked", 2}, {"foliage", 1}, {"carrot", 1}}},
+		required = 
+		{
+			{ items = { "tag_succulent" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_foliage" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "succulent_picked" }, amount = 2 },
+			{ items = { "foliage" }, amount = 1 },
+			{ items = { "carrot" }, amount = 1 },
+		},
 	},
 	
 	festive_cabbagerolls =
@@ -57,7 +85,20 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"kyno_waterycress", 2}, {"kyno_syrup", 2}}},
+		required = 
+		{
+			{ items = { "kyno_waterycress" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_syrup" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_flour" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_waterycress" }, amount = 2 },
+			{ items = { "kyno_syrup" }, amount = 2 },
+		},
 	},
 	
 	festive_fishdish =
@@ -77,7 +118,21 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"pondfish", 2}, {"succulent_picked", 2}}},
+		required = 
+		{
+			{ items = { "tag_fish" }, amount = 1 },
+			{ items = { "tag_succulent" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_sweetener" } },
+			{ items = { "tag_wobster" } },
+		},
+		card_def = 
+		{
+			{ items = { "pondfish" }, amount = 2 },
+			{ items = { "succulent_picked" }, amount = 2 },
+		},
 	},
 	
 	festive_goodgravy =
@@ -97,7 +152,22 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
-		card_def = {ingredients = {{"kyno_syrup", 2}, {"kyno_flour", 1}, {"meat", 1}}},
+		required = 
+		{
+			{ items = { "tag_syrup" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_meat" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_syrup" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "meat" }, amount = 1 },
+		},
 	},
 	
 	festive_latkes =
@@ -117,7 +187,20 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"potato", 3}, {"goatmilk", 1}}},
+		required = 
+		{
+			{ items = { "potato" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_dairy" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "potato" }, amount = 3 },
+			{ items = { "goatmilk" }, amount = 1 },
+		},
 	},
 	
 	festive_lutefisk =
@@ -139,16 +222,33 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"pondeel", 2}, {"pepper", 1}, {"foliage", 1}}},
+		required = 
+		{
+			{ items = { "tag_fish" }, amount = 2, comparator = "morethan" },
+			{ items = { "pepper" }, amount = 1 },
+			{ items = { "tag_foliage" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pondeel" }, amount = 2 },
+			{ items = { "pepper" }, amount = 1 },
+			{ items = { "foliage" }, amount = 1 },
+		},
 	},
 	
 	festive_mulledpunch = 
 	{
-		test = function(cooker, names, tags) return tags.syrup and tags.sweetener and tags.frozen and not names.forgetmelots 
+		test = function(cooker, names, tags) return tags.syrup and tags.sweetener and tags.frozen and not names.forgetweed 
 		and not tags.meat and not tags.berries and not tags.fruit and not names.cutlichen and (TUNING.HOF_SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.WINTERS_FEAST)) end,
 		priority = 35,
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 15,
 		hunger = 12.5,
 		sanity = 33,
@@ -159,7 +259,26 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
-		card_def = {ingredients = {{"kyno_syrup", 1}, {"honey", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "tag_syrup" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_forgetweed" } },
+			{ items = { "tag_meat" } },
+			{ items = { "tag_berries" } },
+			{ items = { "tag_fruit" } },
+			{ items = { "cutlichen" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_syrup" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 	
 	festive_panettone = 
@@ -179,7 +298,20 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"kyno_flour", 2}, {"pomegranate", 2}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_fruit" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 2 },
+			{ items = { "pomegranate" }, amount = 2 },
+		},
 	},
 	
 	festive_pavlova =
@@ -199,7 +331,22 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
-		card_def = {ingredients = {{"kyno_flour", 1}, {"honey", 1}, {"cave_banana", 2}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_fruit" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_banana" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	festive_pickledherring =
@@ -219,7 +366,20 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"pondfish", 2}, {"kyno_spotspice", 2}}},
+		required = 
+		{
+			{ items = { "tag_fish" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_flour" } },
+		},
+		card_def = 
+		{
+			{ items = { "pondfish" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 2 },
+		},
 	},
 	
 	festive_polishcookies = 
@@ -239,7 +399,22 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
-		card_def = {ingredients = {{"kyno_flour", 1}, {"goatmilk", 1}, {"honey", 2}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_dairy" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "honey" }, amount = 2 },
+		},
 	},
 	
 	festive_pumpkinpie =
@@ -259,7 +434,22 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"honeyed", "xmas"},
-		card_def = {ingredients = {{"pumpkin", 2}, {"kyno_flour", 1}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "pumpkin" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pumpkin" }, amount = 2 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	festive_roastedturkey =
@@ -279,7 +469,22 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"drumstick", 1}, {"succulent_picked", 1}, {"kyno_spotspice", 2}}},
+		required = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_succulent" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "drumstick" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 2 },
+			{ items = { "succulent_picked" }, amount = 1 },
+		},
 	},
 	
 	festive_stuffing =
@@ -299,7 +504,22 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"kyno_flour", 1}, {"carrot", 2}, {"berries", 1}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_veggie" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_fruit" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "carrot" }, amount = 2 },
+			{ items = { "berries" }, amount = 1 },
+		},
 	},
 	
 	festive_sweetpotato =
@@ -319,7 +539,20 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"kyno_flour", 2}, {"kyno_sweetpotato", 2}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "kyno_sweetpotato" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_meat" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 2 },
+			{ items = { "kyno_sweetpotato" }, amount = 2 },
+		},
 	},
 	
 	festive_tamales =
@@ -339,7 +572,22 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"kyno_flour", 1}, {"goatmilk", 1}, {"corn", 2}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "corn" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_dairy" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "corn" }, amount = 2 },
+			{ items = { "goatmilk" }, amount = 1 },
+		},
 	},
 	
 	festive_tourtiere =
@@ -359,7 +607,24 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_xmas",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"xmas"},
-		card_def = {ingredients = {{"meat", 1}, {"kyno_flour", 1}, {"kyno_bacon", 1}, {"potato", 1}}},
+		required = 
+		{
+			{ items = { "tag_meat" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "kyno_bacon" }, amount = 1 },
+			{ items = { "potato" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "meat" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_bacon" }, amount = 1 },
+			{ items = { "potato" }, amount = 1 },
+		},
 	},
 
 	spooky_brain_noodles =
@@ -377,16 +642,33 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_spooky",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
-		card_def = {ingredients = {{"kyno_flour", 1}, {"kyno_spotspice", 1}, {"kyno_beanbugs", 1}, {"meat", 1}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_beanbugs" }, amount = 1 },
+			{ items  = { "tag_meat" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_beanbugs" }, amount = 1 },
+			{ items = { "meat" }, amount = 1 },
+		},
 	},
 	
 	spooky_burgerzilla =
 	{
-		test = function(cooker, names, tags) return tags.bread and (names.monstermeat or names.monstermeat_cooked) and
+		test = function(cooker, names, tags) return tags.bread and (names.monstermeat or names.monstermeat_cooked or names.monstermeat_dried) and
 		(names.onion or names.onion_cooked) and (names.kyno_cucumber or names.kyno_cucumber_cooked) and not tags.foliage and not tags.bacon 
 		and (TUNING.HOF_SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.HALLOWED_NIGHTS)) end,
 		priority = 30,
-		foodtype = FOODTYPE.MEAT,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_FASTISH,
 		health = -20,
 		hunger = 80,
@@ -396,7 +678,24 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_spooky",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween", "monstermeat"},
-		card_def = {ingredients = {{"gorge_bread", 1}, {"monstermeat", 1}, {"onion", 1}, {"kyno_cucumber", 1}}},
+		required =
+		{
+			{ items = { "tag_bread" }, amount = 1 },
+			{ items = { "tag_monster" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+			{ items = { "kyno_cucumber" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "bread" }, amount = 1 },
+			{ items = { "monstermeat" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+			{ items = { "kyno_cucumber" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -405,6 +704,9 @@ local kyno_foods_seasonal =
 				eater.components.sanity:DoDelta(20)
 			end
 		end,
+		monsterfood = true,
+		monsterhealth = 20,
+		monstersanity = 20,
 	},
 	
 	spooky_deadbread =
@@ -422,7 +724,24 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_spooky",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
-		card_def = {ingredients = {{"boneshard", 1}, {"kyno_sugar", 1}, {"kyno_flour", 1}, {"butter", 1}}},
+		required =
+		{
+			{ items = { "boneshard" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "tag_butter" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "boneshard" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "butter" }, amount = 1 },
+		},
 	},
 	
 	spooky_jellybeans =
@@ -443,7 +762,22 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_spooky",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween", "honeyed"},
-		card_def = {ingredients = {{"royal_jelly", 1}, {"kyno_sugar", 1}, {"nightmarefuel", 2}}},
+		required = 
+		{
+			{ items = { "royal_jelly" }, amount = 1 },
+			{ items = { "tag_sugar" }, amount = 1 },
+			{ items = { "nightmarefuel" }, amount = 2, comparator = "morethan" },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "royal_jelly" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "nightmarefuel" }, amount = 2 },
+		},
 		prefabs = { "kyno_insanitybuff" },
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_insanitybuff", "kyno_insanitybuff")
@@ -467,7 +801,24 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_spooky",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
-		card_def = {ingredients = {{"livinglog", 1}, {"goatmilk", 1}, {"ice", 1}, {"kyno_sugar", 1}}},
+		required = 
+		{
+			{ items = { "livinglog" }, amount = 1 },
+			{ items = { "tag_dairy" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+			{ items = { "tag_sugar" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "livinglog" }, amount = 1 },
+			{ items = { "goatmilk" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater.SoundEmitter ~= nil then
 				eater.SoundEmitter:PlaySound("dontstarve/creatures/leif/livinglog_burn")
@@ -479,8 +830,9 @@ local kyno_foods_seasonal =
 	
 	spooky_pumpkincream =
 	{
-		test = function(cooker, names, tags) return names.pumpkin and names.kyno_pineapple_halved and (names.pomegranate or names.pomegranate_cooked)
-		and tags.dairy and not names.pumpkin_cooked and (TUNING.HOF_SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.HALLOWED_NIGHTS)) end,
+		test = function(cooker, names, tags) return names.pumpkin and (names.kyno_pineapple_halved or names.kyno_pineapple_cooked) 
+		and (names.pomegranate or names.pomegranate_cooked) and tags.dairy 
+		and not names.pumpkin_cooked and (TUNING.HOF_SEASONALFOOD or IsSpecialEventActive(SPECIAL_EVENTS.HALLOWED_NIGHTS)) end,
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_MED,
@@ -492,7 +844,24 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_spooky",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
-		card_def = {ingredients = {{"pumpkin", 1}, {"kyno_pineapple_halved", 1}, {"pomegranate", 1}, {"goatmilk", 1}}},
+		required = 
+		{
+			{ items = { "pumpkin" }, amount = 1 },
+			{ items = { "kyno_pineapple_halved" }, amount = 1 },
+			{ items = { "pomegranate" }, amount = 1 },
+			{ items = { "tag_dairy" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "pumpkin_cooked" } },
+		},
+		card_def = 
+		{
+			{ items = { "pumpkin" }, amount = 1 },
+			{ items = { "kyno_pineapple_halved" }, amount = 1 },
+			{ items = { "pomegranate" }, amount = 1 },
+			{ items = { "goatmilk" }, amount = 1 },
+		},
 	},
 	
 	spooky_skullcandy =
@@ -512,7 +881,22 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_spooky",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
-		card_def = {ingredients = {{"boneshard", 1}, {"kyno_sugar", 2}, {"nightmarefuel", 1}}},
+		required = 
+		{
+			{ items = { "boneshard" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 2, comparator = "morethan" },
+			{ items = { "nightmarefuel" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "boneshard" }, amount = 2 },
+			{ items = { "kyno_sugar" }, amount = 2 },
+			{ items = { "nightmarefuel" }, amount = 1 },
+		},
 	},
 	
 	spooky_tacodile =
@@ -532,7 +916,24 @@ local kyno_foods_seasonal =
 		overridebuild = "kyno_foodrecipes_seasonal_spooky",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"halloween"},
-		card_def = {ingredients = {{"kyno_flour", 1}, {"pepper", 1}, {"onion", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tag_flour" }, amount = 1 },
+			{ items = { "pepper" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_flour" }, amount = 1 },
+			{ items = { "pepper" }, amount = 1 },
+			{ items = { "onion" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 }
 

@@ -16,7 +16,23 @@ local kyno_foods_jar =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_REHUNGER,
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"bird_egg", 1}, {"kyno_oil", 1}, {"kyno_salt", 1}}},
+		required = 
+		{
+			{ items = { "tag_egg" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "tag_chickenegg" } },
+			{ items = { "tallbirdegg"} },
+		},
+		card_def = 
+		{
+			{ items = { "bird_egg" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 		prefabs = { "kyno_hungerregenbuff" },
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_hungerregenbuff", "kyno_hungerregenbuff")
@@ -38,7 +54,22 @@ local kyno_foods_jar =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_REHUNGER,
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_chicken_egg", 1}, {"kyno_oil", 1}, {"kyno_salt", 1}}},
+		required = 
+		{
+			{ items = { "tag_chickenegg" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_chicken_egg" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 		prefabs = { "kyno_hungerregenbuff" },
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_hungerregenbuff", "kyno_hungerregenbuff")
@@ -60,7 +91,22 @@ local kyno_foods_jar =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_REHUNGER,
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"tallbirdegg", 1}, {"kyno_oil", 1}, {"kyno_salt", 1}}},
+		required = 
+		{
+			{ items = { "tallbirdegg" }, amount = 1 },
+			{ items = { "tag_oil" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "tallbirdegg" }, amount = 1 },
+			{ items = { "kyno_oil" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 		prefabs = { "kyno_hungerregenbuff" },
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_hungerregenbuff", "kyno_hungerregenbuff")
@@ -82,7 +128,22 @@ local kyno_foods_jar =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_DESANITY,
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"bird_egg", 1}, {"nightmarefuel", 1}, {"kyno_salt", 1}}},
+		required = 
+		{
+			{ items = { "tag_egg" }, amount = 1 },
+			{ items = { "nightmarefuel" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "bird_egg" }, amount = 1 },
+			{ items = { "nightmarefuel" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 		prefabs = { "kyno_insanitybuff" },
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_insanitybuff", "kyno_insanitybuff")
@@ -104,7 +165,22 @@ local kyno_foods_jar =
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
 		luckitem = { luck = -TUNING.KYNO_LUCK_MED },
-		card_def = {ingredients = {{"mayonnaise", 1}, {"kyno_spotspice", 1}, {"kyno_cucumber", 1}}},
+		required = 
+		{
+			{ items = { "tag_mayonnaise" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_cucumber" }, amount = 1 },
+		},
+		excluded = 
+		{
+
+		},
+		card_def = 
+		{
+			{ items = { "mayonnaise" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_cucumber" }, amount = 1 },
+		},
 		prefabs = { "kyno_hungerregenbuff" },
 		oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_hungerregenbuff", "kyno_hungerregenbuff")
@@ -123,7 +199,20 @@ local kyno_foods_jar =
 		cooktime = 96,
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_milk_beefalo", 2}, {"kyno_salt", 1}}},
+		required = 
+		{
+			{ items = { "kyno_milk_beefalo" }, amount = 2 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_milk_beefalo" }, amount = 2 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 
 	butter_koalefant =
@@ -138,7 +227,20 @@ local kyno_foods_jar =
 		cooktime = 96,
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_milk_koalefant", 2}, {"kyno_salt", 1}}},
+		required = 
+		{
+			{ items = { "kyno_milk_koalefant" }, amount = 2 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_milk_koalefant" }, amount = 2 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	butter_goat =
@@ -153,7 +255,20 @@ local kyno_foods_jar =
 		cooktime = 96,
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"goatmilk", 2}, {"kyno_salt", 1}}},
+		required = 
+		{
+			{ items = { "goatmilk" }, amount = 2 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "goatmilk" }, amount = 2 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	truffleoil =
@@ -171,7 +286,22 @@ local kyno_foods_jar =
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "truffles"},
-		card_def = {ingredients = {{"kyno_truffles", 1}, {"seeds", 1}, {"kyno_salt", 1}}},
+		required = 
+		{
+			{ items = { "kyno_truffles" }, amount = 1 },
+			{ items = { "seeds" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_truffles" }, amount = 1 },
+			{ items = { "seeds" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 
 	agedroe_oceanfish_sturgeon =
@@ -188,7 +318,22 @@ local kyno_foods_jar =
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"exquisite"},
-		card_def = {ingredients = {{"kyno_roe_oceanfish_sturgeon", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_sturgeon" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_sturgeon" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 
 		end,
@@ -208,7 +353,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_JELLY",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"berries", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "berries" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "berries" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	jelly_berries_juicy = 
@@ -225,7 +383,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_JELLY",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"berries_juicy", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "berries_juicy" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "berries_juicy" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	jelly_pomegranate = 
@@ -242,7 +413,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_JELLY",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pomegranate", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "pomegranate" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pomegranate" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	jelly_dragonfruit = 
@@ -259,7 +443,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_JELLY",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"dragonfruit", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "dragonfruit" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "dragonfruit" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 
 	jelly_banana = 
@@ -277,7 +474,20 @@ local kyno_foods_jar =
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monkeyqueenbribe"},
-		card_def = {ingredients = {{"kyno_banana", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "kyno_banana" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_banana" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	jelly_cave_banana = 
@@ -295,14 +505,27 @@ local kyno_foods_jar =
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monkeyqueenbribe"},
-		card_def = {ingredients = {{"cave_banana", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "cave_banana" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "cave_banana" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	jelly_durian = 
 	{
 		test = function(brewer, names, tags) return names.durian and (names.durian == 2) and tags.sweetener end,
 		priority = 30,
-		foodtype = FOODTYPE.VEGGIE,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_MED,
 		health = -5,
 		hunger = 35,
@@ -313,7 +536,20 @@ local kyno_foods_jar =
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat"},
-		card_def = {ingredients = {{"durian", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "durian" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "durian" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") or eater:HasTag("playermerm") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -322,6 +558,13 @@ local kyno_foods_jar =
 				eater.components.sanity:DoDelta(20)
 			end
 		end,
+		mermfood = true,
+		mermhealth = 5,
+		mermhunger = 70,
+		mermsanity = 20,
+		monsterfood = true,
+		monsterhealth = 5,
+		monstersanity = 20,
 	},
 	
 	jelly_watermelon = 
@@ -338,7 +581,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_JELLY",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"watermelon", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "watermelon" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "watermelon" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	jelly_fig = 
@@ -355,7 +611,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_JELLY",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"fig", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "fig" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "fig" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	jelly_glowberry = 
@@ -373,7 +642,20 @@ local kyno_foods_jar =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_GLOW,
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"wormlight_lesser", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "wormlight_lesser", "wormlight" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "wormlight_lesser" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 		prefabs = { "wormlight_light_greater" },
         oneatenfn = function(inst, eater)
             if eater.wormlight ~= nil then
@@ -415,7 +697,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_JELLY",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"ancientfruit_nightvision", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "ancientfruit_nightvision" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "ancientfruit_nightvision" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 		prefabs = { "kyno_nightvisionbuff" },
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_nightvisionbuff", "kyno_nightvisionbuff")
@@ -440,7 +735,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_JELLY",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_kokonut_halved", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "kyno_kokonut_halved" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_kokonut_halved" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 	
 	jelly_pineapple =
@@ -457,7 +765,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_JELLY",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_pineapple_halved", 2}, {"honey", 1}}},
+		required = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 2 },
+			{ items = { "tag_sweetener" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 2 },
+			{ items = { "honey" }, amount = 1 },
+		},
 	},
 
 	pickles_cucumber = 
@@ -474,7 +795,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_cucumber", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_cucumber" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_cucumber" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_carrot = 
@@ -491,7 +825,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"carrot", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "carrot" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "carrot" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_corn = 
@@ -508,7 +855,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"corn", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "corn" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "corn" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_eggplant = 
@@ -525,7 +885,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"eggplant", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "eggplant" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "eggplant" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_pumpkin = 
@@ -542,7 +915,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pumpkin", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "pumpkin" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pumpkin" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_garlic = 
@@ -559,7 +945,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"garlic", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "garlic" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "garlic" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_onion = 
@@ -576,7 +975,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"onion", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "onion" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "onion" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_pepper = 
@@ -595,7 +1007,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"pepper", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "pepper" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pepper" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_tomato = 
@@ -612,7 +1037,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"tomato", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "tomato" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "tomato" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_potato = 
@@ -629,7 +1067,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"potato", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "potato" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "potato" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_asparagus = 
@@ -646,7 +1097,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"asparagus", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "asparagus" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "asparagus" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_aloe = 
@@ -663,7 +1127,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_aloe", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_aloe" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_aloe" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_radish = 
@@ -680,7 +1157,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_radish", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_radish" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_radish" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_fennel = 
@@ -697,7 +1187,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_fennel", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_fennel" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_fennel" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_sweetpotato = 
@@ -714,7 +1217,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_sweetpotato", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sweetpotato" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sweetpotato" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_parznip = 
@@ -732,7 +1248,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_parznip", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_parznip", "kyno_parznip_eaten" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_parznip" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_turnip = 
@@ -749,7 +1278,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_turnip", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_turnip" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_turnip" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_rice =
@@ -766,7 +1308,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_rice", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_rice" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_rice" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_kelp = 
@@ -783,7 +1338,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kelp", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kelp" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kelp" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_seaweeds = 
@@ -800,7 +1368,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_seaweeds", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_seaweeds" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_seaweeds" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_avocado = 
@@ -817,7 +1398,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"rock_avocado_fruit_ripe", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "rock_avocado_fruit_ripe" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "rock_avocado_fruit_ripe" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_lichen = 
@@ -834,7 +1428,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"cutlichen", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "cutlichen" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "cutlichen" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 
 	pickles_lotus = 
@@ -851,7 +1458,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_lotus_flower", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_lotus_flower" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_lotus_flower" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_taroroot = 
@@ -868,7 +1488,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_taroroot", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_taroroot" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_taroroot" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_waterycress = 
@@ -885,7 +1518,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_waterycress", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_waterycress" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_waterycress" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_cactus = 
@@ -902,7 +1548,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"cactus_meat", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "cactus_meat", "cactus_flower" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "cactus_meat" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_redcap = 
@@ -919,7 +1578,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"red_cap", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "red_cap" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "red_cap" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_greencap = 
@@ -936,7 +1608,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"green_cap", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "green_cap" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "green_cap" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_bluecap = 
@@ -953,7 +1638,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"blue_cap", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "blue_cap" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "blue_cap" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_mooncap = 
@@ -971,7 +1669,20 @@ local kyno_foods_jar =
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_SLEEP_RESISTANCE,
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"moon_cap", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "moon_cap" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "moon_cap" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 		prefabs = { "buff_sleepresistance" },
         oneatenfn = function(inst, eater)
             if eater.components.grogginess ~= nil and
@@ -998,7 +1709,20 @@ local kyno_foods_jar =
 		nameoverride = "KYNO_PICKLES",
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_white_cap", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_white_cap" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_white_cap" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_truffles =
@@ -1017,14 +1741,27 @@ local kyno_foods_jar =
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"truffles"},
-		card_def = {ingredients = {{"kyno_truffles", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_truffles" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_truffles" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 	},
 	
 	pickles_sporecap =
 	{
 		test = function(brewer, names, tags) return names.kyno_sporecap and (names.kyno_sporecap == 2) and tags.spotspice end,
 		priority = 30,
-		foodtype = FOODTYPE.VEGGIE,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_MED,
 		health = -20,
 		hunger = 40,
@@ -1036,7 +1773,20 @@ local kyno_foods_jar =
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat", "acidrainimmune"},
-		card_def = {ingredients = {{"kyno_sporecap", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sporecap" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sporecap" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -1047,13 +1797,16 @@ local kyno_foods_jar =
 			
 			eater:AddDebuff("kyno_poisonimmunityaltbuff", "kyno_poisonimmunityaltbuff")
 		end,
+		monsterfood = true,
+		monsterhealth = 20,
+		monstersanity = 20,
 	},
 	
 	pickles_sporecap_dark =
 	{
 		test = function(brewer, names, tags) return names.kyno_sporecap_dark and (names.kyno_sporecap_dark == 2) and tags.spotspice end,
 		priority = 30,
-		foodtype = FOODTYPE.VEGGIE,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_MED,
 		health = -30,
 		hunger = 55,
@@ -1065,7 +1818,20 @@ local kyno_foods_jar =
 		overridebuild = "kyno_foodrecipes_jar",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"monstermeat", "acidrainimmune"},
-		card_def = {ingredients = {{"kyno_sporecap_dark", 2}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sporecap_dark" }, amount = 2 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sporecap_dark" }, amount = 2 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -1076,6 +1842,9 @@ local kyno_foods_jar =
 
 			eater:AddDebuff("kyno_acidimmunityaltbuff", "kyno_acidimmunityaltbuff")
 		end,
+		monsterfood = true,
+		monsterhealth = 30,
+		monstersanity = 30,
 	},
 	
 	agedroe_pondfish =
@@ -1091,7 +1860,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_pondfish", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_pondfish" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_pondfish" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_pondeel =
@@ -1107,7 +1891,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_pondeel", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_pondeel" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_pondeel" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_wobster =
@@ -1123,7 +1922,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_wobster", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_wobster" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_wobster" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_wobster_moonglass =
@@ -1139,7 +1953,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_wobster_moonglass", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_wobster_moonglass" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_wobster_moonglass" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_wobster_monkeyisland =
@@ -1155,7 +1984,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_wobster_monkeyisland", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_wobster_monkeyisland" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_wobster_monkeyisland" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 
 	agedroe_oceanfish_small_1 =
@@ -1171,7 +2015,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_small_1", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_1" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_1" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_small_2 =
@@ -1187,7 +2046,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_small_2", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_2" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_2" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_small_3 =
@@ -1203,7 +2077,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_small_3", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_3" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_3" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_small_4 =
@@ -1219,7 +2108,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_small_4", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_4" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_4" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_small_5 =
@@ -1235,7 +2139,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_small_5", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_5" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_5" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_small_6 =
@@ -1251,7 +2170,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_small_6", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_6" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_6" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_small_7 =
@@ -1267,7 +2201,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_small_7", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_7" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_7" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_small_8 =
@@ -1285,7 +2234,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_small_8", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_8" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_8" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_small_9 =
@@ -1301,7 +2265,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_small_9", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_9" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_small_9" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 
 	agedroe_oceanfish_pufferfish =
@@ -1318,7 +2297,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_pufferfish", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_pufferfish" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_pufferfish" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and not (eater.components.health ~= nil and eater.components.health:IsDead()) and
 			not eater:HasTag("playerghost") then
@@ -1343,7 +2337,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_medium_1", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_1" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_1" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_medium_2 =
@@ -1359,7 +2368,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_medium_2", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_2" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_2" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_medium_3 =
@@ -1375,7 +2399,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_medium_3", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_3" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_3" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_medium_4 =
@@ -1391,7 +2430,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_medium_4", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_4" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_4" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_medium_5 =
@@ -1407,7 +2461,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_medium_5", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_5" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_5" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_medium_6 =
@@ -1423,7 +2492,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_medium_6", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_6" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_6" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_medium_7 =
@@ -1439,7 +2523,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_medium_7", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_7" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_7" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_medium_8 =
@@ -1457,7 +2556,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_medium_8", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_8" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_8" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_oceanfish_medium_9 =
@@ -1473,7 +2587,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_medium_9", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_9" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_medium_9" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 
 	agedroe_oceanfish_midnight_carp =
@@ -1490,7 +2619,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_oceanfish_midnight_carp", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_oceanfish_midnight_carp" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_oceanfish_midnight_carp" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 		prefabs = { "kyno_darknessbuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_darknessbuff", "kyno_darknessbuff")
@@ -1510,7 +2654,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_tropicalfish", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_tropicalfish" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_tropicalfish" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_pierrotfish =
@@ -1526,7 +2685,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_pierrotfish", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_pierrotfish" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_pierrotfish" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 
 	agedroe_neonfish =
@@ -1542,7 +2716,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_neonfish", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_neonfish" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_neonfish" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_grouper =
@@ -1558,7 +2747,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_grouper", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_grouper" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_grouper" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 
 	agedroe_koi =
@@ -1574,7 +2778,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_koi", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_koi" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_koi" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_salmonfish =
@@ -1590,7 +2809,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_salmonfish", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_salmonfish" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_salmonfish" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_jellyfish =
@@ -1606,7 +2840,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_jellyfish", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_jellyfish" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_jellyfish" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_jellyfish_rainbow =
@@ -1624,7 +2873,22 @@ local kyno_foods_jar =
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
 		prefabs = { "kyno_jellyfish_rainbow_light_greater" },
-		card_def = {ingredients = {{"kyno_roe_jellyfish", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_jellyfish_rainbow" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_jellyfish_rainbow" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
             if eater.wormlight ~= nil then
                 if eater.wormlight.prefab == "kyno_jellyfish_rainbow_light_greater" then
@@ -1662,7 +2926,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_antchovy", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_antchovy" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_antchovy" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 	
 	agedroe_swordfish_blue =
@@ -1680,7 +2959,22 @@ local kyno_foods_jar =
 		nameoverride = "AGEDROE",
 		overridebuild = "kyno_foodrecipes_jar1",
 		floater = TUNING.HOF_FLOATER,
-		card_def = {ingredients = {{"kyno_roe_swordfish_blue", 1}, {"kyno_salt", 1}, {"kyno_spotspice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_roe_swordfish_blue" }, amount = 1 },
+			{ items = { "tag_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_roe_swordfish_blue" }, amount = 1 },
+			{ items = { "kyno_spotspice" }, amount = 1 },
+			{ items = { "kyno_salt" }, amount = 1 },
+		},
 	},
 }
 

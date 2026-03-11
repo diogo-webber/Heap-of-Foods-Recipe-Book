@@ -12,6 +12,8 @@ import {
   faArrowDownAZ,
   faCircleChevronUp,
   faArrowRightFromBracket,
+  faCircleMinus,
+  faCircleQuestion,
 } from "@fortawesome/free-solid-svg-icons";
 
 const PERISH_MAP = {
@@ -30,6 +32,14 @@ const TEMPERATURE_DURATION_MAP = {
   FOOD_TEMP_LONG: 15,
   FOOD_TEMP_DURATION: 480,
 };
+
+const FOODTYPE_ORDER = [
+  "MEAT",
+  "VEGGIE",
+  "GENERIC",
+  "GOODIES",
+  "MONSTER",
+];
 
 interface SortOptionProps {
   value: string;
@@ -51,7 +61,35 @@ interface Recipe {
   debuff?: boolean;
   foodtype?: string;
   stacksize?: number;
+
+  example?: string[];
+  excluded?: string[];
+
+  required?: { ingredient: string; count: number }[];
+  nameRequirement?: { ingredient: string; count: number }[];
+  nameEqualsRequirement?: { ingredient: string; count: number }[];
+  tagCountRequirement?: { tag: string; count: number }[];
+  tagRequirement?: string[];
 }
+
+type IngredientBlock = {
+  ingredient: string[];
+  count?: number;
+  comparator?: "lessthan" | "morethan" | "equal";
+};
+
+type RawIngredient = {
+  items: string[];
+  amount?: number;
+  comparator?: "lessthan" | "morethan" | "equal";
+};
+
+type BlockProps = {
+  children: React.ReactNode;
+  showInfo?: boolean;
+  infoText?: React.ReactNode;
+  infoLink?: string;
+};
 
 const SortOption = ({ value, label, current, onChange }: SortOptionProps) => (
   <label className="flex items-center gap-3 cursor-pointer text-sm text-zinc-900 dark:text-white hover:text-zinc-700 dark:hover:text-white transition-colors">
@@ -167,6 +205,7 @@ export default function CookPotJar() {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const controlsRef = useRef<HTMLDivElement>(null);
   const bothOpen = filtersOpen && sortingOpen;
 
   // FILTERED RECIPES
@@ -244,6 +283,51 @@ export default function CookPotJar() {
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
+  useEffect(() => {
+    if (!filtersOpen && !sortingOpen) return;
+
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        controlsRef.current &&
+        !controlsRef.current.contains(e.target as Node)
+      ) {
+        setFiltersOpen(false);
+        setSortingOpen(false);
+      }
+    }
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setFiltersOpen(false);
+        setSortingOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [filtersOpen, sortingOpen]);
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setSelected(null);
+      }
+    }
+
+    if (selected) {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selected]);
 
   // HIDE BACK TO TOP BUTTON
   useEffect(() => {
@@ -361,7 +445,10 @@ export default function CookPotJar() {
               </div>
             )}
           </div>
-          <div className="flex items-center justify-center gap-3 select-none relative">
+          <div
+            ref={controlsRef}
+            className="flex items-center justify-center gap-3 select-none relative"
+          >
             {/* FILTER BUTTON */}
             <div className="relative group">
               <button
@@ -451,9 +538,9 @@ export default function CookPotJar() {
                       title={t("filters.foodtype")}
                       icon="/icons/cooking/icon_foodtype.png"
                     >
-                      {[...new Set(recipes.map((r: any) => r.foodtype))]
-                        .filter(Boolean)
-                        .map((type) => (
+                      {FOODTYPE_ORDER.filter((type) =>
+                        recipes.some((r: any) => r.foodtype === type)
+                        ).map((type) => (
                           <CheckboxFilter
                             key={type}
                             label={t(`foodtypes.${type}`)}
@@ -617,7 +704,10 @@ export default function CookPotJar() {
             onClick={() => setSelected(recipe)}
             className="bg-white dark:bg-zinc-900 rounded-2xl p-3 flex flex-col items-center gap-3 cursor-pointer hover:scale-105 transition shadow-sm dark:shadow-none"
           >
-            <img src={`/foods_cookpot_jar/${recipe.name}.png`} className="w-24" />
+            <img
+              src={`/foods_cookpot_jar/${recipe.name}.png`}
+              className="w-24"
+            />
             <h2 className="text-center font-semibold text-lg text-zinc-900 dark:text-white">
               {t(`recipes_jar.${recipe.name}`)}
             </h2>
@@ -646,7 +736,6 @@ export default function CookPotJar() {
           </div>
         ))}
       </div>
-      {/* SELECTED CARD */}
       {selected && (
         <div
           className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
@@ -660,17 +749,17 @@ export default function CookPotJar() {
               <button
                 onClick={() => setSelected(null)}
                 className="
-                bg-zinc-100 dark:bg-zinc-800
-                hover:bg-zinc-200 dark:hover:bg-zinc-700
-                px-3 py-1
-                rounded-lg
-                font-bold
-                text-zinc-900 dark:text-white
-                transition-all
-                duration-200
-                flex items-center gap-2
-                cursor-pointer
-                "
+                      bg-zinc-100 dark:bg-zinc-800
+                      hover:bg-zinc-200 dark:hover:bg-zinc-700
+                      px-3 py-1
+                      rounded-lg
+                      font-bold
+                      text-zinc-900 dark:text-white
+                      transition-all
+                      duration-200
+                      flex items-center gap-2
+                      cursor-pointer
+                      "
               >
                 <FontAwesomeIcon icon={faArrowRightFromBracket} />
                 {t("main.close")}
@@ -679,7 +768,7 @@ export default function CookPotJar() {
 
             <img
               src={`/foods_cookpot_jar/${selected.name}.png`}
-              className="w-32 mx-auto mb-4"
+              className="w-24 mx-auto mb-4"
             />
 
             <h2 className="text-center text-2xl font-semibold">
@@ -689,7 +778,42 @@ export default function CookPotJar() {
             <div className="flex justify-center my-4">
               <div className="w-200 h-1 bg-zinc-200 dark:bg-zinc-700" />
             </div>
+            <Block
+              showInfo={true}
+              infoText={
+                <>
+                  <div className="font-bold mb-1">
+                    {t("card.ingredients.info.state_title")}
+                  </div>
 
+                  <p className="mb-2">{t("card.ingredients.info.state_p1")}</p>
+
+                  <p className="mb-2">{t("card.ingredients.info.state_p2")}</p>
+
+                  <p className="mb-3">{t("card.ingredients.info.state_p3")}</p>
+
+                  <div className="font-bold mb-1">
+                    {t("card.ingredients.info.excluded_title")}
+                  </div>
+
+                  <p className="mb-2">
+                    {t("card.ingredients.info.excluded_p1")}
+                  </p>
+
+                  <p className="mb-2">
+                    {t("card.ingredients.info.excluded_p2")}
+                  </p>
+
+                  <p>{t("card.ingredients.info.excluded_p3")}</p>
+                </>
+              }
+              infoLink="https://dontstarve.wiki.gg/wiki/Crock_Pot/Recipe_Table"
+            >
+              <IngredientsTable recipe={selected} />
+            </Block>
+            <div className="flex justify-center my-3">
+              <div className="w-200 h-1 bg-zinc-200 dark:bg-zinc-700" />
+            </div>
             {/* FOODTYPE + EFFECTS */}
             <div className="flex justify-center items-center gap-4 mb-6 mt-2 flex-wrap font-semibold">
               {selected.foodtype && <FoodType type={selected.foodtype} t={t} />}
@@ -721,18 +845,24 @@ export default function CookPotJar() {
                 value={selected.health}
                 tooltip={t("tooltips.health")}
                 isStatus
+                recipe={selected}
+                stat="health"
               />
               <Stat
                 icon="/icons/cooking/icon_hunger.png"
                 value={selected.hunger}
                 tooltip={t("tooltips.hunger")}
                 isStatus
+                recipe={selected}
+                stat="hunger"
               />
               <Stat
                 icon="/icons/cooking/icon_sanity.png"
                 value={selected.sanity}
                 tooltip={t("tooltips.sanity")}
                 isStatus
+                recipe={selected}
+                stat="sanity"
               />
             </Block>
 
@@ -830,15 +960,62 @@ function DropdownGroup({ title, icon, children }: any) {
   );
 }
 
-function Block({ children }: any) {
+function Block({ children, showInfo = false, infoText, infoLink }: BlockProps) {
+  const { t } = useTranslation();
+  const [open, setOpen] = useState(false);
+  const boxRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (boxRef.current && !boxRef.current.contains(event.target as Node)) {
+        setOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="bg-zinc-100 dark:bg-zinc-800 rounded-xl p-4 flex justify-evenly items-center mb-5 min-h-[70px] shadow-sm dark:shadow-none">
+    <div className="relative bg-zinc-100 dark:bg-zinc-800 rounded-xl p-4 flex justify-evenly items-center mb-5 min-h-[70px] shadow-sm dark:shadow-none">
+      {showInfo && (
+        <div ref={boxRef} className="absolute top-1 right-2">
+          <button
+            onClick={() => setOpen(!open)}
+            className="cursor-pointer opacity-70 hover:opacity-100 scale-120"
+          >
+            <FontAwesomeIcon icon={faCircleQuestion} className="text-[14px]" />
+          </button>
+
+          {open && (
+            <div className="absolute top-full right-0 mt-2 w-[440px] bg-black text-white dark:bg-white dark:text-black text-[12px] px-4 py-3 rounded shadow z-30 text-left leading-relaxed">
+              {infoText}
+
+              {infoLink && (
+                <div className="mt-3 text-center">
+                  <a
+                    href={infoLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline text-blue-400 hover:text-blue-300 font-semibold"
+                  >
+                    {t("card.ingredients.info.learn_more")}
+                  </a>
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      )}
+
       {children}
     </div>
   );
 }
 
-function Stat({ icon, value, tooltip, isStatus = false }: any) {
+function Stat({ icon, value, tooltip, isStatus = false, recipe, stat }: any) {
   if (value === undefined || value === null) return null;
 
   let displayValue = value;
@@ -861,13 +1038,61 @@ function Stat({ icon, value, tooltip, isStatus = false }: any) {
     }
   }
 
+  const extrasMap: Record<number, string[]> = {};
+
+  if (recipe?.monsterfood) {
+    const monsterValue = recipe[`monster${stat}`];
+    if (monsterValue !== undefined) {
+      extrasMap[monsterValue] ??= [];
+      extrasMap[monsterValue].push("webber", "wortox");
+    }
+  }
+
+  if (recipe?.mermfood) {
+    const mermValue = recipe[`merm${stat}`];
+    if (mermValue !== undefined) {
+      extrasMap[mermValue] ??= [];
+      extrasMap[mermValue].push("wurt");
+    }
+  }
+
+  const extraValues = Object.entries(extrasMap).map(([value, chars]) => ({
+    value: Number(value),
+    characters: [...new Set(chars)],
+  }));
+
   return (
     <div className="relative group flex items-center gap-3 min-w-[120px] justify-center">
       <img src={icon} className="w-9 h-9 object-contain" />
 
-      <span className={`text-base font-semibold ${colorClass}`}>
-        {displayValue}
+      <div className="flex flex-col items-center leading-tight">
+  <span className={`text-base font-semibold ${colorClass}`}>
+    {displayValue}
+  </span>
+
+  {extraValues.map((extra, i) => (
+    <span
+      key={i}
+      className=" font-semibold flex items-center gap-1 text-zinc-600 dark:text-zinc-400"
+    >
+      (
+      <span className="text-green-500 font-semibold">
+        {extra.value > 0 ? `+${extra.value}` : extra.value}
       </span>
+
+      {extra.characters.map((char, index) => (
+        <span key={char} className="flex items-center font-bold">
+          <img
+            src={`/icons/characters/character_${char}.png`}
+            className="w-7 h-7"
+          />
+          {index < extra.characters.length - 1 && ""}
+        </span>
+      ))}
+      )
+    </span>
+  ))}
+</div>
 
       <div
         className="
@@ -933,6 +1158,242 @@ function TopEffect({ icon, value, tooltip, enableTooltip = true }: any) {
           {tooltip}
         </div>
       )}
+    </div>
+  );
+}
+
+function normalizeIngredientName(name: string) {
+  if (name.startsWith("tag_")) return name;
+  if (name.startsWith("kyno_")) return "ingredient_" + name.slice(5);
+  if (name.startsWith("OR:")) {
+    const clean = name.slice(3);
+    return clean.startsWith("tag_") ? clean : "ingredient_" + clean;
+  }
+  return "ingredient_" + name;
+}
+
+function normalizeIngredients(
+  items?: { items: string[]; amount?: number }[],
+): { ingredient: string; count: number }[] {
+  if (!items) return [];
+  const result: { ingredient: string; count: number }[] = [];
+
+  for (const entry of items) {
+    const count = entry.amount ?? 1;
+    if (entry.items.length > 1) {
+      for (const name of entry.items) {
+        result.push({ ingredient: "OR:" + name, count });
+      }
+    } else {
+      result.push({ ingredient: entry.items[0], count });
+    }
+  }
+
+  return result;
+}
+
+function normalizeIngredientsForDisplay(
+  items?: { items: string[]; amount?: number }[],
+) {
+  if (!items) return [];
+  return items.map((entry) => ({
+    items: entry.items,
+    amount: entry.amount ?? 1,
+  }));
+}
+
+function IngredientIconWithCount({
+  name,
+  count = 1,
+  comparator = "equal",
+  t,
+}: {
+  name: string;
+  count?: number;
+  comparator?: "lessthan" | "morethan" | "equal";
+  t: (key: string) => string;
+}) {
+  const iconName = normalizeIngredientName(name);
+
+  function formatCount(n: number) {
+    return Number.isInteger(n) ? n.toFixed(1) : n.toString();
+  }
+
+  const value = formatCount(count);
+
+  let label = "";
+  if (comparator === "lessthan") label = `<${value}`;
+  if (comparator === "morethan") label = `${value}+`;
+  if (comparator === "equal" && count > 1) label = `${count}x`;
+
+  return (
+    <div className="flex flex-col items-center font-bold group relative">
+      <div className="w-10 h-10 relative">
+        <img
+          src={`/icons/ingredients/${iconName}.png`}
+          className="w-full h-full object-contain"
+        />
+
+        <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-1 hidden group-hover:block bg-black text-white dark:bg-white dark:text-black text-[12px] px-2 py-1 rounded whitespace-nowrap shadow z-20">
+          {getIngredientLabel(name, t)}
+        </div>
+      </div>
+
+      <div className="mt-[2px] h-[1px] flex items-center justify-center">
+        {label && (
+          <div className="bg-black text-white text-[9px] px-1 py-[1px] rounded leading-none">
+            {label}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function getIngredientLabel(name: string, t: (key: string) => string) {
+  const clean = name
+    .replace(/^kyno_/, "")
+    .replace(/^tag_/, "")
+    .replace(/^OR:/, "");
+
+  if (name.startsWith("tag_")) {
+    return t(`ingredients_tags.${clean}`) || clean;
+  }
+
+  return t(`ingredients.${clean}`) || clean;
+}
+
+function groupIngredients(items?: IngredientBlock[]) {
+  if (!items) return [];
+
+  const map: Record<string, number> = {};
+
+  for (const item of items) {
+    if (typeof item === "string") {
+      map[item] = (map[item] || 0) + 1;
+    } else {
+      const key = item.ingredient.join(",");
+      map[key] = (map[key] || 0) + (item.count ?? 1);
+    }
+  }
+
+  return Object.entries(map).map(([ingredient, count]) => ({
+    ingredient: ingredient.split(","),
+    count,
+  }));
+}
+
+function IngredientList({
+  items,
+  t,
+}: {
+  items?: IngredientBlock[];
+  t: (key: string) => string;
+}) {
+  if (!items) return null;
+
+  return (
+    <div className="flex flex-wrap items-center gap-1 justify-center">
+      {items.map((block, idx) => {
+        const count = block.count ?? 1;
+        const comparator = block.comparator ?? "equal";
+
+        if (block.ingredient.length === 1) {
+          return (
+            <IngredientIconWithCount
+              key={idx}
+              name={block.ingredient[0]}
+              count={count}
+              comparator={comparator}
+              t={t}
+            />
+          );
+        } else {
+          const main = block.ingredient[0];
+
+          return (
+            <div key={idx} className="flex items-center gap-1 text-[10px]">
+              <span className="font-bold">(</span>
+
+              {block.ingredient.map((item, i) => (
+                <div key={i} className="flex items-center gap-1">
+                  <IngredientIconWithCount
+                    name={item}
+                    count={count}
+                    comparator={comparator}
+                    t={t}
+                  />
+
+                  {i < block.ingredient.length - 1 && (
+                    <span className="font-bold">{t("card.alternative")}</span>
+                  )}
+                </div>
+              ))}
+
+              <span className="font-bold">)</span>
+            </div>
+          );
+        }
+      })}
+    </div>
+  );
+}
+
+function IngredientsTable({ recipe }: { recipe: Recipe }) {
+  const { t } = useTranslation();
+
+  const required: IngredientBlock[] = (recipe as any).requires.map(
+    (i: RawIngredient) => ({
+      ingredient: i.items,
+      count: i.amount,
+      comparator: i.comparator ?? "equal",
+    }),
+  );
+
+  const excluded: IngredientBlock[] = (recipe as any).excluded.map(
+    (i: RawIngredient) => ({
+      ingredient: i.items,
+      count: i.amount,
+      comparator: i.comparator ?? "equal",
+    }),
+  );
+
+  const example: IngredientBlock[] = (recipe as any).card_def.map(
+    (i: RawIngredient) => ({
+      ingredient: i.items,
+      count: i.amount,
+      comparator: i.comparator ?? "equal",
+    }),
+  );
+
+  return (
+    <div className="flex flex-wrap gap-2 mt-1 text-center justify-center">
+      <div className="min-w-[180px] max-w-[220px] flex-1">
+        <div className="text-sm font-bold mb-2">
+          {t("card.ingredients.required")}
+        </div>
+        <IngredientList items={required} t={t} />
+      </div>
+
+      <div className="min-w-[180px] max-w-[220px] flex-1">
+        <div className="text-sm font-bold mb-2">
+          {t("card.ingredients.excluded")}
+        </div>
+        {excluded.length > 0 ? (
+          <IngredientList items={excluded} t={t} />
+        ) : (
+          <div className="opacity-70">
+            <FontAwesomeIcon icon={faCircleMinus} className="scale-170 p-2" />
+          </div>
+        )}
+      </div>
+
+      <div className="min-w-[180px] max-w-[220px] flex-1">
+        <div className="text-sm font-bold mb-2">
+          {t("card.ingredients.example")}
+        </div>
+        <IngredientList items={example} t={t} />
+      </div>
     </div>
   );
 }

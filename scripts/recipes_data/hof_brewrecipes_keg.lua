@@ -6,6 +6,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 5,
 		hunger = 12.5,
 		sanity = -10,
@@ -14,7 +16,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"kyno_wheat", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_wheat" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_wheat" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "kyno_strengthbuff" },
 		oneatenfn = function (inst, eater)
 			eater:AddDebuff("kyno_strengthbuff", "kyno_strengthbuff")
@@ -27,6 +42,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 15,
 		hunger = 25,
 		sanity = -10,
@@ -35,7 +52,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"kyno_spotspice_leaf", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_spotspice_leaf" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_spotspice_leaf" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "kyno_strengthbuff_med" },
 		oneatenfn = function (inst, eater)
 			eater:AddDebuff("kyno_strengthbuff_med", "kyno_strengthbuff_med")
@@ -49,6 +79,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_SUPERSLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = -10,
 		hunger = 70,
 		sanity = 40,
@@ -57,7 +89,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink", "honeyed"},
-		card_def = {ingredients = {{"honey", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "honey", "tag_syrup" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "honey" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "kyno_dmgreductionbuff" },
 		oneatenfn = function (inst, eater)
 			eater:AddDebuff("kyno_dmgreductionbuff", "kyno_dmgreductionbuff")
@@ -78,7 +123,22 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_piko_orange", 1}, {"green_cap", 1}, {"kyno_tealeaf", 1}}},
+		required = 
+		{
+			{ items = { "kyno_piko_orange" }, amount = 1 },
+			{ items = { "green_cap" }, amount = 1 },
+			{ items = { "kyno_tealeaf" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_piko_orange" }, amount = 1 },
+			{ items = { "green_cap" }, amount = 1 },
+			{ items = { "kyno_tealeaf" }, amount = 1 },
+		},
 		prefabs = { "kyno_sanityregenbuff" },
         oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_sanityregenbuff", "kyno_sanityregenbuff")
@@ -99,7 +159,22 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_piko", 1}, {"red_cap", 1}, {"kyno_tealeaf", 1}}},
+		required = 
+		{
+			{ items = { "kyno_piko" }, amount = 1 },
+			{ items = { "red_cap" }, amount = 1 },
+			{ items = { "kyno_tealeaf" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_piko" }, amount = 1 },
+			{ items = { "red_cap" }, amount = 1 },
+			{ items = { "kyno_tealeaf" }, amount = 1 },
+		},
 		prefabs = { "healthregenbuff" },
         oneatenfn = function(inst, eater)
 			eater:AddDebuff("healthregenbuff", "healthregenbuff")
@@ -112,6 +187,8 @@ local kyno_foods_keg =
 		priority = 1,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = 9000000,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = -5,
 		hunger = 60,
 		sanity = -33,
@@ -121,7 +198,22 @@ local kyno_foods_keg =
 		floater = TUNING.HOF_FLOATER,
 		luckitem = { luck = -TUNING.KYNO_LUCK_MED },
 		tags = {"fooddrink", "alcoholic_drink", "honeyed", "monkeyqueenbribe"},
-		card_def = {ingredients = {{"durian", 1}, {"kyno_syrup", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "durian" }, amount = 1 },
+			{ items = { "tag_syrup" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "durian" }, amount = 1 },
+			{ items = { "kyno_syrup" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "kyno_piratebuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_piratebuff", "kyno_piratebuff")
@@ -131,10 +223,12 @@ local kyno_foods_keg =
 
 	twistedtequila =
 	{
-		test = function(cooker, names, tags) return (names.kyno_aloe or names.kyno_aloe_cooked) and names.kyno_spotspice_leaf and tags.frozen end,
+		test = function(cooker, names, tags) return names.kyno_aloe and names.kyno_spotspice_leaf and tags.frozen end,
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_SUPERSLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 15,
 		hunger = 32.5,
 		sanity = -30,
@@ -143,7 +237,22 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"kyno_aloe", 1}, {"kyno_spotspice_leaf", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_aloe" }, amount = 1 },
+			{ items = { "kyno_spotspice_leaf" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_aloe" }, amount = 1 },
+			{ items = { "kyno_spotspice_leaf" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			OnFoodTeleport(inst, eater)
 			
@@ -169,7 +278,22 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_sugar", 1}, {"kyno_syrup", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "tag_syrup" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "kyno_syrup" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			eater:PushEvent("bottlecap")
 
@@ -198,7 +322,22 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_sugar", 1}, {"wormlight_lesser", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "wormlight_lesser", "wormlight" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "wormlight_lesser" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "wormlight_light_greater" },
         oneatenfn = function(inst, eater)
 			eater:PushEvent("bottlecap")
@@ -249,7 +388,22 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"nukacola", 1}, {"horrorfuel", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "nukacola" }, amount = 1 },
+			{ items = { "horrorfuel" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "nukacola" }, amount = 1 },
+			{ items = { "horrorfuel" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "kyno_maxhealthbuff" },
 		oneatenfn = function(inst, eater)
 			eater:PushEvent("bottlecap")
@@ -281,7 +435,22 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"nukacola", 1}, {"cactus_flower", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "nukacola" }, amount = 1 },
+			{ items = { "cactus_flower" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "nukacola" }, amount = 1 },
+			{ items = { "cactus_flower" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "kyno_maxomnibuff" },
 		oneatenfn = function(inst, eater)
 			eater:PushEvent("bottlecap")
@@ -311,7 +480,22 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"ancientfruit_nightvision", 1}, {"kyno_sugar", 1}, {"nukacola_quantum", 1}}},
+		required = 
+		{
+			{ items = { "nukacola_quantum" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "ancientfruit_nightvision" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "nukacola_quantum" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "ancientfruit_nightvision" }, amount = 1 },
+		},
 		prefabs = { "kyno_nukashinebuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_nukashinebuff", "kyno_nukashinebuff")
@@ -324,6 +508,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_SUPERSLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = -10,
 		hunger = 32.5,
 		sanity = 20,
@@ -333,7 +519,20 @@ local kyno_foods_keg =
 		floater = TUNING.HOF_FLOATER,
 		luckitem = { luck = TUNING.KYNO_LUCK_MED },
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"kyno_rice", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_rice" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_rice" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "kyno_dmgreductionbuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_dmgreductionbuff", "kyno_dmgreductionbuff")
@@ -358,7 +557,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_coffeebeans_cooked", 2}, {"chocolate_black", 1}}},
+		required = 
+		{
+			{ items = { "kyno_coffeebeans_cooked" }, amount = 2 },
+			{ items = { "tag_chocolate" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		{ items = { "kyno_coffeebeans" } },
+		},
+		card_def = 
+		{
+			{ items = { "kyno_coffeebeans_cooked" }, amount = 2 },
+			{ items = { "chocolate_black" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 
 		end,
@@ -370,6 +582,8 @@ local kyno_foods_keg =
 		priority = 100,
 		foodtype = FOODTYPE.GOODIES,
 		perishtime = TUNING.PERISH_SUPERSLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+        temperatureduration = TUNING.BUFF_FOOD_TEMP_DURATION,
 		health = -30,
 		hunger = 12.5,
 		sanity = 80,
@@ -378,7 +592,22 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_poison_froglegs", 1}, {"kyno_sugar", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_poison_froglegs" }, amount = 1 },
+			{ items = { "tag_sugar" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_poison_froglegs" }, amount = 1 },
+			{ items = { "tag_sugar" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefab = { "kyno_amphibianbuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_amphibianbuff", "kyno_amphibianbuff")
@@ -400,7 +629,22 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_pineapple_halved", 1}, {"kyno_sugar", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 1 },
+			{ items = { "tag_sugar" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 1 },
+			{ items = { "kyno_sugar" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	souljuice =
@@ -420,7 +664,22 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "preparedsoul", "bottled"},
-		card_def = {ingredients = {{"kyno_bottle_soul", 1}, {"pomegranate", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_bottle_soul" }, amount = 1 },
+			{ items = { "pomegranate" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_bottle_soul" }, amount = 1 },
+			{ items = { "pomegranate" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater:HasTag("soulstealer") and eater.components.health ~= nil and not eater.components.health:IsDead() and
 			not eater:HasTag("playerghost") and eater.components.hunger ~= nil and eater.components.sanity ~= nil then
@@ -446,6 +705,8 @@ local kyno_foods_keg =
 		priority = 100,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_SUPERSLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+        temperatureduration = TUNING.BUFF_FOOD_TEMP_DURATION,
 		loopanim = true,
 		health = 5,
 		hunger = 12.5,
@@ -457,7 +718,22 @@ local kyno_foods_keg =
 		floater = TUNING.HOF_FLOATER,
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_ENLIGHTENMENT,
 		tags = {"fooddrink", "alcoholic_drink", "lunar_aligned"},
-		card_def = {ingredients = {{"moon_tree_blossom", 1}, {"purebrilliance", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "moon_tree_blossom" }, amount = 1 },
+			{ items = { "purebrilliance" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "moon_tree_blossom" }, amount = 1 },
+			{ items = { "purebrilliance" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "kyno_enlightenmentbuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_enlightenmentbuff", "kyno_enlightenmentbuff")
@@ -470,6 +746,8 @@ local kyno_foods_keg =
 		priority = 100,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_SUPERSLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+        temperatureduration = TUNING.BUFF_FOOD_TEMP_DURATION,
 		horrorfx = true,
 		health = 5,
 		hunger = 12.5,
@@ -480,7 +758,22 @@ local kyno_foods_keg =
 		floater = TUNING.HOF_FLOATER,
 		oneat_desc = STRINGS.UI.COOKBOOK.FOOD_EFFECTS_STEALTH,
 		tags = {"fooddrink", "alcoholic_drink", "shadow_aligned", "shadow_fooditem"},
-		card_def = {ingredients = {{"kyno_pineapple_halved", 1}, {"horrorfuel", 1}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 1 },
+			{ items = { "horrorfuel" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 1 },
+			{ items = { "horrorfuel" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "kyno_stealthbuff" },
 		oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_stealthbuff", "kyno_stealthbuff")
@@ -493,6 +786,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 10,
 		hunger = 20,
 		sanity = 40,
@@ -501,7 +796,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"berries", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "berries" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "berries" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	wine_berries_juicy =
@@ -510,6 +818,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 10,
 		hunger = 20,
 		sanity = 40,
@@ -518,7 +828,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"berries_juicy", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "berries_juicy" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "berries_juicy" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	wine_pomegranate =
@@ -527,6 +850,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 10,
 		hunger = 25,
 		sanity = 40,
@@ -535,7 +860,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"pomegranate", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "pomegranate" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pomegranate" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	wine_dragonfruit =
@@ -544,6 +882,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 40,
 		hunger = 20,
 		sanity = 40,
@@ -552,24 +892,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"dragonfruit", 2}, {"ice", 1}}},
-	},
-
-	wine_cave_banana =
-	{
-		test = function(brewer, names, tags) return names.cave_banana and (names.cave_banana == 2) and tags.frozen and not names.kyno_sugar end,
-		priority = 30,
-		foodtype = FOODTYPE.ALCOHOLIC,
-		perishtime = TUNING.PERISH_MED,
-		health = 10,
-		hunger = 25,
-		sanity = 40,
-		cooktime = 72,
-		nameoverride = "KYNO_WINE",
-		overridebuild = "kyno_foodrecipes_keg",
-		floater = TUNING.HOF_FLOATER,
-		tags = {"fooddrink", "alcoholic_drink", "monkeyqueenbribe"},
-		card_def = {ingredients = {{"cave_banana", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "dragonfruit" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "dragonfruit" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	wine_banana =
@@ -578,6 +914,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 10,
 		hunger = 25,
 		sanity = 40,
@@ -586,15 +924,62 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink", "monkeyqueenbribe"},
-		card_def = {ingredients = {{"kyno_banana", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_banana" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_banana" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+	},
+
+	wine_cave_banana =
+	{
+		test = function(brewer, names, tags) return names.cave_banana and (names.cave_banana == 2) and tags.frozen and not names.kyno_sugar end,
+		priority = 30,
+		foodtype = FOODTYPE.ALCOHOLIC,
+		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
+		health = 10,
+		hunger = 25,
+		sanity = 40,
+		cooktime = 72,
+		nameoverride = "KYNO_WINE",
+		overridebuild = "kyno_foodrecipes_keg",
+		floater = TUNING.HOF_FLOATER,
+		tags = {"fooddrink", "alcoholic_drink", "monkeyqueenbribe"},
+		required = 
+		{
+			{ items = { "cave_banana" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "cave_banana" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	wine_durian =
 	{
 		test = function(brewer, names, tags) return names.durian and (names.durian == 2) and tags.frozen and not names.kyno_sugar  end,
 		priority = 30,
-		foodtype = FOODTYPE.ALCOHOLIC,
+		foodtype = FOODTYPE.ALCOHOLICMONSTER,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = -5,
 		hunger = 35,
 		sanity = -40,
@@ -603,7 +988,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink", "monstermeat"},
-		card_def = {ingredients = {{"durian", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "durian" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "durian" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") or eater:HasTag("playermerm") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -612,6 +1010,13 @@ local kyno_foods_keg =
 				eater.components.sanity:DoDelta(40)
 			end
 		end,
+		mermfood = true,
+		mermhealth = 5,
+		mermhunger = 70,
+		mermsanity = 40,
+		monsterfood = true,
+		monsterhealth = 5,
+		monstersanity = 40,
 	},
 
 	wine_watermelon =
@@ -620,6 +1025,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 10,
 		hunger = 25,
 		sanity = 40,
@@ -628,7 +1035,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"watermelon", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "watermelon" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "watermelon" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	wine_fig =
@@ -637,6 +1057,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 10,
 		hunger = 25,
 		sanity = 40,
@@ -645,7 +1067,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"fig", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "fig" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "fig" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	wine_glowberry =
@@ -655,6 +1090,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 20,
 		hunger = 40,
 		sanity = -10,
@@ -664,7 +1101,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"berries", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "wormlight_lesser", "wormlight" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "wormlight_lesser" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "wormlight_light_greater" },
         oneatenfn = function(inst, eater)
             if eater.wormlight ~= nil then
@@ -696,6 +1146,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 0,
 		hunger = 35,
 		sanity = 15,
@@ -706,7 +1158,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"ancientfruit_nightvision", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "ancientfruit_nightvision" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "ancientfruit_nightvision" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "kyno_nightvisionbuff" },
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_nightvisionbuff", "kyno_nightvisionbuff")
@@ -724,6 +1189,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 10,
 		hunger = 25,
 		sanity = 40,
@@ -732,7 +1199,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"kyno_kokonut_halved", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_kokonut_halved" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_kokonut_halved" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	wine_pineapple =
@@ -742,6 +1222,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.ALCOHOLIC,
 		perishtime = TUNING.PERISH_MED,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 40,
 		hunger = 25,
 		sanity = 20,
@@ -750,7 +1232,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "alcoholic_drink"},
-		card_def = {ingredients = {{"kyno_pineapple", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_pineapple_halved" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_carrot =
@@ -759,6 +1254,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 40,
 		hunger = 20,
 		sanity = 10,
@@ -767,7 +1264,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"carrot", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "carrot" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "carrot" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_corn =
@@ -776,6 +1286,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 40,
 		hunger = 25,
 		sanity = 10,
@@ -784,7 +1296,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"corn", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "corn" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "corn" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_eggplant =
@@ -793,6 +1318,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 25,
 		hunger = 35,
 		sanity = 10,
@@ -801,7 +1328,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"eggplant", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "eggplant" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "eggplant" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_pumpkin =
@@ -810,6 +1350,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 30,
 		hunger = 30,
 		sanity = 10,
@@ -818,7 +1360,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"pumpkin", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "pumpkin" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pumpkin" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_garlic =
@@ -827,6 +1382,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 30,
 		hunger = 25,
 		sanity = -5,
@@ -835,7 +1392,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"garlic", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "garlic" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "garlic" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_onion =
@@ -844,6 +1414,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 40,
 		hunger = 25,
 		sanity = -20,
@@ -852,7 +1424,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"onion", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "onion" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "onion" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_pepper =
@@ -871,7 +1456,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"pepper", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "pepper" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "pepper" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_tomato =
@@ -880,6 +1478,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 50,
 		hunger = 25,
 		sanity = 10,
@@ -888,7 +1488,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"tomato", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "tomato" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "tomato" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_potato =
@@ -897,6 +1510,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 30,
 		hunger = 62.5,
 		sanity = 10,
@@ -905,7 +1520,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"potato", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "potato" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "potato" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_asparagus =
@@ -914,6 +1542,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 45,
 		hunger = 20,
 		sanity = 10,
@@ -922,7 +1552,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"asparagus", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "asparagus" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "asparagus" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_aloe =
@@ -931,6 +1574,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 25,
 		hunger = 50,
 		sanity = 10,
@@ -939,7 +1584,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_aloe", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_aloe" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_aloe" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_radish =
@@ -948,6 +1606,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 25,
 		hunger = 35,
 		sanity = 10,
@@ -956,7 +1616,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_radish", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_radish" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_radish" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_fennel =
@@ -965,6 +1638,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 35,
 		hunger = 70,
 		sanity = -20,
@@ -973,7 +1648,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_fennel", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_fennel" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_fennel" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_cucumber =
@@ -982,6 +1670,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 30,
 		hunger = 30,
 		sanity = 10,
@@ -990,7 +1680,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_cucumber", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_cucumber" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_cucumber" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_sweetpotato =
@@ -999,6 +1702,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 40,
 		hunger = 62.5,
 		sanity = 10,
@@ -1007,7 +1712,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_sweetpotato", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sweetpotato" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sweetpotato" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_parznip =
@@ -1016,6 +1734,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 20,
 		hunger = 20,
 		sanity = 10,
@@ -1024,7 +1744,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_parznip", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_parznip", "kyno_parznip_eaten" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_parznip" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_turnip =
@@ -1033,6 +1766,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 20,
 		hunger = 70,
 		sanity = 10,
@@ -1041,7 +1776,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_turnip", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_turnip" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_turnip" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_kelp =
@@ -1050,6 +1798,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 35,
 		hunger = 65,
 		sanity = -20,
@@ -1058,7 +1808,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kelp", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kelp" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kelp" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_seaweeds =
@@ -1067,6 +1830,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 20,
 		hunger = 62.5,
 		sanity = -10,
@@ -1075,7 +1840,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_seaweeds", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_seaweeds" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_seaweeds" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_avocado =
@@ -1084,6 +1862,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 20,
 		hunger = 45,
 		sanity = 10,
@@ -1092,7 +1872,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"rock_avocado_fruit_ripe", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "rock_avocado_fruit_ripe" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "rock_avocado_fruit_ripe" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_lichen =
@@ -1101,6 +1894,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 30,
 		hunger = 20,
 		sanity = -15,
@@ -1109,7 +1904,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"cutlichen", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "cutlichen" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "cutlichen" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_lotus =
@@ -1118,6 +1926,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 60,
 		hunger = 20,
 		sanity = 10,
@@ -1126,7 +1936,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_lotus_flower", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_lotus_flower" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_lotus_flower" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_taroroot =
@@ -1135,6 +1958,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 40,
 		hunger = 62.5,
 		sanity = 10,
@@ -1143,7 +1968,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_taroroot", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_taroroot" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_taroroot" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_waterycress =
@@ -1152,6 +1990,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 35,
 		hunger = 20,
 		sanity = 10,
@@ -1160,7 +2000,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_waterycress", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_waterycress" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_waterycress" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_cactus =
@@ -1169,6 +2022,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 40,
 		hunger = 40,
 		sanity = 10,
@@ -1177,7 +2032,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"cactus_meat", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "cactus_meat", "cactus_flower" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "cactus_meat" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_redcap =
@@ -1186,6 +2054,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 30,
 		hunger = 40,
 		sanity = 10,
@@ -1194,7 +2064,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"red_cap", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "red_cap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "red_cap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_greencap =
@@ -1203,6 +2086,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 20,
 		hunger = 62.5,
 		sanity = 10,
@@ -1211,7 +2096,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"green_cap", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "green_cap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "green_cap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_bluecap =
@@ -1220,6 +2118,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 40,
 		hunger = 20,
 		sanity = 10,
@@ -1228,7 +2128,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"blue_cap", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "blue_cap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "blue_cap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 
 	juice_mooncap =
@@ -1237,6 +2150,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 30,
 		hunger = 30,
 		sanity = 10,
@@ -1246,7 +2161,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"moon_cap", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "moon_cap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "moon_cap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		prefabs = { "buff_sleepresistance" },
         oneatenfn = function(inst, eater)
             if eater.components.grogginess ~= nil and
@@ -1265,6 +2193,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 25,
 		hunger = 62.5,
 		sanity = -10,
@@ -1273,7 +2203,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink"},
-		card_def = {ingredients = {{"kyno_white_cap", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_white_cap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_white_cap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 	
 	juice_truffles =
@@ -1282,6 +2225,8 @@ local kyno_foods_keg =
 		priority = 30,
 		foodtype = FOODTYPE.VEGGIE,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = 5,
 		hunger = 50,
 		sanity = 5,
@@ -1291,15 +2236,30 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "truffles"},
-		card_def = {ingredients = {{"kyno_truffles", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_truffles" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_truffles" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 	},
 	
 	juice_sporecap =
 	{
 		test = function(brewer, names, tags) return names.kyno_sporecap and (names.kyno_sporecap == 2) and tags.frozen end,
 		priority = 30,
-		foodtype = FOODTYPE.VEGGIE,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = -10,
 		hunger = 62.5,
 		sanity = -10,
@@ -1308,7 +2268,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "monstermeat"},
-		card_def = {ingredients = {{"kyno_sporecap", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sporecap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sporecap" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -1317,14 +2290,19 @@ local kyno_foods_keg =
 				eater.components.sanity:DoDelta(10)
 			end
 		end,
+		monsterfood = true,
+		monsterhealth = 10,
+		monstersanity = 10,
 	},
 	
 	juice_sporecap_dark =
 	{
 		test = function(brewer, names, tags) return names.kyno_sporecap_dark and (names.kyno_sporecap_dark == 2) and tags.frozen end,
 		priority = 30,
-		foodtype = FOODTYPE.VEGGIE,
+		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_SLOW,
+		temperature = TUNING.COLD_FOOD_BONUS_TEMP,
+		temperatureduration = TUNING.FOOD_TEMP_AVERAGE,
 		health = -20,
 		hunger = 62.5,
 		sanity = -20,
@@ -1333,7 +2311,20 @@ local kyno_foods_keg =
 		overridebuild = "kyno_foodrecipes_keg",
 		floater = TUNING.HOF_FLOATER,
 		tags = {"fooddrink", "monstermeat"},
-		card_def = {ingredients = {{"kyno_sporecap_dark", 2}, {"ice", 1}}},
+		required = 
+		{
+			{ items = { "kyno_sporecap_dark" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
+		excluded = 
+		{
+    		
+		},
+		card_def = 
+		{
+			{ items = { "kyno_sporecap_dark" }, amount = 2 },
+			{ items = { "ice" }, amount = 1 },
+		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and
 			not (eater.components.health ~= nil and eater.components.health:IsDead()) and
@@ -1342,6 +2333,9 @@ local kyno_foods_keg =
 				eater.components.sanity:DoDelta(20)
 			end
 		end,
+		monsterfood = true,
+		monsterhealth = 20,
+		monstersanity = 20,
 	},
 }
 

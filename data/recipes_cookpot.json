@@ -12,6 +12,13 @@
     "sanity": -10,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -69,10 +76,17 @@
     "sanity": 5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
-          "tag_limpet"
+          "kyno_limpets"
         ],
         "amount": 3,
         "comparator": "morethan"
@@ -89,7 +103,7 @@
     "card_def": [
       {
         "items": [
-          "tag_limpet"
+          "kyno_limpets"
         ],
         "amount": 3,
         "comparator": "equal"
@@ -116,6 +130,13 @@
     "sanity": 10,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -177,6 +198,13 @@
     "sanity": -10,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -217,6 +245,13 @@
     "sanity": 15,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -292,10 +327,17 @@
     "sanity": 15,
     "cooktime": 3.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
-          "tag_beanbug"
+          "kyno_beanbugs"
         ],
         "amount": 3,
         "comparator": "morethan"
@@ -312,7 +354,7 @@
     "card_def": [
       {
         "items": [
-          "tag_beanbug"
+          "kyno_beanbugs"
         ],
         "amount": 3,
         "comparator": "equal"
@@ -339,10 +381,17 @@
     "sanity": -5,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
-          "tag_gummybug"
+          "kyno_gummybug"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -359,7 +408,7 @@
     "card_def": [
       {
         "items": [
-          "tag_gummybug"
+          "kyno_gummybug"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -386,6 +435,13 @@
     "sanity": 5,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -433,6 +489,13 @@
     "sanity": 33,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -494,6 +557,13 @@
     "sanity": 33,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -548,6 +618,13 @@
     "sanity": -10,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -595,6 +672,13 @@
     "sanity": -5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -649,6 +733,13 @@
     "sanity": 20,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -705,6 +796,13 @@
     "sanity": 15,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -766,6 +864,13 @@
     "sanity": 0,
     "cooktime": 1,
     "stacksize": 3,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -806,6 +911,13 @@
     "sanity": 15,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -867,6 +979,13 @@
     "sanity": 10,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -950,6 +1069,13 @@
     "sanity": 15,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1023,6 +1149,13 @@
     "sanity": 5,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1097,6 +1230,13 @@
     "sanity": 10,
     "cooktime": 0.75,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1165,6 +1305,13 @@
     "sanity": 40,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1225,6 +1372,13 @@
     "sanity": 15,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1272,6 +1426,13 @@
     "sanity": 20,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1333,10 +1494,17 @@
     "sanity": 5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
-          "tag_bacon"
+          "kyno_bacon"
         ],
         "amount": 2,
         "comparator": "morethan"
@@ -1394,6 +1562,13 @@
     "sanity": 5,
     "cooktime": 0.6,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1441,6 +1616,13 @@
     "sanity": 10,
     "cooktime": 0.75,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1509,6 +1691,13 @@
     "sanity": 20,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1584,10 +1773,17 @@
     "sanity": 5,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
-          "tag_bacon"
+          "kyno_bacon"
         ],
         "amount": 2,
         "comparator": "morethan"
@@ -1652,6 +1848,13 @@
     "sanity": 10,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1699,6 +1902,13 @@
     "sanity": 5,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1760,6 +1970,13 @@
     "sanity": 15,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1821,6 +2038,13 @@
     "sanity": 25,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -1861,7 +2085,8 @@
       },
       {
         "items": [
-          "tag_bacon"
+          "kyno_bacon",
+          "kyno_bacon_cooked"
         ],
         "comparator": "equal"
       }
@@ -1903,10 +2128,17 @@
     "sanity": 25,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
-          "tag_bacon"
+          "kyno_bacon"
         ],
         "amount": 2,
         "comparator": "morethan"
@@ -1930,7 +2162,7 @@
     "card_def": [
       {
         "items": [
-          "tag_bacon"
+          "kyno_bacon"
         ],
         "amount": 2,
         "comparator": "equal"
@@ -1964,6 +2196,13 @@
     "sanity": 15,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2011,6 +2250,13 @@
     "sanity": 5,
     "cooktime": 0.75,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2079,6 +2325,13 @@
     "sanity": 15,
     "cooktime": 0.6,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2140,6 +2393,13 @@
     "sanity": 5,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2200,6 +2460,13 @@
     "sanity": 15,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2247,10 +2514,17 @@
     "sanity": 10,
     "cooktime": 0.8,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
-          "tag_bacon"
+          "kyno_bacon"
         ],
         "amount": 3,
         "comparator": "morethan"
@@ -2294,6 +2568,13 @@
     "sanity": 60,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2341,6 +2622,13 @@
     "sanity": 10,
     "cooktime": 0.8,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2406,6 +2694,13 @@
     "sanity": 10,
     "cooktime": 1.7,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2467,6 +2762,13 @@
     "sanity": 5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2484,7 +2786,7 @@
       },
       {
         "items": [
-          "tag_bacon"
+          "kyno_bacon"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -2512,7 +2814,8 @@
       },
       {
         "items": [
-          "tag_bacon"
+          "kyno_bacon",
+          "kyno_bacon_cooked"
         ],
         "amount": 1,
         "comparator": "morethan"
@@ -2562,6 +2865,13 @@
     "sanity": 5,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2623,6 +2933,13 @@
     "sanity": 30,
     "cooktime": 0.7,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2684,6 +3001,13 @@
     "sanity": 15,
     "cooktime": 1.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2752,6 +3076,13 @@
     "sanity": 15,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2813,6 +3144,13 @@
     "sanity": 25,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2888,6 +3226,13 @@
     "sanity": 25,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -2949,6 +3294,13 @@
     "sanity": 10,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3024,6 +3376,13 @@
     "sanity": 33,
     "cooktime": 0.75,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3071,6 +3430,13 @@
     "sanity": 40,
     "cooktime": 1.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3132,6 +3498,13 @@
     "sanity": 15,
     "cooktime": 1.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3200,6 +3573,13 @@
     "sanity": 50,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3278,6 +3658,13 @@
     "sanity": 50,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3353,6 +3740,13 @@
     "sanity": 40,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3434,6 +3828,13 @@
     "sanity": 25,
     "cooktime": 0.75,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3495,6 +3896,13 @@
     "sanity": 50,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3570,6 +3978,13 @@
     "sanity": 40,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3645,6 +4060,13 @@
     "sanity": -5,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3706,6 +4128,13 @@
     "sanity": 15,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3761,6 +4190,13 @@
     "sanity": 30,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3836,6 +4272,13 @@
     "sanity": 5,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3916,6 +4359,13 @@
     "sanity": 5,
     "cooktime": 2.25,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -3963,6 +4413,13 @@
     "sanity": 15,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4037,6 +4494,13 @@
     "sanity": 0,
     "cooktime": 0.75,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4047,7 +4511,7 @@
       },
       {
         "items": [
-          "tag_bacon"
+          "kyno_bacon"
         ],
         "amount": 2,
         "comparator": "morethan"
@@ -4103,6 +4567,13 @@
     "sanity": 20,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4178,6 +4649,13 @@
     "sanity": 25,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4253,6 +4731,13 @@
     "sanity": 50,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4328,6 +4813,13 @@
     "sanity": 100,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4375,6 +4867,13 @@
     "sanity": 40,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4436,6 +4935,13 @@
     "sanity": 60,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4497,6 +5003,13 @@
     "sanity": 60,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4558,6 +5071,13 @@
     "sanity": 3,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4606,6 +5126,13 @@
     "sanity": 10,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4653,6 +5180,13 @@
     "sanity": 50,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4686,6 +5220,13 @@
     "sanity": 10,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4726,6 +5267,13 @@
     "sanity": 15,
     "cooktime": 1.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4767,6 +5315,13 @@
     "sanity": 5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4821,6 +5376,13 @@
     "sanity": 150,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4868,6 +5430,13 @@
     "sanity": -300,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4917,6 +5486,13 @@
     "sanity": 33,
     "cooktime": 5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -4992,6 +5568,13 @@
     "sanity": 15,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5053,6 +5636,13 @@
     "sanity": 30,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5121,6 +5711,13 @@
     "sanity": 33,
     "cooktime": 1.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5175,6 +5772,13 @@
     "sanity": 50,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5241,6 +5845,13 @@
     "sanity": 0,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5321,6 +5932,13 @@
     "sanity": -150,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5382,6 +6000,13 @@
     "sanity": 15,
     "cooktime": 1.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5436,6 +6061,13 @@
     "sanity": 5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5497,6 +6129,13 @@
     "sanity": 25,
     "cooktime": 1.6,
     "stacksize": 2,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5572,6 +6211,13 @@
     "sanity": 5,
     "cooktime": 2.3,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5645,6 +6291,13 @@
     "sanity": 20,
     "cooktime": 2.3,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5719,6 +6372,13 @@
     "sanity": 5,
     "cooktime": 2.3,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5798,6 +6458,13 @@
     "sanity": 20,
     "cooktime": 1.1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5852,6 +6519,13 @@
     "sanity": 10,
     "cooktime": 1.6,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5899,6 +6573,13 @@
     "sanity": 1,
     "cooktime": 0.1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -5969,6 +6650,13 @@
     "sanity": 60,
     "cooktime": 2.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6030,6 +6718,13 @@
     "sanity": 10,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6092,6 +6787,13 @@
     "sanity": -15,
     "cooktime": 1.6,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6153,6 +6855,13 @@
     "sanity": 33,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6221,6 +6930,13 @@
     "sanity": 12.5,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6282,6 +6998,13 @@
     "sanity": 5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6357,6 +7080,13 @@
     "sanity": 10,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6418,6 +7148,13 @@
     "sanity": 20,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6479,6 +7216,13 @@
     "sanity": 10,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6540,6 +7284,13 @@
     "sanity": 40,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6615,6 +7366,13 @@
     "sanity": 15,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6690,6 +7448,13 @@
     "sanity": -5,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6700,7 +7465,7 @@
       },
       {
         "items": [
-          "tag_gummybug"
+          "kyno_gummybug"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -6751,10 +7516,17 @@
     "sanity": -5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
-          "tag_gummybug"
+          "kyno_gummybug"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -6812,6 +7584,13 @@
     "sanity": 15,
     "cooktime": 2.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6873,6 +7652,13 @@
     "sanity": 50,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6949,6 +7735,13 @@
     "sanity": 33,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -6996,6 +7789,13 @@
     "sanity": 10,
     "cooktime": 1.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7033,7 +7833,7 @@
   {
     "name": "monstermuffin",
     "priority": 30,
-    "foodtype": "GOODIES",
+    "foodtype": "MONSTER",
     "spoilage": 19200,
     "temperature": null,
     "temperatureDuration": null,
@@ -7043,6 +7843,13 @@
     "sanity": -15,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": true,
+    "mermhealth": 10,
+    "mermhunger": 67,
+    "mermsanity": 15,
+    "monsterfood": true,
+    "monsterhealth": 10,
+    "monstersanity": 15,
     "requires": [
       {
         "items": [
@@ -7104,6 +7911,13 @@
     "sanity": 20,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7165,6 +7979,13 @@
     "sanity": 5,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7226,6 +8047,13 @@
     "sanity": 1,
     "cooktime": 1,
     "stacksize": 3,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7273,6 +8101,13 @@
     "sanity": 10,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7356,6 +8191,13 @@
     "sanity": 30,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7438,6 +8280,13 @@
     "sanity": 50,
     "cooktime": 0.8,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7499,6 +8348,13 @@
     "sanity": 5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7509,7 +8365,7 @@
       },
       {
         "items": [
-          "tag_mussel"
+          "kyno_mussel"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -7574,6 +8430,13 @@
     "sanity": 15,
     "cooktime": 0.8,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7635,6 +8498,13 @@
     "sanity": 5,
     "cooktime": 1.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7682,6 +8552,13 @@
     "sanity": 33,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7743,6 +8620,13 @@
     "sanity": 5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7792,6 +8676,13 @@
     "sanity": 25,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7842,7 +8733,7 @@
   {
     "name": "duriansplit",
     "priority": 30,
-    "foodtype": "VEGGIE",
+    "foodtype": "MONSTER",
     "spoilage": 2880,
     "temperature": -40,
     "temperatureDuration": 10,
@@ -7852,6 +8743,13 @@
     "sanity": -15,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": true,
+    "mermhealth": 5,
+    "mermhunger": 65,
+    "mermsanity": 15,
+    "monsterfood": true,
+    "monsterhealth": 5,
+    "monstersanity": 15,
     "requires": [
       {
         "items": [
@@ -7903,7 +8801,7 @@
   {
     "name": "duriansoup",
     "priority": 35,
-    "foodtype": "VEGGIE",
+    "foodtype": "MONSTER",
     "spoilage": 4800,
     "temperature": 40,
     "temperatureDuration": 10,
@@ -7913,6 +8811,13 @@
     "sanity": 0,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": true,
+    "mermhealth": 15,
+    "mermhunger": 75,
+    "mermsanity": null,
+    "monsterfood": true,
+    "monsterhealth": 15,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -7950,7 +8855,7 @@
   {
     "name": "durianmeated",
     "priority": 40,
-    "foodtype": "MEAT",
+    "foodtype": "MONSTER",
     "spoilage": 7200,
     "temperature": null,
     "temperatureDuration": null,
@@ -7960,6 +8865,13 @@
     "sanity": -5,
     "cooktime": 1.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": true,
+    "monsterhealth": 20,
+    "monstersanity": 5,
     "requires": [
       {
         "items": [
@@ -8004,7 +8916,7 @@
   {
     "name": "durianchicken",
     "priority": 30,
-    "foodtype": "VEGGIE",
+    "foodtype": "MONSTER",
     "spoilage": 3840,
     "temperature": null,
     "temperatureDuration": null,
@@ -8014,6 +8926,13 @@
     "sanity": -30,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": true,
+    "mermhealth": 10,
+    "mermhunger": 90,
+    "mermsanity": 30,
+    "monsterfood": true,
+    "monsterhealth": 10,
+    "monstersanity": 30,
     "requires": [
       {
         "items": [
@@ -8088,6 +9007,13 @@
     "sanity": 5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -8135,6 +9061,13 @@
     "sanity": 33,
     "cooktime": 1.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -8182,6 +9115,13 @@
     "sanity": 15,
     "cooktime": 1.1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -8243,6 +9183,13 @@
     "sanity": 20,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -8304,6 +9251,13 @@
     "sanity": -5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -8351,6 +9305,13 @@
     "sanity": 0,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -8402,7 +9363,7 @@
   {
     "name": "purplewobstersoup",
     "priority": 30,
-    "foodtype": "MEAT",
+    "foodtype": "MONSTER",
     "spoilage": 7200,
     "temperature": null,
     "temperatureDuration": null,
@@ -8412,6 +9373,13 @@
     "sanity": -5,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": true,
+    "monsterhealth": 60,
+    "monstersanity": 5,
     "requires": [
       {
         "items": [
@@ -8463,7 +9431,7 @@
   {
     "name": "wobstermonster",
     "priority": 35,
-    "foodtype": "MEAT",
+    "foodtype": "MONSTER",
     "spoilage": 4800,
     "temperature": 40,
     "temperatureDuration": 10,
@@ -8473,6 +9441,13 @@
     "sanity": -20,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": true,
+    "monsterhealth": 60,
+    "monstersanity": 20,
     "requires": [
       {
         "items": [
@@ -8524,7 +9499,7 @@
   {
     "name": "spidercake",
     "priority": 1,
-    "foodtype": "MEAT",
+    "foodtype": "MONSTER",
     "spoilage": 19200,
     "temperature": null,
     "temperatureDuration": null,
@@ -8534,6 +9509,13 @@
     "sanity": -20,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": true,
+    "monsterhealth": 20,
+    "monstersanity": 20,
     "requires": [
       {
         "items": [
@@ -8609,6 +9591,13 @@
     "sanity": 15,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -8656,6 +9645,13 @@
     "sanity": 8,
     "cooktime": 1.1,
     "stacksize": 2,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -8717,6 +9713,13 @@
     "sanity": 10,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -8778,6 +9781,13 @@
     "sanity": 10,
     "cooktime": 2,
     "stacksize": 2,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -8788,7 +9798,7 @@
       },
       {
         "items": [
-          "tag_mussel"
+          "kyno_mussel"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -8853,6 +9863,13 @@
     "sanity": 15,
     "cooktime": 2.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -8929,6 +9946,13 @@
     "sanity": 10,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9017,6 +10041,13 @@
     "sanity": 65,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9078,6 +10109,13 @@
     "sanity": 20,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9139,6 +10177,13 @@
     "sanity": 20,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9200,6 +10245,13 @@
     "sanity": 5,
     "cooktime": 0.7,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9275,6 +10327,13 @@
     "sanity": 5,
     "cooktime": 3,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9350,6 +10409,13 @@
     "sanity": 10,
     "cooktime": 1.3,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9425,6 +10491,13 @@
     "sanity": 0,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9500,6 +10573,13 @@
     "sanity": 33,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9582,6 +10662,13 @@
     "sanity": 5,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9630,6 +10717,13 @@
     "sanity": 5,
     "cooktime": 1.3,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9684,6 +10778,13 @@
     "sanity": 33,
     "cooktime": 0.8,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9745,6 +10846,13 @@
     "sanity": -10,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9792,6 +10900,13 @@
     "sanity": 10,
     "cooktime": 0.7,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -9867,10 +10982,17 @@
     "sanity": -15,
     "cooktime": 1.3,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
-          "tag_beanbug"
+          "kyno_beanbugs"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -9928,6 +11050,13 @@
     "sanity": 5,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10003,6 +11132,13 @@
     "sanity": 60,
     "cooktime": 1.1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10071,6 +11207,13 @@
     "sanity": 10,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10132,6 +11275,13 @@
     "sanity": 20,
     "cooktime": 1.6,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10200,6 +11350,13 @@
     "sanity": 40,
     "cooktime": 1.8,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10276,6 +11433,13 @@
     "sanity": 5,
     "cooktime": 0.7,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10358,6 +11522,13 @@
     "sanity": 33,
     "cooktime": 0.7,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10433,6 +11604,13 @@
     "sanity": 50,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10494,6 +11672,13 @@
     "sanity": 30,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10580,6 +11765,13 @@
     "sanity": 33,
     "cooktime": 1.3,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10655,6 +11847,13 @@
     "sanity": 20,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10665,7 +11864,7 @@
       },
       {
         "items": [
-          "tag_beanbug"
+          "kyno_beanbugs"
         ],
         "amount": 2,
         "comparator": "morethan"
@@ -10702,6 +11901,13 @@
     "sanity": 0,
     "cooktime": 1.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10753,7 +11959,7 @@
   {
     "name": "sporecappie",
     "priority": 35,
-    "foodtype": "VEGGIE",
+    "foodtype": "MONSTER",
     "spoilage": 9600,
     "temperature": null,
     "temperatureDuration": null,
@@ -10763,6 +11969,13 @@
     "sanity": -10,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": true,
+    "monsterhealth": 20,
+    "monstersanity": 10,
     "requires": [
       {
         "items": [
@@ -10814,7 +12027,7 @@
   {
     "name": "sporecap_skewers",
     "priority": 35,
-    "foodtype": "VEGGIE",
+    "foodtype": "MONSTER",
     "spoilage": 4800,
     "temperature": null,
     "temperatureDuration": null,
@@ -10824,6 +12037,13 @@
     "sanity": -20,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": true,
+    "monsterhealth": 30,
+    "monstersanity": 20,
     "requires": [
       {
         "items": [
@@ -10885,6 +12105,13 @@
     "sanity": 25,
     "cooktime": 2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -10960,6 +12187,13 @@
     "sanity": 20,
     "cooktime": 0.15,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -11014,6 +12248,13 @@
     "sanity": 50,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -11082,6 +12323,13 @@
     "sanity": 5,
     "cooktime": 0.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -11157,6 +12405,13 @@
     "sanity": 10,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -11232,6 +12487,13 @@
     "sanity": 10,
     "cooktime": 1,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -11307,6 +12569,13 @@
     "sanity": 25,
     "cooktime": 1.2,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -11382,6 +12651,13 @@
     "sanity": 5,
     "cooktime": 1.3,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -11457,6 +12733,13 @@
     "sanity": 10,
     "cooktime": 2.5,
     "stacksize": null,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [
@@ -11525,6 +12808,13 @@
     "sanity": 33,
     "cooktime": 1,
     "stacksize": 2,
+    "mermfood": null,
+    "mermhealth": null,
+    "mermhunger": null,
+    "mermsanity": null,
+    "monsterfood": null,
+    "monsterhealth": null,
+    "monstersanity": null,
     "requires": [
       {
         "items": [

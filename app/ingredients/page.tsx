@@ -131,6 +131,7 @@ export default function Ingredients() {
 
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const controlsRef = useRef<HTMLDivElement>(null);
   const bothOpen = filtersOpen && sortingOpen;
 
   // FILTERED INGREDIENTS
@@ -258,6 +259,51 @@ export default function Ingredients() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  useEffect(() => {
+    if (!filtersOpen && !sortingOpen) return;
+
+    function handleClickOutside(e: MouseEvent) {
+      if (
+        controlsRef.current &&
+        !controlsRef.current.contains(e.target as Node)
+      ) {
+        setFiltersOpen(false);
+        setSortingOpen(false);
+      }
+    }
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setFiltersOpen(false);
+        setSortingOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [filtersOpen, sortingOpen]);
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") {
+        setSelected(null);
+      }
+    }
+
+    if (selected) {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selected]);
+
   // HIDE BACK TO TOP BUTTON
   useEffect(() => {
     const handleScroll = () => {
@@ -374,7 +420,10 @@ export default function Ingredients() {
               </div>
             )}
           </div>
-          <div className="flex items-center justify-center gap-3 select-none relative">
+          <div
+            ref={controlsRef}
+            className="flex items-center justify-center gap-3 select-none relative"
+          >
             {/* FILTER BUTTON */}
             <div className="relative group">
               <button
@@ -430,61 +479,63 @@ export default function Ingredients() {
               <div className="absolute top-full mt-3 left-1/2 -translate-x-1/2 flex items-start gap-4 z-50">
                 {/* FILTER PANEL */}
                 {filtersOpen && (
-                  <div className="w-[700px] max-h-[420px] overflow-y-auto overscroll-contain bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl p-4 flex flex-col gap-2 font-bold shadow-sm dark:shadow-none hide-scrollbar">
-                    <DropdownGroup
-                      title={t("filters.foodtype")}
-                      icon="/icons/cooking/icon_foodtype.png"
-                    >
-                      <div className="grid grid-cols-[max-content_max-content] gap-x-9 gap-y-2">
-                        {uniqueFoodTypes.map((type: string) => (
-                          <CheckboxFilter
-                            key={type}
-                            label={t(`foodtypes.${type}`)}
-                            checked={filterFoodType.includes(type)}
-                            onChange={() =>
-                              setFilterFoodType((prev) =>
-                                prev.includes(type)
-                                  ? prev.filter((t) => t !== type)
-                                  : [...prev, type],
-                              )
-                            }
-                          />
-                        ))}
-                      </div>
-                      <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20 my-1" />
-                    </DropdownGroup>
-                    <DropdownGroup
-                      title={t("filters.cooktype")}
-                      icon="/icons/cooking/icon_cooktype.png"
-                    >
-                      <div className="grid grid-cols-5 gap-x-0 gap-y-2">
-                        {uniqueCookTypes.map((value: string) => (
-                          <CheckboxFilter
-                            key={value}
-                            label={t(`cooktypes.${value}`)}
-                            checked={filterCookType.includes(value)}
-                            onChange={() =>
-                              setFilterCookType((prev) =>
-                                prev.includes(value)
-                                  ? prev.filter((v) => v !== value)
-                                  : [...prev, value],
-                              )
-                            }
-                          />
-                        ))}
-                      </div>
-                      <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20 my-1" />
-                    </DropdownGroup>
+                  <div className="w-[700px] max-h-[420px] bg-white dark:bg-zinc-900 border border-zinc-300 dark:border-zinc-700 rounded-xl overflow-hidden shadow-sm dark:shadow-none">
+                    <div className="max-h-[420px] overflow-y-auto overscroll-contain p-4 flex flex-col gap-2 font-bold">
+                      <DropdownGroup
+                        title={t("filters.foodtype")}
+                        icon="/icons/cooking/icon_foodtype.png"
+                      >
+                        <div className="grid grid-cols-[max-content_max-content] gap-x-9 gap-y-2">
+                          {uniqueFoodTypes.map((type: string) => (
+                            <CheckboxFilter
+                              key={type}
+                              label={t(`foodtypes.${type}`)}
+                              checked={filterFoodType.includes(type)}
+                              onChange={() =>
+                                setFilterFoodType((prev) =>
+                                  prev.includes(type)
+                                    ? prev.filter((t) => t !== type)
+                                    : [...prev, type],
+                                )
+                              }
+                            />
+                          ))}
+                        </div>
+                        <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20 my-1" />
+                      </DropdownGroup>
+                      <DropdownGroup
+                        title={t("filters.cooktype")}
+                        icon="/icons/cooking/icon_cooktype.png"
+                      >
+                        <div className="grid grid-cols-5 gap-x-0 gap-y-2">
+                          {uniqueCookTypes.map((value: string) => (
+                            <CheckboxFilter
+                              key={value}
+                              label={t(`cooktypes.${value}`)}
+                              checked={filterCookType.includes(value)}
+                              onChange={() =>
+                                setFilterCookType((prev) =>
+                                  prev.includes(value)
+                                    ? prev.filter((v) => v !== value)
+                                    : [...prev, value],
+                                )
+                              }
+                            />
+                          ))}
+                        </div>
+                        <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20 my-1" />
+                      </DropdownGroup>
 
-                    <button
-                      onClick={() => {
-                        setFilterFoodType([]);
-                        setFilterCookType([]);
-                      }}
-                      className="bg-zinc-300 dark:bg-zinc-500 hover:bg-red-700 rounded-lg py-2 text-sm font-bold cursor-pointer"
-                    >
-                      {t("filters.clear")}
-                    </button>
+                      <button
+                        onClick={() => {
+                          setFilterFoodType([]);
+                          setFilterCookType([]);
+                        }}
+                        className="bg-zinc-300 dark:bg-zinc-500 hover:bg-red-700 rounded-lg py-2 text-sm font-bold cursor-pointer"
+                      >
+                        {t("filters.clear")}
+                      </button>
+                    </div>
                   </div>
                 )}
 
@@ -589,7 +640,7 @@ export default function Ingredients() {
               {t("filters.clear")}
             </button>
           </div>
-        )}        
+        )}
         {sortedIngredients.map((ingredient, index) => (
           <div
             key={ingredient.name}
