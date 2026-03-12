@@ -34,6 +34,7 @@ const en = {
     download: "Download the Mod",
     workshop: "Workshop Page",
     kofi: "Support Me!",
+    copyright: "© Copyright {{year}} - All rights reserved.",
     description: `Heap of Foods is a mod for Don't Starve Together made by Kyno.
     It is not affiliated with Klei Entertainment.
 
