@@ -2,9 +2,13 @@
 
 import { useState, useMemo, useRef, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n";
+import { usePageTitle } from "@/components/PageTitle";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import recipes from "@/data/recipes_cookpot_seasonal.json";
 import { recommendRecipe } from "@/lib/recommend";
 import SeeAlso from "@/components/SeeAlso";
+import Fuse from "fuse.js";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -13,6 +17,9 @@ import {
   faFilterCircleXmark,
   faArrowDownAZ,
   faCircleChevronUp,
+  faCircleChevronDown,
+  faCircleChevronLeft,
+  faCircleChevronRight,
   faArrowRightFromBracket,
   faCircleMinus,
   faCircleQuestion,
@@ -119,6 +126,8 @@ const SortOption = ({ value, label, current, onChange }: SortOptionProps) => (
 
 export default function CookPotSeasonal() {
   const { t } = useTranslation();
+
+  usePageTitle(t("pages.cookpot_seasonal.title")); 
 
   const SPOILAGE_LABELS = useMemo(
     () => ({
@@ -254,17 +263,31 @@ export default function CookPotSeasonal() {
     return arr;
   }, [filteredRecipes, sortType, sortDirection, t]);
 
+  const recipesWithLabel = useMemo(() => {
+    return sortedRecipes.map((r) => ({
+      ...r,
+      label: t(`recipes_seasonal.${r.name}`),
+    }));
+  }, [sortedRecipes, t]);
+
+  // FUZZY SEARCH
+  const fuse = useMemo(() => {
+    return new Fuse(recipesWithLabel, {
+      keys: ["label"],
+      threshold: 0.4,
+      ignoreLocation: true,
+    });
+  }, [recipesWithLabel]);
+
   // SEARCHED RECIPES
   const searchedRecipes = useMemo(() => {
     if (!search.trim()) return [];
-    return sortedRecipes
-      .filter((recipe: any) =>
-        t(`recipes_seasonal.${recipe.name}`)
-          .toLowerCase()
-          .includes(search.toLowerCase()),
-      )
-      .slice(0, 8);
-  }, [search, sortedRecipes]);
+
+    return fuse
+      .search(search)
+      .slice(0, 8)
+      .map((result) => result.item);
+  }, [search, fuse]);
 
   // OUTSIDE CLICK
   useEffect(() => {
@@ -332,7 +355,7 @@ export default function CookPotSeasonal() {
   // HIDE BACK TO TOP BUTTON
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 1000) {
+      if (window.scrollY > 500) {
         setShowTopButton(true);
       } else {
         setShowTopButton(false);
@@ -361,11 +384,76 @@ export default function CookPotSeasonal() {
     setTimeout(() => setSelected(recipe), 300);
   };
 
+  const selectedIndex = useMemo(() => {
+    if (!selected) return -1;
+    return sortedRecipes.findIndex(r => r.name === selected.name);
+  }, [selected, sortedRecipes]);
+
+  const goNext = () => {
+    if (selectedIndex < sortedRecipes.length - 1) {
+      setSelected(sortedRecipes[selectedIndex + 1]);
+    }
+  };
+
+  const goPrev = () => {
+    if (selectedIndex > 0) {
+      setSelected(sortedRecipes[selectedIndex - 1]);
+    }
+  };
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setSelected(null);
+      if (e.key === "ArrowRight") goNext();
+      if (e.key === "ArrowLeft") goPrev();
+    }
+
+    if (selected) {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selected, selectedIndex]);
+
+  const searchParams = useSearchParams();
+  const recipeParam = searchParams.get("recipe");
+  
+  useEffect(() => {
+    if (recipeParam) {
+      const recipe = sortedRecipes.find(r => r.name === recipeParam);
+      if (recipe) {
+        setSelected(recipe);
+        const element = document.getElementById(`recipe-${recipe.name}`);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+    }
+  }, [recipeParam, sortedRecipes]);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (recipeParam) {
+      const recipe = sortedRecipes.find(r => r.name === recipeParam);
+      if (recipe) {
+        setSelected(recipe);
+        const element = document.getElementById(`recipe-${recipe.name}`);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+      router.replace("/recipes_seasonal", { scroll: false });
+    }
+  }, [recipeParam, sortedRecipes]);
+
   return (
-    <div className="bg-zinc-300 dark:bg-zinc-950 text-zinc-900 dark:text-white min-h-screen">
-      <div className="max-w-full pt-16 pb-1"></div>
+    <div className="bg-zinc-300 dark:bg-zinc-800 text-zinc-900 dark:text-white min-h-screen">
+      <div className="max-w-full pt-14"></div>
       {/* STICKY SEARCH + FILTER + SORT + BACK TO TOP */}
-      <div className="sticky top-14 z-40 bg-zinc-300 dark:bg-zinc-950 shadow-md">
+      <div className="sticky top-14 z-40 bg-zinc-300 dark:bg-zinc-800 shadow-md">
         <div className="max-w-4xl mx-auto p-2 flex flex-row items-center justify-center gap-3">
           {/* SEARCH - Agora alinhado horizontalmente */}
           <div className="relative w-full max-w-sm">
@@ -419,7 +507,7 @@ export default function CookPotSeasonal() {
                 <div className="max-h-80 overflow-y-auto overscroll-contain">
                   {searchedRecipes.length === 0 && (
                     <div className="px-4 py-3 text-sm text-zinc-500 dark:text-white italic">
-                      {t("search.notfound")}
+                      {t("search.notfound.recipe")}
                     </div>
                   )}
                   {searchedRecipes.map((recipe, idx) => (
@@ -453,7 +541,7 @@ export default function CookPotSeasonal() {
             <div className="relative group">
               <button
                 onClick={() => setFiltersOpen(!filtersOpen)}
-                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                className="bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faFilter} />
               </button>
@@ -469,7 +557,7 @@ export default function CookPotSeasonal() {
             <div className="relative group">
               <button
                 onClick={() => setSortingOpen(!sortingOpen)}
-                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                className="bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faArrowDownAZ} />
               </button>
@@ -488,7 +576,7 @@ export default function CookPotSeasonal() {
                   onClick={() =>
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }
-                  className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                  className="bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
                 >
                   <FontAwesomeIcon icon={faCircleChevronUp} />
                 </button>
@@ -772,8 +860,43 @@ export default function CookPotSeasonal() {
           className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
           onClick={() => setSelected(null)}
         >
+          <div className="flex items-center gap-6">
+            {/* PREVIOUS */}
+            {selectedIndex > 0 && (
+              <div
+                className="p-8 flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <div className="relative group">
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      goPrev();
+                    }}
+                    className="text-5xl text-white hover:text-white/80 dark:text-white/70 dark:hover:text-white/90 transition cursor-pointer"
+                  >
+                    <FontAwesomeIcon icon={faCircleChevronLeft} />
+                  </button>
+                  <div
+                    className="
+                    absolute bottom-full mb-2
+                    left-1/2 -translate-x-1/2
+                    hidden group-hover:block
+                    bg-black text-white dark:bg-white dark:text-black
+                    text-xs font-semibold
+                    px-3 py-1 rounded
+                    whitespace-nowrap
+                    shadow-lg
+                    "
+                  >
+                    {t("main.previous")}
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
           <div
-            className="bg-white dark:bg-zinc-900 rounded-2xl p-8 w-[750px] relative shadow-xl dark:shadow-none"
+            className="bg-white dark:bg-zinc-900 rounded-2xl p-8 w-[750px] relative shadow-xl dark:shadow-none scale-95"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-end">
@@ -846,7 +969,7 @@ export default function CookPotSeasonal() {
               <div className="w-200 h-1 bg-zinc-200 dark:bg-zinc-700" />
             </div>
             {/* FOODTYPE + EFFECTS */}
-            <div className="flex justify-center items-center gap-4 mb-6 mt-2 flex-wrap font-semibold">
+            <div className="flex justify-center items-center gap-4 mb-3 mt-2 flex-wrap font-semibold">
               {selected.foodtype && <FoodType type={selected.foodtype} t={t} />}
 
               {selected.temperature != null && (
@@ -921,17 +1044,14 @@ export default function CookPotSeasonal() {
                 value={GetSpoilageLabel(selected.spoilage)}
                 tooltip={t("tooltips.spoilage")}
               />
-            </Block>
-
-            {selected.stacksize && (
-              <Block>
+              {selected.stacksize && (
                 <Stat
                   icon="/icons/cooking/icon_stacksize.png"
                   value={selected.stacksize}
                   tooltip={t("tooltips.stacksize")}
                 />
-              </Block>
-            )}
+              )}
+            </Block>
             {(() => {
               const suggestion = recommendRecipe(selected, recipes);
               return suggestion ? (
@@ -947,6 +1067,39 @@ export default function CookPotSeasonal() {
               ) : null;
             })()}
           </div>
+          {/* NEXT */}
+          {selectedIndex < sortedRecipes.length - 1 && (
+            <div
+              className="p-8 flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="relative group">
+                <button
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    goNext();
+                  }}
+                  className="text-5xl text-white hover:text-white/80 dark:text-white/70 dark:hover:text-white/90 transition cursor-pointer"
+                >
+                  <FontAwesomeIcon icon={faCircleChevronRight} />
+                </button>
+                <div
+                  className="
+                  absolute bottom-full mb-2
+                  left-1/2 -translate-x-1/2
+                  hidden group-hover:block
+                  bg-black text-white dark:bg-white dark:text-black
+                  text-xs font-semibold
+                  px-3 py-1 rounded
+                  whitespace-nowrap
+                  shadow-lg
+                  "
+                >
+                  {t("main.next")}
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -1093,17 +1246,25 @@ function Stat({ icon, value, tooltip, isStatus = false, recipe, stat }: any) {
 
   const extrasMap: Record<number, string[]> = {};
 
+  if (stat === "hunger" && recipe?.characterfood) {
+    const charValue = (recipe.hunger ?? 0) + 15;
+    extrasMap[charValue] ??= [];
+    extrasMap[charValue].push(recipe.characterfood);
+  }
+
   if (recipe?.monsterfood) {
-    const monsterValue = recipe[`monster${stat}`];
-    if (monsterValue !== undefined) {
+    const monsterValue = recipe[`monster${stat}`] ?? 0;
+
+    if (monsterValue !== 0) {
       extrasMap[monsterValue] ??= [];
       extrasMap[monsterValue].push("webber", "wortox");
     }
   }
 
   if (recipe?.mermfood) {
-    const mermValue = recipe[`merm${stat}`];
-    if (mermValue !== undefined) {
+    const mermValue = recipe[`merm${stat}`] ?? 0;
+
+    if (mermValue !== 0) {
       extrasMap[mermValue] ??= [];
       extrasMap[mermValue].push("wurt");
     }

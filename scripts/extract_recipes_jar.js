@@ -53,6 +53,21 @@ function extractBoolean(block, key) {
   return match ? match[1] === "true" : null
 }
 
+function extractCharacterFood(block) {
+  const single = block.match(/characterfood\s*=\s*"(\w+)"/)
+  if (single) return [single[1]]
+
+  const multi = block.match(/characterfood\s*=\s*\{([^\}]+)\}/)
+  if (multi) {
+    return multi[1]
+      .split(",")
+      .map(s => s.replace(/["\s]/g, "").trim())
+      .filter(Boolean)
+  }
+
+  return null
+}
+
 function extractRecipesFromLua(luaText) {
   const results = []
   const nameRegex = /(\w+)\s*=\s*\{/g
@@ -130,6 +145,8 @@ for (const recipe of rawRecipes) {
     continue
   }
 
+  const characterfood = extractCharacterFood(block)
+
   const mermfood = extractBoolean(block, "mermfood")
   const monsterfood = extractBoolean(block, "monsterfood")
 
@@ -190,6 +207,8 @@ for (const recipe of rawRecipes) {
     sanity: extractNumber(block, "sanity"),
     cooktime: extractNumber(block, "cooktime"),
     stacksize: extractNumber(block, "stacksize"),
+
+    characterfood,
 
     mermfood,
     mermhealth,

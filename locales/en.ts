@@ -1,6 +1,13 @@
 const en = {
   main: {
+    title: "Heap of Foods",
+    subtitle: "The Recipe Book",
+    description: "A complete recipes sheet for the Heap of Foods Mod!",
+    randomrecipe: "Random Pick",
     close: "Back",
+    previous: "Previous",
+    browsecategory: "or browse one of the categories...",
+    next: "Next",
     backtotop: "Back to Top",
     cookpot: "Crock Pot",
     cookpot_warly: "Chef's Specials",
@@ -10,14 +17,6 @@ const en = {
     ingredients: "Ingredients",
   },
 
-  search: {
-    title: {
-      recipe: "Browse recipe...",
-      ingredient: "Browse ingredient...",
-    },
-    notfound: "No recipe found with that name.",
-  },
-
   settings: {
     title: "Settings",
     theme: {
@@ -25,18 +24,60 @@ const en = {
       light: "Light Theme",
     },
     lang: "Language",
+    backtopage: "Back to Previous Page",
   },
 
   footer: {
     backtotop: "Back to Top",
     mainpage: "Main Page",
     discord: "Join our Discord",
+    download: "Download the Mod",
     workshop: "Workshop Page",
     kofi: "Support Me!",
     description: `Heap of Foods is a mod for Don't Starve Together made by Kyno.
     It is not affiliated with Klei Entertainment.
 
     A special thanks to everyone who made this mod possible!`
+  },
+
+  pages: {
+    home: {
+      title: "Home",
+    },
+    cookpot: {
+      title: "Crock Pot",
+    },
+    cookpot_warly: {
+      title: "Chef's Specials",
+    },
+    cookpot_keg: {
+      title: "Wooden Keg",
+    },
+    cookpot_jar: {
+      title: "Preserves Jar",
+    },
+    cookpot_seasonal: {
+      title: "Seasonal",
+    },
+    ingredients: {
+      title: "Ingredients",
+    },
+    settings: {
+      title: "Settings",
+    },
+  },
+
+  search: {
+    title: {
+      everything: "Browse recipe or ingredient...",
+      recipe: "Browse recipe...",
+      ingredient: "Browse ingredient...",
+    },
+    notfound: {
+      everything: "No recipe or ingredient found with that name.",
+      recipe: "No recipe found with that name.",
+      ingredient: "No ingredient found with that name.",
+    },
   },
 
   time: {
@@ -56,8 +97,9 @@ const en = {
     foodtype: "Food Types",
     cooktype: "Ingredient Types",
     debuff: {
-      title: "Side Effects",
-      hasdebuff: "Has Side Effect",
+      title: "Miscellaneous",
+      hasdebuff: "Side Effect",
+      characterfood: "Favorite Food",
     },
     event: "Special Event",
     noresults: "Nothing found with the current filter",
@@ -86,6 +128,67 @@ const en = {
     clear: "Reset to Default",
   },
 
+  characterfood: {
+    wilson: "Wilson's Favorite",
+    willow: "Willow's Favorite",
+    wolfgang: "Wolfgang's Favorite",
+    wendy: "Wendy's Favorite",
+    wx78: "WX-78's Favorite",
+    wickerbottom: "Wickerbottom's Favorite",
+    woodie: "Woodie's Favorite",
+    waxwell: "Maxwell's Favorite",
+    wes: "Wes' Favorite",
+    wathgrithr: "Wigfrid's Favorite",
+    webber: "Webber's Favorite",
+    winona: "Winona's Favorite",
+    wortox: "Wortox's Favorite",
+    wormwood: "Wormwood's Favorite",
+    warly: "Warly's Favorite",
+    wurt: "Wurt's Favorite",
+    walter: "Walter's Favorite",
+    wanda: "Wanda's Favorite",
+    wonkey: "Wonkey's Favorite",
+  },
+
+  card: {
+    alternative: "/",
+    ingredients: {
+      required: "Requires",
+      excluded: "Excludes",
+      no_excluded: "N/A",
+      example: "Example",
+      info: {
+        state_title: "Ingredient States",
+        state_p1: "Ingredients used in recipes can be either raw or cooked.",
+        state_p2: "If a recipe does not specify the ingredient state, it means both raw and cooked versions are valid and can be used interchangeably.",
+        state_p3: "However, if a recipe explicitly requires the cooked version, then the raw version will not count toward the recipe requirement.",
+
+        excluded_title: "Excluded Ingredient Limits",
+        excluded_p1: "Some recipes may list excluded ingredients with value limits.",
+        excluded_p2: "1.0+ means the ingredient cannot be used more than once. If the total value is higher, the recipe will fail.",
+        excluded_p3: "<1.0 means the ingredient must be used in an amount less than one full value. For example, values like 0.50 or 0.25 are acceptable, but 1.0 or higher will not meet the requirement.",
+        learn_more: "Learn More",
+      },
+    },
+    values: {
+      raw: "Raw Ingredient Values",
+      cooked: "Cooked Ingredient Values",
+      dried: "Dried Ingredient Values",
+    },
+    temperature: {
+      hot: "Hot",
+      cold: "Cold",
+      none: "None",
+    },
+    debuff: {
+      hasEffect: "Side Effect"
+    },
+    event: {
+      xmas: "Winter's Feast",
+      halloween: "Hallowed Nights",
+    },
+  },
+
   tooltips: {
     health: "Health",
     hunger: "Hunger",
@@ -97,7 +200,8 @@ const en = {
     temperature: "Temperature",
     foodtype: "Food Type",
     cooktype: "Ingredient Value",
-    debuff: "Side Effect",
+    debuff: "Temporary Effect",
+    characterfood: "Favorite Food",
     event: "Special Event",
   },
 
@@ -191,45 +295,6 @@ const en = {
     preserved: "20 Days",
     superslow: "40 Days",
     never: "Never",
-  },
-
-  card: {
-    alternative: "/",
-    ingredients: {
-      required: "Requires",
-      excluded: "Excludes",
-      no_excluded: "N/A",
-      example: "Example",
-      info: {
-        state_title: "Ingredient States",
-        state_p1: "Ingredients used in recipes can be either raw or cooked.",
-        state_p2: "If a recipe does not specify the ingredient state, it means both raw and cooked versions are valid and can be used interchangeably.",
-        state_p3: "However, if a recipe explicitly requires the cooked version, then the raw version will not count toward the recipe requirement.",
-
-        excluded_title: "Excluded Ingredient Limits",
-        excluded_p1: "Some recipes may list excluded ingredients with value limits.",
-        excluded_p2: "1.0+ means the ingredient cannot be used more than once. If the total value is higher, the recipe will fail.",
-        excluded_p3: "<1.0 means the ingredient must be used in an amount less than one full value. For example, values like 0.50 or 0.25 are acceptable, but 1.0 or higher will not meet the requirement.",
-        learn_more: "Learn More",
-      },
-    },
-    values: {
-      raw: "Raw Ingredient Values",
-      cooked: "Cooked Ingredient Values",
-      dried: "Dried Ingredient Values",
-    },
-    temperature: {
-      hot: "Hot",
-      cold: "Cold",
-      none: "None",
-    },
-    debuff: {
-      hasEffect: "Side Effect"
-    },
-    event: {
-      xmas: "Winter's Feast",
-      halloween: "Hallowed Nights",
-    },
   },
 
   recipes: {

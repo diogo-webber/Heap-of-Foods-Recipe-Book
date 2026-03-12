@@ -7,7 +7,7 @@ export default function SettingsPage() {
   const { locale, setLocale } = useTranslation();
 
   return (
-    <div className="min-h-screen bg-zinc-300 dark:bg-zinc-950 flex items-center justify-center">
+    <div className="min-h-screen bg-zinc-300 dark:bg-zinc-800 flex items-center justify-center">
       <Settings
         initialLanguage={locale}
         onLanguageChange={(lang: Locale) => setLocale(lang)}

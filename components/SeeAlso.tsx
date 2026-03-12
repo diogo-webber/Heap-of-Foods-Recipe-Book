@@ -19,7 +19,7 @@ export default function SeeAlso({
   const { t } = useTranslation();
 
   return (
-    <div className="flex items-center justify-center gap-3 mt-4 pt-4 border-t border-zinc-200 dark:border-zinc-700">
+    <div className="flex items-center justify-center gap-3 mt-4 pt-4 border-t-4 border-zinc-200 dark:border-zinc-700">
       <span className="text-sm font-semibold text-zinc-500 dark:text-zinc-400">
         {t("seealso.label")}:
       </span>

@@ -35,6 +35,7 @@ local kyno_foods =
 		oneatenfn = function(inst, eater)
 
 		end,
+		characterfood = {"winona"},
 	},
 	
 	bisque =
@@ -132,6 +133,7 @@ local kyno_foods =
 		oneatenfn = function(inst, eater)
 			OnFoodNaughtiness(inst, eater)
 		end,
+		characterfood = {"wes"},
 	},
 	
 	tropicalbouillabaisse =
@@ -201,6 +203,7 @@ local kyno_foods =
 			{ items = { "kyno_beanbugs" }, amount = 3 },
 			{ items = { "smallmeat" }, amount = 1 },
 		},
+		characterfood = {"willow"},
 	},
 	
 	gummy_cake =
@@ -231,6 +234,7 @@ local kyno_foods =
 			{ items = { "kyno_gummybug" }, amount = 1 },
 			{ items = { "honey" }, amount = 3 },
 		},
+		characterfood = {"wormwood"},
 	},
 	
 	hardshell_tacos =
@@ -293,6 +297,7 @@ local kyno_foods =
 			{ items = { "honey" }, amount = 1 },
 			{ items = { "ice" }, amount = 1 },
 		},
+		characterfood = {"wendy"},
 	},
 	
 	tea = 
@@ -326,6 +331,7 @@ local kyno_foods =
 			{ items = { "kyno_tealeaf" }, amount = 2 },
 			{ items = { "honey" }, amount = 2 },
 		},
+		characterfood = {"wickerbottom"},
 	},
 	
 	nettlelosange = 
@@ -708,6 +714,7 @@ local kyno_foods =
 			{ items = { "potato" }, amount = 3 },
 			{ items = { "succulent_picked" }, amount = 1 },
 		},
+		characterfood = {"wolfgang"},
 	},
 	
 	gorge_fishball_skewers = 
@@ -1053,6 +1060,7 @@ local kyno_foods =
 			{ items = { "littlebread" }, amount = 1 },
 			{ items = { "foliage" }, amount = 1 },
 		},
+		characterfood = {"woodie"},
 	},
 	
 	gorge_jelly_roll = 
@@ -1631,6 +1639,7 @@ local kyno_foods =
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_hastebuff", "kyno_hastebuff")
         end,
+		characterfood = {"wanda"},
 	},
 	
 	gorge_bread_pudding = 
@@ -2024,6 +2033,7 @@ local kyno_foods =
 			{ items = { "carrot" }, amount = 1 },
 			{ items = { "kyno_spotspice" }, amount = 1 },
 		},
+		characterfood = {"wathgrithr"},
 	},
 	
 	gorge_steak_frites =
@@ -2053,6 +2063,7 @@ local kyno_foods =
 			{ items = { "meat" }, amount = 2 },
 			{ items = { "potato" }, amount = 2 },
 		},
+		characterfood = {"wilson"},
 	},
 	
 	gorge_shooter_sandwich =
@@ -2185,6 +2196,7 @@ local kyno_foods =
 			{ items = { "kyno_white_cap" }, amount = 1 },
 			{ items = { "kyno_flour" }, amount = 1 },
 		},
+		characterfood = {"waxwell"},
 	},
 	
 	gorge_crab_ravioli =
@@ -2561,6 +2573,7 @@ local kyno_foods =
 		oneatenfn = function(inst, eater)
 
 		end,
+		characterfood = {"wx78"},
 	},
 	
 	longpigmeal = 
@@ -3709,6 +3722,7 @@ local kyno_foods =
 			{ items = { "kyno_sugar" }, amount = 3 },
 			{ items = { "twigs" }, amount = 1 },
 		},
+		characterfood = {"webber"},
 	},
 	
 	roastedhazelnuts =
@@ -3779,10 +3793,6 @@ local kyno_foods =
 				eater.components.sanity:DoDelta(15)
 			end
 		end,
-		mermfood = true,
-		mermhealth = 10,
-		mermhunger = 67,
-		mermsanity = 15,
 		monsterfood = true,
 		monsterhealth = 10,
 		monstersanity = 15,
@@ -3980,6 +3990,7 @@ local kyno_foods =
 			{ items = { "goatmilk" }, amount = 1 },
 			{ items = { "honey" }, amount = 1 },
 		},
+		characterfood = {"wonkey"},
 	},
 	
 	sea_pudding =
@@ -4218,10 +4229,6 @@ local kyno_foods =
 				eater.components.sanity:DoDelta(15)
 			end
 		end,
-		mermfood = true,
-		mermhealth = 5,
-		mermhunger = 65,
-		mermsanity = 15,
 		monsterfood = true,
 		monsterhealth = 5,
 		monstersanity = 15,
@@ -4264,11 +4271,9 @@ local kyno_foods =
 				eater.components.health:DoDelta(15)
 			end
 		end,
-		mermfood = true,
-		mermhealth = 15,
-		mermhunger = 75,
 		monsterfood = true,
 		monsterhealth = 15,
+		monstersanity = 0,
 	},
 	
 	durianmeated =
@@ -4353,9 +4358,9 @@ local kyno_foods =
 				eater.components.sanity:DoDelta(30)
 			end
 		end,
+		characterfood = {"wurt"},
 		mermfood = true,
 		mermhealth = 10,
-		mermhunger = 90,
 		mermsanity = 30,
 		monsterfood = true,
 		monsterhealth = 10,
@@ -4955,6 +4960,7 @@ local kyno_foods =
 			{ items = { "kyno_flour" }, amount = 1 },
 			{ items = { "chocolate_black" }, amount = 1 },
 		},
+		characterfood = {"walter"},
 	},
 	
 	moonbutterflymuffin =
@@ -5523,6 +5529,7 @@ local kyno_foods =
 			{ items = { "kyno_flour" }, amount = 1 },
 			{ items = { "twigs" }, amount = 1 },
 		},
+		characterfood = {"wortox"},
 	},
 	
 	pineapplecake =

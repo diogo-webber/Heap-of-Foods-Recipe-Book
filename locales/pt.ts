@@ -1,6 +1,13 @@
 const pt = {
   main: {
+    title: "Heap of Foods",
+    subtitle: "O Livro de Receitas",
+    description: "Um livro de receitas completo para o Mod Heap of Foods!",
+    randomrecipe: "Receita Aleatória",
     close: "Retornar",
+    previous: "Anterior",
+    browsecategory: "...ou navegue por uma das categorias:",
+    next: "Próximo",
     backtotop: "Retornar ao Topo",
     cookpot: "Panela",
     cookpot_warly: "Especiais do Chef",
@@ -12,10 +19,15 @@ const pt = {
 
   search: {
     title: {
+      everything: "Pesquisar receita ou ingrediente...",
       recipe: "Pesquisar receita...",
       ingredient: "Pesquisar ingrediente...",
     },
-    notfound: "Nenhuma receita com este nome foi encontrada.",
+    notfound: {
+      everything: "Nenhuma receita ou ingrediente com este nome foi encontrado.",
+      recipe: "Nenhuma receita com este nome foi encontrada.",
+      ingredient: "Nenhum ingrediente com este nome foi encontrado.",
+    },
   },
 
   settings: {
@@ -25,12 +37,41 @@ const pt = {
       light: "Tema Claro",
     },
     lang: "Idioma",
+    backtopage: "Voltar para Página Anterior",
+  },
+
+  pages: {
+    home: {
+      title: "Inicio",
+    },
+    cookpot: {
+      title: "Panela",
+    },
+    cookpot_warly: {
+      title: "Especiais do Chefe",
+    },
+    cookpot_keg: {
+      title: "Barril de Madeira",
+    },
+    cookpot_jar: {
+      title: "Jarra de Conserva",
+    },
+    cookpot_seasonal: {
+      title: "Sazonais",
+    },
+    ingredients: {
+      title: "Ingredientes",
+    },
+    settings: {
+      title: "Configurações",
+    },
   },
 
   footer: {
     backtotop: "Retornar ao Topo",
     mainpage: "Página Principal",
     discord: "Entre em nosso Discord",
+    download: "Baixe o Mod",
     workshop: "Página da Oficina",
     kofi: "Me Apoie!",
     description: `Heap of Foods é um mod para o Don't Starve Together feito por Kyno.
@@ -56,8 +97,9 @@ const pt = {
     foodtype: "Tipos de Receita",
     cooktype: "Tipos de Ingrediente",
     debuff: {
-      title: "Efeito Especiais",
-      hasdebuff: "Possui Efeito Especial",
+      title: "Miscelânea",
+      hasdebuff: "Efeito Especial",
+      characterfood: "Comida Favorita",
     },
     event: "Evento Especial",
     clear: "Limpar Todos Filtros",
@@ -84,6 +126,67 @@ const pt = {
     clear: "Resetar para Padrão",
   },
 
+  characterfood: {
+    wilson: "Favorito do Wilson",
+    willow: "Favorito da Willow",
+    wolfgang: "Favorito do Wolfgang",
+    wendy: "Favorito da Wendy",
+    wx78: "Favorito de WX-78",
+    wickerbottom: "Favorito da Wickerbottom",
+    woodie: "Favorito do Woodie",
+    waxwell: "Favorito do Maxwell",
+    wes: "Favorito do Wes",
+    wathgrithr: "Favorito da Wigfrid",
+    webber: "Favorito do Webber",
+    winona: "Favorito da Winona",
+    wortox: "Favorito do Wortox",
+    wormwood: "Favorito do Wormwood",
+    warly: "Favorito do Warly",
+    wurt: "Favorito da Wurt",
+    walter: "Favorito do Walter",
+    wanda: "Favorito da Wanda",
+    wonkey: "Favorito de Wonkey",
+  },
+
+  card: {
+    alternative: "ou",
+    ingredients: {
+      required: "Requisitos",
+      excluded: "Restrições",
+      no_excluded: "Nenhuma Restrição",
+      example: "Exemplo",
+      info: {
+        state_title: "Estado dos Ingredientes",
+        state_p1: "Os ingredientes usados nas receitas podem estar crus ou cozidos.",
+        state_p2: "Se uma receita não especifica o estado do ingrediente, significa que tanto a versão crua quanto a cozida são válidas e podem ser usadas indistintamente.",
+        state_p3: "No entanto, se a receita exigir explicitamente a versão cozida, então a versão crua não contará para cumprir o requisito da receita.",
+
+        excluded_title: "Limites de Ingredientes Excluídos",
+        excluded_p1: "Algumas receitas podem listar ingredientes excluídos com limites de valor.",
+        excluded_p2: "1.0+ significa que o ingrediente não pode ser usado mais de uma vez. Se o valor total for maior que isso, a receita irá falhar.",
+        excluded_p3: "<1.0 significa que o ingrediente deve ser usado em uma quantidade menor que um valor completo. Por exemplo, valores como 0.50 ou 0.25 são aceitáveis, mas 1.0 ou mais não atenderá ao requisito.",
+        learn_more: "Saiba Mais",
+      },
+    },
+    values: {
+      raw: "Valores do Ingrediente Cru",
+      cooked: "Valores do Ingrediente Assado",
+      dried: "Valores do Ingrediente Seco",
+    },
+    temperature: {
+      hot: "Quente",
+      cold: "Frio",
+      none: "Nenhuma",
+    },
+    debuff: {
+      hasEffect: "Efeito Especial"
+    },
+    event: {
+      xmas: "Banquete de Inverno",
+      halloween: "Noites Assombrosas",
+    },
+  },
+
   tooltips: {
     health: "Vida",
     hunger: "Fome",
@@ -95,7 +198,8 @@ const pt = {
     temperature: "Temperatura",
     foodtype: "Tipo da Receita",
     cooktype: "Tipo do Ingrediente",
-    debuff: "Efeito Especial",
+    debuff: "Efeito Temporário",
+    characterfood: "Comida Favorita",
     event: "Evento Especial",
   },
 
@@ -189,45 +293,6 @@ const pt = {
     preserved: "20 Dias",
     superslow: "40 Dias",
     never: "Nunca",
-  },
-
-  card: {
-    alternative: "ou",
-    ingredients: {
-      required: "Requisitos",
-      excluded: "Restrições",
-      no_excluded: "Nenhuma Restrição",
-      example: "Exemplo",
-      info: {
-        state_title: "Estado dos Ingredientes",
-        state_p1: "Os ingredientes usados nas receitas podem estar crus ou cozidos.",
-        state_p2: "Se uma receita não especifica o estado do ingrediente, significa que tanto a versão crua quanto a cozida são válidas e podem ser usadas indistintamente.",
-        state_p3: "No entanto, se a receita exigir explicitamente a versão cozida, então a versão crua não contará para cumprir o requisito da receita.",
-
-        excluded_title: "Limites de Ingredientes Excluídos",
-        excluded_p1: "Algumas receitas podem listar ingredientes excluídos com limites de valor.",
-        excluded_p2: "1.0+ significa que o ingrediente não pode ser usado mais de uma vez. Se o valor total for maior que isso, a receita irá falhar.",
-        excluded_p3: "<1.0 significa que o ingrediente deve ser usado em uma quantidade menor que um valor completo. Por exemplo, valores como 0.50 ou 0.25 são aceitáveis, mas 1.0 ou mais não atenderá ao requisito.",
-        learn_more: "Saiba Mais",
-      },
-    },
-    values: {
-      raw: "Valores do Ingrediente Cru",
-      cooked: "Valores do Ingrediente Assado",
-      dried: "Valores do Ingrediente Seco",
-    },
-    temperature: {
-      hot: "Quente",
-      cold: "Frio",
-      none: "Nenhuma",
-    },
-    debuff: {
-      hasEffect: "Efeito Especial"
-    },
-    event: {
-      xmas: "Banquete de Inverno",
-      halloween: "Noites Assombrosas",
-    },
   },
 
   recipes: {

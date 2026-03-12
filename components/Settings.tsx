@@ -1,14 +1,17 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import { t, useTranslation, type Locale } from "@/lib/i18n";
+import { usePageTitle } from "@/components/PageTitle";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSun,
   faMoon,
   faLanguage,
   faChevronDown,
+  faArrowRightFromBracket
 } from "@fortawesome/free-solid-svg-icons";
 
 interface SettingsProps {
@@ -55,9 +58,11 @@ export default function Settings({
 
   const currentLang = LANGUAGES.find((l) => l.code === language);
 
+  usePageTitle(t("pages.settings.title")); 
+
   return (
-    <div className="min-h-screen bg-zinc-300 dark:bg-zinc-950 text-zinc-900 dark:text-white flex flex-col items-center p-8 pt-24">
-      <h1 className="text-4xl font-bold mb-8">
+    <div className="min-h-screen bg-zinc-300 dark:bg-zinc-800 text-zinc-900 dark:text-white flex flex-col items-center p-8 pt-20">
+      <h1 className="text-4xl font-bold mb-8 drop-shadow-md">
         {t("settings.title") || "Settings"}
       </h1>
 
@@ -86,6 +91,9 @@ export default function Settings({
         {/* LANGUAGE CARD */}
         <div className="relative" ref={langRef}>
           <label className="font-bold mb-2 flex items-center gap-2">
+            <FontAwesomeIcon
+              icon={faLanguage}
+            />
             {t("settings.lang")}
           </label>
           <button
@@ -101,7 +109,7 @@ export default function Settings({
 
           {/* LANGUAGE DROPDOWN */}
           {langOpen && (
-            <div className="absolute top-full left-0 w-full mt-1 bg-zinc-200 dark:bg-zinc-800 rounded-lg overflow-hidden shadow-lg z-50">
+            <div className="absolute top-full left-0 w-full mt-1 bg-zinc-200 dark:bg-zinc-900 rounded-lg overflow-hidden shadow-lg z-50">
               {LANGUAGES.map((lang) => (
                 <button
                   key={lang.code}
@@ -115,6 +123,25 @@ export default function Settings({
           )}
         </div>
       </div>
+      <button
+        onClick={() => window.history.back()}
+        className="
+        font-bold
+        mt-5 z-10 px-6 py-3 bg-zinc-100 
+        dark:bg-zinc-900 text-zinc-900 
+        dark:text-white rounded-lg 
+        hover:bg-zinc-200 dark:hover:bg-zinc-700 
+        transition relative shadow-md
+        cursor-pointer
+        flex items-center gap-2
+        "
+      >
+        <FontAwesomeIcon
+          icon={faArrowRightFromBracket}
+          className="rotate-180"
+        />
+        {t("settings.backtopage")}
+      </button>
     </div>
   );
 }

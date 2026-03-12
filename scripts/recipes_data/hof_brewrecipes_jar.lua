@@ -37,6 +37,7 @@ local kyno_foods_jar =
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_hungerregenbuff", "kyno_hungerregenbuff")
         end,
+		characterfood = {"webber"},
 	},
 	
 	mayonnaise_chicken = 
@@ -74,6 +75,7 @@ local kyno_foods_jar =
         oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_hungerregenbuff", "kyno_hungerregenbuff")
         end,
+		characterfood = {"walter"},
 	},
 	
 	mayonnaise_tallbird = 
@@ -185,6 +187,7 @@ local kyno_foods_jar =
 		oneatenfn = function(inst, eater)
             eater:AddDebuff("kyno_hungerregenbuff", "kyno_hungerregenbuff")
         end,
+		characterfood = {"wes"},
 	},
 	
 	butter_beefalo =
@@ -337,6 +340,7 @@ local kyno_foods_jar =
 		oneatenfn = function(inst, eater)
 
 		end,
+		characterfood = {"waxwell"},
 	},
 
 	jelly_berries = 
@@ -427,6 +431,7 @@ local kyno_foods_jar =
 			{ items = { "pomegranate" }, amount = 2 },
 			{ items = { "honey" }, amount = 1 },
 		},
+		characterfood = {"wortox"},
 	},
 	
 	jelly_dragonfruit = 
@@ -488,6 +493,7 @@ local kyno_foods_jar =
 			{ items = { "kyno_banana" }, amount = 2 },
 			{ items = { "honey" }, amount = 1 },
 		},
+		characterfood = {"wonkey"},
 	},
 	
 	jelly_cave_banana = 
@@ -519,6 +525,7 @@ local kyno_foods_jar =
 			{ items = { "cave_banana" }, amount = 2 },
 			{ items = { "honey" }, amount = 1 },
 		},
+		characterfood = {"wonkey"},
 	},
 	
 	jelly_durian = 
@@ -558,9 +565,9 @@ local kyno_foods_jar =
 				eater.components.sanity:DoDelta(20)
 			end
 		end,
+		characterfood = {"wurt"},
 		mermfood = true,
 		mermhealth = 5,
-		mermhunger = 70,
 		mermsanity = 20,
 		monsterfood = true,
 		monsterhealth = 5,
@@ -625,6 +632,7 @@ local kyno_foods_jar =
 			{ items = { "fig" }, amount = 2 },
 			{ items = { "honey" }, amount = 1 },
 		},
+		characterfood = {"wendy"},
 	},
 	
 	jelly_glowberry = 
@@ -749,6 +757,7 @@ local kyno_foods_jar =
 			{ items = { "kyno_kokonut_halved" }, amount = 2 },
 			{ items = { "honey" }, amount = 1 },
 		},
+		characterfood = {"wormwood"},
 	},
 	
 	jelly_pineapple =
@@ -1021,6 +1030,7 @@ local kyno_foods_jar =
 			{ items = { "pepper" }, amount = 2 },
 			{ items = { "kyno_spotspice" }, amount = 1 },
 		},
+		characterfood = {"willow"},
 	},
 
 	pickles_tomato = 
@@ -1081,6 +1091,7 @@ local kyno_foods_jar =
 			{ items = { "potato" }, amount = 2 },
 			{ items = { "kyno_spotspice" }, amount = 1 },
 		},
+		characterfood = {"wolfgang"},
 	},
 
 	pickles_asparagus = 

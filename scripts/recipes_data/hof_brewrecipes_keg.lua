@@ -34,6 +34,7 @@ local kyno_foods_keg =
 		oneatenfn = function (inst, eater)
 			eater:AddDebuff("kyno_strengthbuff", "kyno_strengthbuff")
 		end,
+		characterfood = {"woodie"},
 	},
 
 	paleale =
@@ -70,6 +71,7 @@ local kyno_foods_keg =
 		oneatenfn = function (inst, eater)
 			eater:AddDebuff("kyno_strengthbuff_med", "kyno_strengthbuff_med")
 		end,
+		characterfood = {"winona"},
 	},
 
 	mead =
@@ -107,6 +109,7 @@ local kyno_foods_keg =
 		oneatenfn = function (inst, eater)
 			eater:AddDebuff("kyno_dmgreductionbuff", "kyno_dmgreductionbuff")
 		end,
+		characterfood = {"wathgrithr"},
 	},
 
 	teagreen =
@@ -143,6 +146,7 @@ local kyno_foods_keg =
         oneatenfn = function(inst, eater)
 			eater:AddDebuff("kyno_sanityregenbuff", "kyno_sanityregenbuff")
         end,
+		characterfood = {"wickerbottom"},
 	},
 
 	teared =
@@ -304,6 +308,7 @@ local kyno_foods_keg =
 				end
 			end
 		end,
+		characterfood = {"wanda"},
 	},
 
 	nukacola_quantum =
@@ -906,6 +911,7 @@ local kyno_foods_keg =
 			{ items = { "dragonfruit" }, amount = 2 },
 			{ items = { "ice" }, amount = 1 },
 		},
+		characterfood = {"wilson"},
 	},
 
 	wine_banana =
@@ -1010,10 +1016,7 @@ local kyno_foods_keg =
 				eater.components.sanity:DoDelta(40)
 			end
 		end,
-		mermfood = true,
-		mermhealth = 5,
-		mermhunger = 70,
-		mermsanity = 40,
+		characterfood = {"wurt"},
 		monsterfood = true,
 		monsterhealth = 5,
 		monstersanity = 40,

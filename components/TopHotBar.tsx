@@ -3,10 +3,14 @@
 import { useTranslation } from "@/lib/i18n";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faGear, faUtensils } from "@fortawesome/free-solid-svg-icons";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 export default function TopHotBar() {
   const { t, locale } = useTranslation();
+  const pathname = usePathname();
+
+  if (pathname === "/") return null;
 
   return (
     <div 
@@ -58,7 +62,7 @@ export default function TopHotBar() {
 
         <Link href="/ingredients">
           <button className="flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
-            <img src="/icons/ingredients/ingredient_flour.png" className="w-6 h-6 object-contain"/>
+            <img src="/icons/misc/icon_ingredients.png" className="w-6 h-6 object-contain"/>
             {t("main.ingredients")}
           </button>
         </Link>

@@ -2,7 +2,11 @@
 
 import { useState, useMemo, useRef, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n";
+import { usePageTitle } from "@/components/PageTitle";
+import { useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import ingredients from "@/data/ingredients.json";
+import Fuse from "fuse.js";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,6 +15,9 @@ import {
   faFilterCircleXmark,
   faArrowDownAZ,
   faCircleChevronUp,
+  faCircleChevronDown,
+  faCircleChevronLeft,
+  faCircleChevronRight,
   faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -75,6 +82,8 @@ const SortOption = ({ value, label, current, onChange }: SortOptionProps) => (
 
 export default function Ingredients() {
   const { t } = useTranslation();
+
+  usePageTitle(t("pages.ingredients.title")); 
 
   const SPOILAGE_LABELS = useMemo(
     () => ({
@@ -202,16 +211,13 @@ export default function Ingredients() {
     return arr;
   }, [filteredIngredients, sortType, sortDirection, t]);
 
-  // SEARCHED INGREDIENTS
-  const searchedIngredients = useMemo(() => {
-    if (!search.trim()) return [];
-
-    const expanded = sortedIngredients.flatMap((ingredient: any) => {
+  const expandedIngredients = useMemo(() => {
+    return sortedIngredients.flatMap((ingredient: any) => {
       const list = [
         {
           ...ingredient,
           variant: "normal",
-          searchName: t(`ingredients.${ingredient.name}`),
+          label: t(`ingredients.${ingredient.name}`),
         },
       ];
 
@@ -219,7 +225,7 @@ export default function Ingredients() {
         list.push({
           ...ingredient,
           variant: "cooked",
-          searchName: t(`ingredients.${ingredient.name}_cooked`),
+          label: t(`ingredients.${ingredient.name}_cooked`),
         });
       }
 
@@ -227,19 +233,32 @@ export default function Ingredients() {
         list.push({
           ...ingredient,
           variant: "dried",
-          searchName: t(`ingredients.${ingredient.name}_dried`),
+          label: t(`ingredients.${ingredient.name}_dried`),
         });
       }
 
       return list;
     });
+  }, [sortedIngredients, t]);
 
-    return expanded
-      .filter((item: any) =>
-        item.searchName.toLowerCase().includes(search.toLowerCase()),
-      )
-      .slice(0, 8);
-  }, [search, sortedIngredients, t]);
+  // FUZZY SEARCH
+  const fuse = useMemo(() => {
+    return new Fuse(expandedIngredients, {
+      keys: ["label"],
+      threshold: 0.4,
+      ignoreLocation: true,
+    });
+  }, [expandedIngredients]);
+
+  // SEARCHED INGREDIENTS
+  const searchedIngredients = useMemo(() => {
+    if (!search.trim()) return [];
+
+    return fuse
+      .search(search)
+      .slice(0, 8)
+      .map((result) => result.item);
+  }, [search, fuse]);
 
   // OUTSIDE CLICK
   useEffect(() => {
@@ -336,11 +355,76 @@ export default function Ingredients() {
     setTimeout(() => setSelected(ingredient), 300);
   };
 
+  const selectedIndex = useMemo(() => {
+    if (!selected) return -1;
+    return sortedIngredients.findIndex(r => r.name === selected.name);
+  }, [selected, sortedIngredients]);
+
+  const goNext = () => {
+    if (selectedIndex < sortedIngredients.length - 1) {
+      setSelected(sortedIngredients[selectedIndex + 1]);
+    }
+  };
+
+  const goPrev = () => {
+    if (selectedIndex > 0) {
+      setSelected(sortedIngredients[selectedIndex - 1]);
+    }
+  };
+
+  useEffect(() => {
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === "Escape") setSelected(null);
+      if (e.key === "ArrowRight") goNext();
+      if (e.key === "ArrowLeft") goPrev();
+    }
+
+    if (selected) {
+      document.addEventListener("keydown", handleKeyDown);
+    }
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [selected, selectedIndex]);
+
+  const searchParams = useSearchParams();
+  const ingredientParam = searchParams.get("ingredient");
+  
+  useEffect(() => {
+    if (ingredientParam) {
+      const ingredient = sortedIngredients.find(r => r.name === ingredientParam);
+      if (ingredient) {
+        setSelected(ingredient);
+        const element = document.getElementById(`ingredient-${ingredient.name}`);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+    }
+  }, [ingredientParam, sortedIngredients]);
+
+  const router = useRouter();
+
+  useEffect(() => {
+    if (ingredientParam) {
+      const ingredient = sortedIngredients.find(r => r.name === ingredientParam);
+      if (ingredient) {
+        setSelected(ingredient);
+        const element = document.getElementById(`ingredient-${ingredient.name}`);
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+      router.replace("/ingredients", { scroll: false });
+    }
+  }, [ingredientParam, sortedIngredients]);
+
   return (
-    <div className="bg-zinc-300 dark:bg-zinc-950 text-zinc-900 dark:text-white min-h-screen">
-      <div className="max-w-full pt-16 pb-1"></div>
+    <div className="bg-zinc-300 dark:bg-zinc-800 text-zinc-900 dark:text-white min-h-screen">
+      <div className="max-w-full pt-14"></div>
       {/* STICKY SEARCH + FILTER + SORT + BACK TO TOP */}
-      <div className="sticky top-14 z-40 bg-zinc-300 dark:bg-zinc-950 shadow-md">
+      <div className="sticky top-14 z-40 bg-zinc-300 dark:bg-zinc-800 shadow-md">
         <div className="max-w-4xl mx-auto p-2 flex flex-row items-center justify-center gap-3">
           {/* SEARCH - Agora alinhado horizontalmente */}
           <div className="relative w-full max-w-sm">
@@ -394,7 +478,7 @@ export default function Ingredients() {
                 <div className="max-h-80 overflow-y-auto overscroll-contain">
                   {searchedIngredients.length === 0 && (
                     <div className="px-4 py-3 text-sm text-zinc-500 dark:text-white italic">
-                      {t("search.notfound")}
+                      {t("search.notfound.ingredient")}
                     </div>
                   )}
                   {searchedIngredients.map((ingredient, idx) => (
@@ -412,7 +496,7 @@ export default function Ingredients() {
                         className="w-10 h-10 object-contain"
                       />
                       <span className="text-sm font-semibold">
-                        {ingredient.searchName}
+                        {ingredient.label}
                       </span>
                     </div>
                   ))}
@@ -428,7 +512,7 @@ export default function Ingredients() {
             <div className="relative group">
               <button
                 onClick={() => setFiltersOpen(!filtersOpen)}
-                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                className="bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faFilter} />
               </button>
@@ -444,7 +528,7 @@ export default function Ingredients() {
             <div className="relative group">
               <button
                 onClick={() => setSortingOpen(!sortingOpen)}
-                className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                className="bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faArrowDownAZ} />
               </button>
@@ -463,7 +547,7 @@ export default function Ingredients() {
                   onClick={() =>
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }
-                  className="bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                  className="bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
                 >
                   <FontAwesomeIcon icon={faCircleChevronUp} />
                 </button>
@@ -689,8 +773,43 @@ export default function Ingredients() {
               className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
               onClick={() => setSelected(null)}
             >
+              <div className="flex items-center gap-6">
+                {/* PREVIOUS */}
+                {selectedIndex > 0 && (
+                  <div
+                    className="p-8 flex items-center justify-center"
+                    onClick={(e) => e.stopPropagation()}
+                  >
+                    <div className="relative group">
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          goPrev();
+                        }}
+                        className="text-5xl text-white hover:text-white/80 dark:text-white/70 dark:hover:text-white/90 transition cursor-pointer"
+                      >
+                        <FontAwesomeIcon icon={faCircleChevronLeft} />
+                      </button>
+                      <div
+                        className="
+                        absolute bottom-full mb-2
+                        left-1/2 -translate-x-1/2
+                        hidden group-hover:block
+                        bg-black text-white dark:bg-white dark:text-black
+                        text-xs font-semibold
+                        px-3 py-1 rounded
+                        whitespace-nowrap
+                        shadow-lg
+                        "
+                      >
+                        {t("main.previous")}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
               <div
-                className="bg-white dark:bg-zinc-900 rounded-2xl p-8 w-[750px] relative shadow-xl dark:shadow-none"
+                className="bg-white dark:bg-zinc-900 rounded-2xl p-8 w-[750px] relative shadow-xl dark:shadow-none scale-95"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex justify-end">
@@ -795,6 +914,39 @@ export default function Ingredients() {
                   </div>
                 ))}
               </div>
+              {/* NEXT */}
+              {selectedIndex < sortedIngredients.length - 1 && (
+                <div
+                  className="p-8 flex items-center justify-center"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="relative group">
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        goNext();
+                      }}
+                      className="text-5xl text-white hover:text-white/80 dark:text-white/70 dark:hover:text-white/90 transition cursor-pointer"
+                    >
+                      <FontAwesomeIcon icon={faCircleChevronRight} />
+                    </button>
+                    <div
+                      className="
+                      absolute bottom-full mb-2
+                      left-1/2 -translate-x-1/2
+                      hidden group-hover:block
+                      bg-black text-white dark:bg-white dark:text-black
+                      text-xs font-semibold
+                      px-3 py-1 rounded
+                      whitespace-nowrap
+                      shadow-lg
+                      "
+                    >
+                      {t("main.next")}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           );
         })()}
