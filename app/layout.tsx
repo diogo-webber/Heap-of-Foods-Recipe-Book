@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Heap of Foods - Recipe Book",
+  // title: "Heap of Foods - Recipe Book",
   description: "A complete recipes sheet for the Heap of Foods Mod!",
   keywords: ["Don't Starve Together", "Heap of Foods", "Heaps of Food", "Heaps of Foods", "HoF", "Kyno"],
   authors: [{ name: "Kyno" }],

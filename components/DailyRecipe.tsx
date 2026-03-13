@@ -34,9 +34,6 @@ interface FoodTypeProps {
 export default function DailyRecipe() {
   const { t } = useTranslation();
 
-  const ROTATION_HOURS = 200; // 200 = 10 sec for easy test.
-  const ROTATION_MS = ROTATION_HOURS * 60 //* 60 * 1000;
-
   const allRecipes = [
     ...recipes.map(r => ({ ...r, prefix: "recipes", icon: "foods_cookpot", source: "cookpot" })),
     ...recipes_warly.map(r => ({ ...r, prefix: "recipes_warly", icon: "foods_cookpot_warly", source: "warly" })),
@@ -85,8 +82,12 @@ export default function DailyRecipe() {
     return x - Math.floor(x);
   }
 
+  const ROTATION_HOURS = 24; // 200 = 10 sec for easy test.
+  const ROTATION_MS = ROTATION_HOURS * 60 * 60 * 1000;
+
   function getDailyRecipe() {
-    const seed = Math.floor(now / ROTATION_MS);
+    const OFFSET_MS = 0;
+    const seed = Math.floor((now + OFFSET_MS) / ROTATION_MS);
     const random = seededRandom(seed);
     const index = Math.floor(random * allRecipes.length);
     return allRecipes[index];
