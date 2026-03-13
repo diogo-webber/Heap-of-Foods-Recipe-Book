@@ -1101,7 +1101,7 @@ function TopEffect({ icon, value, tooltip, enableTooltip = true }: any) {
             bg-black text-white text-xs dark:bg-white dark:text-black
             px-3 py-1 rounded
             shadow-lg z-50
-            whitespace-nowrap
+            whitespace-nowrap max-w-xs sm:max-w-md md:max-w-lg
           "
         >
           {tooltip}

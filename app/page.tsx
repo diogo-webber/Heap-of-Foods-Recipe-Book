@@ -3,6 +3,7 @@
 import { useState, useMemo, useEffect, useRef } from "react";
 import { useTranslation } from "@/lib/i18n";
 import { usePageTitle } from "@/components/PageTitle";
+import { useRouter } from "next/navigation";
 import RandomRecipe from "../components/RandomRecipe";
 import DailyRecipe from "../components/DailyRecipe";
 
@@ -27,6 +28,7 @@ import Fuse from "fuse.js";
 
 export default function HomePage() {
   const { t } = useTranslation();
+  const router = useRouter();
 
   usePageTitle(t("pages.home.title"));
 
@@ -47,7 +49,7 @@ export default function HomePage() {
       const query = item.name;
 
       if (currentPath !== "/ingredients") {
-        window.location.href = `/ingredients?ingredient=${query}`;
+        router.push(`/ingredients?ingredient=${query}`);
       } else {
         const element = document.getElementById(`ingredient-${query}`);
         if (element) {
@@ -66,7 +68,7 @@ export default function HomePage() {
       const page = recipePageMap[item.type] || "/recipes_cookpot";
 
       if (currentPath !== page) {
-        window.location.href = `${page}?recipe=${item.name}`;
+        router.push(`${page}?recipe=${item.name}`);
       } else {
         const element = document.getElementById(`recipe-${item.name}`);
         if (element) {
@@ -418,7 +420,7 @@ function LocalButton({ icon, label, href }: any) {
     <a
       href={href}
       className="
-      bg-zinc-100 dark:bg-zinc-900
+        bg-zinc-100 dark:bg-zinc-900
       px-6 py-4
       rounded-xl
       flex items-center gap-3

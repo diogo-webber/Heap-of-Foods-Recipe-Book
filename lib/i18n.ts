@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext, createContext } from "react"
 import en from "@/locales/en"
 import pt from "@/locales/pt"
 
@@ -7,24 +7,30 @@ export type Locale = "en" | "pt"
 
 const locales = { en, pt }
 
-let currentLocale: Locale = (() => {
-  if (typeof window !== "undefined") {
-    const saved = localStorage.getItem("lang")
-    if (saved === "en" || saved === "pt") return saved
-  }
-  return "en"
-})()
+// Contexto para gerenciar locale globalmente
+const LocaleContext = createContext<Locale>("en")
+
+let currentLocale: Locale = "en"
 let listeners: (() => void)[] = []
 
 export function setLocale(locale: Locale) {
   currentLocale = locale
+  if (typeof window !== "undefined") {
+    localStorage.setItem("lang", locale)
+  }
   listeners.forEach((fn) => fn())
 }
 
+export function getLocale(): Locale {
+  return currentLocale
+}
+
 export function t(path: string, params?: Record<string, string | number>): string {
+  // Usa o locale global que foi sincronizado
+  const activeLocale = currentLocale
   const keys = path.split(".")
 
-  let result: any = locales[currentLocale]
+  let result: any = locales[activeLocale]
   for (const key of keys) {
     result = result?.[key]
   }
@@ -50,15 +56,29 @@ export function t(path: string, params?: Record<string, string | number>): strin
 
 // HOOK
 export function useTranslation() {
-  const [locale, setLocaleState] = useState(currentLocale)
+  const [locale, setLocaleState] = useState<Locale>("en")
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    const listener = () => setLocaleState(currentLocale)
+    setIsClient(true)
+    
+    // Sincroniza com o localStorage quando o componente monta
+    const saved = localStorage.getItem("lang")
+    const initialLocale = (saved === "en" || saved === "pt") ? saved : "en"
+    
+    // Atualiza o locale global
+    currentLocale = initialLocale
+    setLocaleState(initialLocale)
+
+    const listener = () => {
+      setLocaleState(getLocale())
+    }
     listeners.push(listener)
+    
     return () => {
       listeners = listeners.filter((l) => l !== listener)
     }
   }, [])
 
-  return { t, locale, setLocale }
+  return { t, locale: isClient ? locale : "en", setLocale }
 }
