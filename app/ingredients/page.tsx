@@ -1,5 +1,6 @@
 "use client";
 
+import { Suspense } from "react";
 import { useState, useMemo, useRef, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n";
 import { usePageTitle } from "@/components/PageTitle";
@@ -84,6 +85,67 @@ export default function Ingredients() {
   const { t } = useTranslation();
 
   usePageTitle(t("pages.ingredients.title")); 
+
+  const SPOILAGE_LABELS = useMemo(
+    () => ({
+      PERISH_ONEDAY: t("spoilagetime.oneday"),
+      PERISH_TWODAY: t("spoilagetime.twoday"),
+      PERISH_FOURDAY: t("spoilagetime.fourday"),
+      PERISH_SUPERFAST: t("spoilagetime.superfast"),
+      PERISH_MEDFAST: t("spoilagetime.medfast"),
+      PERISH_FAST: t("spoilagetime.fast"),
+      PERISH_FASTISH: t("spoilagetime.fastish"),
+      PERISH_MED: t("spoilagetime.med"),
+      PERISH_SLOW: t("spoilagetime.slow"),
+      PERISH_PRESERVED: t("spoilagetime.preserved"),
+      PERISH_SUPERSLOW: t("spoilagetime.superslow"),
+    }),
+    [t],
+  );
+
+  const GetSpoilageLabel = (spoilage: number | undefined) => {
+    if (spoilage == null) return t("spoilagetime.never");
+
+    const entries = Object.entries(PERISH_MAP) as [
+      keyof typeof PERISH_MAP,
+      number,
+    ][];
+    entries.sort((a, b) => a[1] - b[1]);
+    for (const [key, value] of entries) {
+      if (spoilage <= value) return SPOILAGE_LABELS[key];
+    }
+    return SPOILAGE_LABELS.PERISH_SUPERSLOW;
+  };
+
+  const getVariantValue = (value: any, index: number) => {
+    if (Array.isArray(value)) return value[index];
+    return index === 0 ? value : undefined;
+  };
+
+  const [selected, setSelected] = useState<any>(null);
+
+  const [showTopButton, setShowTopButton] = useState(false);
+
+  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [sortingOpen, setSortingOpen] = useState(false);
+
+  const [sortType, setSortType] = useState("default");
+  const [sortDirection, setSortDirection] = useState<"asc" | "desc">("asc");
+
+  const [filterFoodType, setFilterFoodType] = useState<string[]>([]);
+  const [filterCookType, setFilterCookType] = useState<string[]>([]);
+
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <IngredientsContent />
+    </Suspense>
+  );
+}
+
+function IngredientsContent() {
+  const { t } = useTranslation();
+
+  usePageTitle(t("pages.ingredients.title"));
 
   const SPOILAGE_LABELS = useMemo(
     () => ({
