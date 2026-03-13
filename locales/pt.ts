@@ -6,7 +6,7 @@ const pt = {
     randomrecipe: "Receita Aleatória",
     close: "Retornar",
     previous: "Anterior",
-    browsecategory: "...ou navegue por uma das categorias:",
+    browsecategory: "Ou navegue por uma das categorias:",
     next: "Próximo",
     backtotop: "Retornar ao Topo",
     cookpot: "Panela",
@@ -40,12 +40,27 @@ const pt = {
     backtopage: "Voltar para Página Anterior",
   },
 
+  footer: {
+    backtotop: "Retornar ao Topo",
+    mainpage: "Página Principal",
+    discord: "Entre em nosso Discord",
+    download: "Baixe o Mod",
+    workshop: "Página da Oficina",
+    kofi: "Me Apoie!",
+    copyright: "© Copyright {{year}} - Todos os direitos reservados.",
+    description: `Heap of Foods é um mod para o Don't Starve Together feito por Kyno.
+    Este mod não é afiliado com a Klei Entertainment.
+
+    Um obrigado especial para todos que tornaram esse mod possível!`
+  },
+
   pages: {
     home: {
       title: "Inicio",
       daily: {
         title: "Receita do Dia",
         timer: "Próxima Receita em:",
+        details: "Ver mais detalhes",
       },
     },
     cookpot: {
@@ -69,20 +84,6 @@ const pt = {
     settings: {
       title: "Configurações",
     },
-  },
-
-  footer: {
-    backtotop: "Retornar ao Topo",
-    mainpage: "Página Principal",
-    discord: "Entre em nosso Discord",
-    download: "Baixe o Mod",
-    workshop: "Página da Oficina",
-    kofi: "Me Apoie!",
-    copyright: "© Copyright {{year}} - Todos os direitos reservados.",
-    description: `Heap of Foods é um mod para o Don't Starve Together feito por Kyno.
-    Este mod não é afiliado com a Klei Entertainment.
-
-    Um obrigado especial para todos que tornaram esse mod possível!`
   },
   
   time: {

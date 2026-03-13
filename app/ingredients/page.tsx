@@ -426,7 +426,6 @@ export default function Ingredients() {
       {/* STICKY SEARCH + FILTER + SORT + BACK TO TOP */}
       <div className="sticky top-14 z-40 bg-zinc-300 dark:bg-zinc-800 shadow-md">
         <div className="max-w-4xl mx-auto p-1 sm:p-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-          {/* SEARCH - Agora alinhado horizontalmente */}
           <div className="relative w-full max-w-sm">
             <div className="absolute inset-y-0 left-3 flex items-center pointer-events-none text-zinc-500 dark:text-white">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -512,7 +511,7 @@ export default function Ingredients() {
             <div className="relative group">
               <button
                 onClick={() => setFiltersOpen(!filtersOpen)}
-                className="bg-white dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                className="bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faFilter} />
               </button>
@@ -528,7 +527,7 @@ export default function Ingredients() {
             <div className="relative group">
               <button
                 onClick={() => setSortingOpen(!sortingOpen)}
-                className="bg-white dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                className="bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
               >
                 <FontAwesomeIcon icon={faArrowDownAZ} />
               </button>
@@ -547,7 +546,7 @@ export default function Ingredients() {
                   onClick={() =>
                     window.scrollTo({ top: 0, behavior: "smooth" })
                   }
-                  className="bg-white dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
+                  className="bg-zinc-100 dark:bg-zinc-900 hover:bg-zinc-200 dark:hover:bg-zinc-700 px-4 py-3 rounded-xl font-bold flex items-center gap-2 cursor-pointer"
                 >
                   <FontAwesomeIcon icon={faCircleChevronUp} />
                 </button>

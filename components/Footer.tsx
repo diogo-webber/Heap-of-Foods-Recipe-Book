@@ -26,16 +26,6 @@ export function Footer() {
           <div className="flex flex-col items-center gap-3 sm:gap-6">
           <div className="flex items-center gap-3 sm:gap-5">
             <a
-              href="https://discord.gg/jjNr4Vvutn"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 hover:text-grey transition"
-            >
-              <FontAwesomeIcon icon={faDiscord} />
-              {t("footer.discord")}
-            </a>
-
-            <a
               href="https://steamcommunity.com/sharedfiles/filedetails/?id=2334209327"
               target="_blank"
               rel="noopener noreferrer"
@@ -43,6 +33,16 @@ export function Footer() {
             >
               <FontAwesomeIcon icon={faSteam} />
               {t("footer.workshop")}
+            </a>
+
+            <a
+              href="https://discord.gg/jjNr4Vvutn"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 hover:text-grey transition"
+            >
+              <FontAwesomeIcon icon={faDiscord} />
+              {t("footer.discord")}
             </a>
 
             <a

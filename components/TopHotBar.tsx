@@ -26,31 +26,18 @@ export default function TopHotBar() {
   return (
     <div
       key={locale}
-      className="fixed top-0 left-0 w-full z-50 bg-zinc-200 dark:bg-zinc-900 shadow-md flex items-center justify-between p-2">
-      <div className="flex items-center">
-        <Link href="/">
-          <button className="flex items-center gap-2 px-3 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer drop-shadow-md">
-            <FontAwesomeIcon icon={faHouse} className="w-6 h-6" />
-          </button>
-        </Link>
-      </div>
+      className="fixed top-0 left-0 w-full z-50 bg-zinc-200 dark:bg-zinc-900 shadow-md">
+      <div className="flex items-center justify-between p-1 sm:p-2">
+        {/* HOME */}
+        <div className="flex items-center">
+          <Link href="/">
+            <button className="flex items-center gap-2 px-3 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
+              <FontAwesomeIcon icon={faHouse} className="w-6 h-6" />
+            </button>
+          </Link>
+        </div>
 
-      <div className="flex items-center justify-center gap-2 drop-shadow-md">
-        <Link href="/recipes_cookpot">
-          <button className="flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
-            <img src="/icons/misc/icon_cookpot.png" className="w-6 h-6 object-contain"/>
-            {t("main.cookpot")}
-          </button>
-        </Link>
-
-        <Link href="/recipes_warly">
-          <button className="flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
-            <img src="/icons/misc/icon_cookpot_warly.png" className="w-6 h-6 object-contain"/>
-            {t("main.cookpot_warly")}
-          </button>
-        </Link>
-
-        {/* NAV LINKS — desktop only */}
+        {/* NAV LINKS DESKTOP ONLY */}
         <div className="hidden md:flex items-center justify-center gap-1 sm:gap-2">
           {navLinks.map((link) => (
             <Link key={link.href} href={link.href}>
@@ -70,7 +57,7 @@ export default function TopHotBar() {
             </button>
           </Link>
 
-          {/* HAMBURGER — mobile only */}
+          {/* HAMBURGER — MOBILE ONLY */}
           <button
             className="md:hidden flex items-center gap-2 px-3 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer"
             onClick={() => setMenuOpen((prev) => !prev)}
@@ -81,13 +68,19 @@ export default function TopHotBar() {
         </div>
       </div>
 
-      <div className="flex items-center">
-        <Link href="/settings">
-          <button className="flex items-center gap-2 px-3 py-3 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer drop-shadow-md">
-            <FontAwesomeIcon icon={faGear} className="w-6 h-6" />
-          </button>
-        </Link>
-      </div>
+      {/* MOBILE DROPDOWN MENU */}
+      {menuOpen && (
+        <div className="md:hidden flex flex-col gap-1 px-2 pb-2 bg-zinc-200 dark:bg-zinc-900">
+          {navLinks.map((link) => (
+            <Link key={link.href} href={link.href} onClick={() => setMenuOpen(false)}>
+              <button className="w-full flex items-center gap-2 px-3 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 transition font-bold cursor-pointer">
+                <img src={link.icon} className="w-6 h-6 object-contain" />
+                {link.label}
+              </button>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

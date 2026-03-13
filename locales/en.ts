@@ -3,10 +3,10 @@ const en = {
     title: "Heap of Foods",
     subtitle: "The Recipe Book",
     description: "A complete recipes sheet for the Heap of Foods Mod!",
-    randomrecipe: "Random Pick",
+    randomrecipe: "Mystery Pick!",
     close: "Back",
     previous: "Previous",
-    browsecategory: "or browse one of the categories...",
+    browsecategory: "Or browse one of the categories:",
     next: "Next",
     backtotop: "Back to Top",
     cookpot: "Crock Pot",
@@ -47,6 +47,7 @@ const en = {
       daily: {
         title: "Recipe of the Day",
         timer: "Next Recipe in:",
+        details: "See more details",
       },
     },
     cookpot: {

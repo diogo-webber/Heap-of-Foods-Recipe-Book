@@ -70,7 +70,7 @@ export default function RandomRecipe({interval = 500, onSelectItem, }: RandomRec
       onMouseLeave={() => setHovered(false)}
       className="
       flex items-center justify-center
-      gap-2 px-2 sm:px-4 py-1.5 sm:py-2
+      gap-2 px-2 sm:px-4 py-1.5 sm:py-1
       bg-white dark:bg-zinc-900
       rounded-xl
       shadow hover:shadow-lg

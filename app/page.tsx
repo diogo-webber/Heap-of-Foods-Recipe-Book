@@ -160,8 +160,6 @@ export default function HomePage() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const PickDailyRecipe = recipes[Math.floor(Math.random() * recipes.length)];
-
   return (
     <div className="min-h-screen bg-zinc-300 dark:bg-zinc-800 text-zinc-900 dark:text-white flex justify-center relative">
       {/* SETTINGS BUTTON */}
@@ -287,13 +285,13 @@ export default function HomePage() {
 
         {/* SEARCH CATEGORY TEXT */}
         <div className="mb-6 text-center w-full">
-          <h2 className="text-xl font-bold tracking-wide text-zinc-900 dark:text-white drop-shadow-md">
+          <h2 className="text-xl font-bold tracking-wide text-zinc-900 dark:text-white">
             {t("main.browsecategory")}
           </h2>
         </div>
 
         {/* CATEGORIES */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-25 mb-6 w-full justify-items-center drop-shadow-md">
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-20 mb-6 w-full justify-items-center drop-shadow-md">
           <CategoryCard
             icon="/icons/misc/icon_cookpot.png"
             label={t("main.cookpot")}
@@ -328,11 +326,12 @@ export default function HomePage() {
 
         <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20" />
 
-        <div className="flex justify-center items-center p-7">
-          <DailyRecipe/>
+        {/* DAILY RECIPE */}
+        <div className="flex justify-center items-center px-4 pt-2 pb-5 w-full">
+          <DailyRecipe />
         </div>
 
-        <div className="w-263 h-1 bg-zinc-700/20 dark:bg-white/20" />
+        <div className="w-full h-1 bg-zinc-700/20 dark:bg-white/20" />
 
         {/* EXTERNAL LINKS */}
         <div className="flex flex-wrap justify-center m-6 gap-6 mb-10 w-full">
