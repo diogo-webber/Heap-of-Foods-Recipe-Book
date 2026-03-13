@@ -19,7 +19,7 @@ export default function SeeAlso({
   const { t } = useTranslation();
 
   return (
-    <div className="flex items-center justify-center gap-3 mt-4 pt-4 border-t-4 border-zinc-200 dark:border-zinc-700">
+    <div className="flex items-center justify-center gap-2 sm:gap-3 mt-4 pt-4 border-t-4 border-zinc-200 dark:border-zinc-700">
       <span className="text-sm font-semibold text-zinc-500 dark:text-zinc-400">
         {t("seealso.label")}:
       </span>
@@ -30,10 +30,10 @@ export default function SeeAlso({
       >
         <img
           src={`${imageBasePath}/${suggested.name}.png`}
-          className="w-8 h-8 object-contain"
+          className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
           alt={t(`${translationPrefix}.${suggested.name}`)}
         />
-        <span className="text-sm font-semibold text-zinc-900 dark:text-white">
+        <span className="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-white">
           {t(`${translationPrefix}.${suggested.name}`)}
         </span>
       </button>

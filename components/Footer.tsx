@@ -22,9 +22,9 @@ export function Footer() {
 
   return (
     <footer className="bg-zinc-200 dark:bg-zinc-900 font-bold">
-      <div className="max-w-8xl mx-auto px-6 py-5 text-grey">
-        <div className="flex flex-col items-center gap-6">
-          <div className="flex items-center gap-5">
+      <div className="max-w-8xl mx-auto px-3 sm:px-6 py-3 sm:py-5 text-grey">
+          <div className="flex flex-col items-center gap-3 sm:gap-6">
+          <div className="flex items-center gap-3 sm:gap-5">
             <a
               href="https://discord.gg/jjNr4Vvutn"
               target="_blank"

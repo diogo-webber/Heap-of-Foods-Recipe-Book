@@ -70,7 +70,7 @@ export default function RandomRecipe({interval = 500, onSelectItem, }: RandomRec
       onMouseLeave={() => setHovered(false)}
       className="
       flex items-center justify-center
-      gap-2 px-4 py-1
+      gap-2 px-2 sm:px-4 py-1.5 sm:py-2
       bg-white dark:bg-zinc-900
       rounded-xl
       shadow hover:shadow-lg
@@ -81,7 +81,7 @@ export default function RandomRecipe({interval = 500, onSelectItem, }: RandomRec
     >
       <img
         src={allRecipeIcons[iconIndex]}
-        className="w-10 h-10 object-contain transition-all duration-300"
+        className="w-8 h-8 sm:w-10 sm:h-10 object-contain transition-all duration-300"
       />
       <span className="leading-none">{t("main.randomrecipe")}</span>
     </button>
