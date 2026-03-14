@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n";
 import { getAssetPath } from "@/lib/paths";
+import { useRouter, usePathname } from "next/navigation";
 
 import recipes from "@/data/recipes_cookpot.json";
 import recipes_warly from "@/data/recipes_cookpot_warly.json";
@@ -34,6 +35,8 @@ interface FoodTypeProps {
 
 export default function DailyRecipe() {
   const { t } = useTranslation();
+  const router = useRouter();
+  const pathname = usePathname();
 
   const allRecipes = [
     ...recipes.map(r => ({ ...r, prefix: "recipes", icon: "foods_cookpot", source: "cookpot" })),
@@ -147,12 +150,9 @@ export default function DailyRecipe() {
 
               <button
                 onClick={() => {
-                  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-                  const currentPath = window.location.pathname;
                   const page = source.page;
-                  const fullPath = basePath + page;
-                  if (currentPath !== fullPath) {
-                    window.location.href = `${fullPath}?recipe=${recipe.name}`;
+                  if (pathname !== page) {
+                    router.push(`${page}?recipe=${recipe.name}`);
                   } else {
                     const element = document.getElementById(`recipe-${recipe.name}`);
                     if (element) element.scrollIntoView({ behavior: "smooth", block: "center" });
