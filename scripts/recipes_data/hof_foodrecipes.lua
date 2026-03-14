@@ -608,7 +608,7 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		required = 
 		{
-			{ items = { "tag_salmon" }, amount = 2, comparator = "morethan" },
+			{ items = { "kyno_salmonfish" }, amount = 2, comparator = "morethan" },
 			{ items = { "asparagus" }, amount = 1 },
 			{ items = { "tag_spotspice" }, amount = 1 },
 		},
@@ -950,7 +950,7 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		required = 
 		{
-			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "kyno_salmonfish" }, amount = 1 },
 			{ items = { "tag_flour" }, amount = 1 },
 			{ items = { "tag_veggie" }, amount = 1 },
 		},
@@ -1269,7 +1269,7 @@ local kyno_foods =
 		tags = {"honeyed"},
 		required = 
 		{
-			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "kyno_salmonfish" }, amount = 1 },
 			{ items = { "tag_syrup" }, amount = 1 },
 		},
 		excluded = 
@@ -1398,7 +1398,7 @@ local kyno_foods =
 		required = 
 		{
 			{ items = { "tag_bread" }, amount = 1 },
-			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "kyno_salmonfish" }, amount = 1 },
 			{ items = { "tag_foliage" }, amount = 1 },
 		},
 		excluded = 
@@ -1556,7 +1556,7 @@ local kyno_foods =
 		floater = TUNING.HOF_FLOATER,
 		required = 
 		{
-			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "kyno_salmonfish" }, amount = 1 },
 			{ items = { "tag_foliage" }, amount = 2, comparator = "morethan" },
 			{ items = { "tag_spotspice" }, amount = 1 },
 		},
@@ -1759,7 +1759,7 @@ local kyno_foods =
 		{
 			{ items = { "tag_bread" }, amount = 1 },
 			{ items = { "tag_milk" }, amount = 1 },
-			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "kyno_salmonfish" }, amount = 1 },
 			{ items = { "tag_spotspice"}, amount = 1 },
 		},
 		excluded = 
@@ -1985,7 +1985,7 @@ local kyno_foods =
 		{
 			{ items = { "tag_milk" }, amount = 1 },
 			{ items = { "tag_veggie" }, amount = 1 },
-			{ items = { "tag_salmon" }, amount = 1 },
+			{ items = { "kyno_salmonfish" }, amount = 1 },
 			{ items = { "tag_spotspice" }, amount = 1 },
 		},
 		excluded = 
@@ -4639,7 +4639,7 @@ local kyno_foods =
 	wobstermonster =
 	{
 		test = function(cooker, names, tags) return tags.wobster and (names.monstermeat or names.monstermeat_cooked
-		or names.monstermeat_dried) and (tags.veggie and tags.veggie >= 2) end,
+		or names.monstermeat_dried) and tags.veggie and tags.frozen end,
 		priority = 35,
 		foodtype = FOODTYPE.MONSTER,
 		perishtime = TUNING.PERISH_MED,
@@ -4657,7 +4657,8 @@ local kyno_foods =
 		{
 			{ items = { "tag_wobster" }, amount = 1 },
 			{ items = { "tag_monster" }, amount = 1 },
-			{ items = { "tag_veggie" }, amount = 2, comparator = "morethan" },
+			{ items = { "tag_veggie" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
 		},
 		excluded = 
 		{
@@ -4667,7 +4668,8 @@ local kyno_foods =
 		{
 			{ items = { "wobster_sheller_land" }, amount = 1 },
 			{ items = { "monstermeat" }, amount = 1 },
-			{ items = { "carrot" }, amount = 2 },
+			{ items = { "carrot" }, amount = 1 },
+			{ items = { "ice" }, amount = 1 },
 		},
 		oneatenfn = function(inst, eater)
 			if eater ~= nil and eater:HasTag("playermonster") and

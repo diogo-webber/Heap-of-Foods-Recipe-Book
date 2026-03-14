@@ -1190,7 +1190,7 @@
     "requires": [
       {
         "items": [
-          "tag_salmon"
+          "kyno_salmonfish"
         ],
         "amount": 2,
         "comparator": "morethan"
@@ -1956,7 +1956,7 @@
     "requires": [
       {
         "items": [
-          "tag_salmon"
+          "kyno_salmonfish"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -2634,7 +2634,7 @@
     "requires": [
       {
         "items": [
-          "tag_salmon"
+          "kyno_salmonfish"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -2942,7 +2942,7 @@
       },
       {
         "items": [
-          "tag_salmon"
+          "kyno_salmonfish"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -3301,7 +3301,7 @@
     "requires": [
       {
         "items": [
-          "tag_salmon"
+          "kyno_salmonfish"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -3755,7 +3755,7 @@
       },
       {
         "items": [
-          "tag_salmon"
+          "kyno_salmonfish"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -4294,7 +4294,7 @@
       },
       {
         "items": [
-          "tag_salmon"
+          "kyno_salmonfish"
         ],
         "amount": 1,
         "comparator": "equal"
@@ -9638,8 +9638,15 @@
         "items": [
           "tag_veggie"
         ],
-        "amount": 2,
-        "comparator": "morethan"
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
+        "comparator": "equal"
       }
     ],
     "excluded": [],
@@ -9662,7 +9669,14 @@
         "items": [
           "carrot"
         ],
-        "amount": 2,
+        "amount": 1,
+        "comparator": "equal"
+      },
+      {
+        "items": [
+          "ice"
+        ],
+        "amount": 1,
         "comparator": "equal"
       }
     ]
