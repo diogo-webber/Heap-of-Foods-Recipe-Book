@@ -16,3 +16,61 @@
   width: 0px;
   height: 0px;
 }
+
+/* Overlay animations */
+.overlay-before-enter {
+  opacity: 0;
+}
+
+.overlay-enter {
+  animation: overlayFadeIn 0.12s ease-out forwards;
+}
+
+.overlay-exit {
+  animation: overlayFadeOut 0.1s ease-in forwards;
+}
+
+.overlay-before-enter .recipe-popup-panel {
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+}
+
+.overlay-enter .recipe-popup-panel {
+  animation: panelSlideIn 0.12s ease-out forwards;
+}
+
+.overlay-exit .recipe-popup-panel {
+  animation: panelSlideOut 0.1s ease-in forwards;
+}
+
+@keyframes overlayFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes overlayFadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes panelSlideIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes panelSlideOut {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+  }
+}

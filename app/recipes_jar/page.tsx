@@ -9,6 +9,7 @@ import { useRouter } from "next/navigation";
 import recipes from "@/data/recipes_cookpot_jar.json";
 import { recommendRecipe } from "@/lib/recommend";
 import SeeAlso from "@/components/SeeAlso";
+import AnimatedOverlay from "@/components/AnimatedOverlay";
 import Fuse from "fuse.js";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -851,11 +852,8 @@ export default function CookPotJar() {
         ))}
       </div>
       {/* SELECTED CARD */}
-      {selected && (
-        <div
-          className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-          onClick={() => setSelected(null)}
-        >
+      <AnimatedOverlay isOpen={!!selected} onClose={() => setSelected(null)}>
+        {selected && (<>
           {/* PREVIOUS */}
           {selectedIndex > 0 && (
             <button
@@ -869,7 +867,7 @@ export default function CookPotJar() {
             </button>
           )}
           <div
-            className="bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-8 w-11/12 md:w-[750px] max-h-[90vh] overflow-y-auto hide-scrollbar relative shadow-xl dark:shadow-none"
+            className="recipe-popup-panel bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-8 w-11/12 md:w-[750px] max-h-[90vh] overflow-y-auto hide-scrollbar relative shadow-xl dark:shadow-none"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex justify-end">
@@ -1044,8 +1042,8 @@ export default function CookPotJar() {
               <FontAwesomeIcon icon={faCircleChevronRight} />
             </button>
           )}
-        </div>
-      )}
+        </>)}
+      </AnimatedOverlay>
     </div>
   );
 }
