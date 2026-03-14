@@ -33,6 +33,7 @@ export function Footer() {
               className="flex items-center gap-2 hover:text-grey transition"
             >
               <FontAwesomeIcon icon={faSteam} />
+              <span className="hidden sm:inline">{t("footer.workshop")}</span>
             </a>
 
             <a

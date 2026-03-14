@@ -294,7 +294,7 @@ export default function HomePage() {
         </div>
 
         {/* CATEGORIES */}
-        <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6 w-full drop-shadow-md">
+        <div className="grid grid-cols-3 sm:grid-cols-6 gap-4 sm:gap-6 mb-6 w-full drop-shadow-md">
           <CategoryCard
             icon={getAssetPath("/icons/misc/icon_cookpot.png")}
             label={t("main.cookpot")}
@@ -369,15 +369,15 @@ function CategoryCard({ icon, label, href }: any) {
     <Link
       href={href}
       className="
-        w-40 h-40
+        w-full aspect-square
         bg-white dark:bg-zinc-900
         rounded-2xl
         flex flex-col
         items-center
         justify-center
-        gap-4
+        gap-2 sm:gap-3
         font-semibold
-        text-lg
+        text-xs sm:text-sm
         text-center
         hover:scale-105
         transition
@@ -385,7 +385,7 @@ function CategoryCard({ icon, label, href }: any) {
         dark:shadow-none
       "
     >
-      <img src={icon} className="w-16 h-16 object-contain" />
+      <img src={icon} className="w-10 h-10 sm:w-14 sm:h-14 object-contain" />
 
       <span>{label}</span>
     </Link>
