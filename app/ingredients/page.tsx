@@ -9,6 +9,7 @@ import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
 import ingredients from "@/data/ingredients.json";
 import SkeletonImage from "@/components/SkeletonImage";
+import AnimatedOverlay from "@/components/AnimatedOverlay";
 import Fuse from "fuse.js";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -816,27 +817,24 @@ function IngredientsContent() {
         ))}
       </div>
       {/* SELECTED CARD */}
-      {selected &&
-        (() => {
-          const variants = [
-            { type: "normal", enabled: true, label: t("card.values.raw") },
-            {
-              type: "cooked",
-              enabled: selected.cooked,
-              label: t("card.values.cooked"),
-            },
-            {
-              type: "dried",
-              enabled: selected.dried,
-              label: t("card.values.dried"),
-            },
-          ].filter((v) => v.enabled);
+      <AnimatedOverlay isOpen={!!selected} onClose={() => setSelected(null)}>
+        {selected &&
+          (() => {
+            const variants = [
+              { type: "normal", enabled: true, label: t("card.values.raw") },
+              {
+                type: "cooked",
+                enabled: selected.cooked,
+                label: t("card.values.cooked"),
+              },
+              {
+                type: "dried",
+                enabled: selected.dried,
+                label: t("card.values.dried"),
+              },
+            ].filter((v) => v.enabled);
 
-          return (
-            <div
-              className="fixed inset-0 bg-black/70 flex items-center justify-center z-50"
-              onClick={() => setSelected(null)}
-            >
+            return (<>
               {/* PREVIOUS */}
               {selectedIndex > 0 && (
                 <button
@@ -850,7 +848,7 @@ function IngredientsContent() {
                 </button>
               )}
               <div
-                className="bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-8 w-11/12 md:w-[750px] max-h-[90vh] overflow-y-auto hide-scrollbar relative shadow-xl dark:shadow-none"
+                className="recipe-popup-panel bg-white dark:bg-zinc-900 rounded-2xl p-4 sm:p-8 w-11/12 md:w-[750px] max-h-[90vh] overflow-y-auto hide-scrollbar relative shadow-xl dark:shadow-none"
                 onClick={(e) => e.stopPropagation()}
               >
                 <div className="flex justify-end">
@@ -967,9 +965,9 @@ function IngredientsContent() {
                   <FontAwesomeIcon icon={faCircleChevronRight} />
                 </button>
               )}
-            </div>
-          );
-        })()}
+            </>);
+          })()}
+      </AnimatedOverlay>
     </div>
   );
 }
