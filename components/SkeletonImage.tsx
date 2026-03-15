@@ -38,6 +38,7 @@ export default function SkeletonImage({
       <img
         key={props.src}
         ref={imgRef}
+        loading="lazy"
         {...props}
         className={`w-full h-full object-contain transition-opacity duration-100 ${loaded ? "opacity-100" : "opacity-0"}`}
         onLoad={(e) => {
