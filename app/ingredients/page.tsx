@@ -5,8 +5,6 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n";
 import { getAssetPath } from "@/lib/paths";
 import { usePageTitle } from "@/components/PageTitle";
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
 import ingredients from "@/data/ingredients.json";
 import SkeletonImage from "@/components/SkeletonImage";
 import AnimatedOverlay from "@/components/AnimatedOverlay";
@@ -453,12 +451,12 @@ function IngredientsContent() {
     };
   }, [selected, selectedIndex]);
 
-  const searchParams = useSearchParams();
-  const ingredientParam = searchParams.get("ingredient");
-  
+  // Open ingredient from URL param on initial load
   useEffect(() => {
-    if (ingredientParam) {
-      const ingredient = sortedIngredients.find(r => r.name === ingredientParam);
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("ingredient");
+    if (name) {
+      const ingredient = sortedIngredients.find(r => r.name === name);
       if (ingredient) {
         setSelected(ingredient);
         const element = document.getElementById(`ingredient-${ingredient.name}`);
@@ -467,23 +465,18 @@ function IngredientsContent() {
         }
       }
     }
-  }, [ingredientParam, sortedIngredients]);
+  }, [sortedIngredients.length]);
 
-  const router = useRouter();
-
+  // Keep URL in sync with selected ingredient
   useEffect(() => {
-    if (ingredientParam) {
-      const ingredient = sortedIngredients.find(r => r.name === ingredientParam);
-      if (ingredient) {
-        setSelected(ingredient);
-        const element = document.getElementById(`ingredient-${ingredient.name}`);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      }
-      router.replace("/ingredients", { scroll: false });
+    const url = new URL(window.location.href);
+    if (selected) {
+      url.searchParams.set("ingredient", selected.name);
+    } else {
+      url.searchParams.delete("ingredient");
     }
-  }, [ingredientParam, sortedIngredients]);
+    window.history.replaceState({}, "", url.toString());
+  }, [selected]);
 
   return (
     <div className="bg-zinc-300 dark:bg-zinc-800 text-zinc-900 dark:text-white min-h-screen">

@@ -4,8 +4,6 @@ import { useState, useMemo, useRef, useEffect } from "react";
 import { useTranslation } from "@/lib/i18n";
 import { getAssetPath } from "@/lib/paths";
 import { usePageTitle } from "@/components/PageTitle";
-import { useSearchParams } from "next/navigation";
-import { useRouter } from "next/navigation";
 import recipes from "@/data/recipes_cookpot_warly.json";
 import { recommendRecipe } from "@/lib/recommend";
 import SeeAlso from "@/components/SeeAlso";
@@ -409,12 +407,12 @@ export default function CookPotWarly() {
     };
   }, [selected, selectedIndex]);
 
-  const searchParams = useSearchParams();
-  const recipeParam = searchParams.get("recipe");
-  
+  // Open recipe from URL param on initial load
   useEffect(() => {
-    if (recipeParam) {
-      const recipe = sortedRecipes.find(r => r.name === recipeParam);
+    const params = new URLSearchParams(window.location.search);
+    const name = params.get("recipe");
+    if (name) {
+      const recipe = sortedRecipes.find(r => r.name === name);
       if (recipe) {
         setSelected(recipe);
         const element = document.getElementById(`recipe-${recipe.name}`);
@@ -423,23 +421,18 @@ export default function CookPotWarly() {
         }
       }
     }
-  }, [recipeParam, sortedRecipes]);
+  }, [sortedRecipes.length]);
 
-  const router = useRouter();
-
+  // Keep URL in sync with selected recipe
   useEffect(() => {
-    if (recipeParam) {
-      const recipe = sortedRecipes.find(r => r.name === recipeParam);
-      if (recipe) {
-        setSelected(recipe);
-        const element = document.getElementById(`recipe-${recipe.name}`);
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      }
-      router.replace("/recipes_warly", { scroll: false });
+    const url = new URL(window.location.href);
+    if (selected) {
+      url.searchParams.set("recipe", selected.name);
+    } else {
+      url.searchParams.delete("recipe");
     }
-  }, [recipeParam, sortedRecipes]);
+    window.history.replaceState({}, "", url.toString());
+  }, [selected]);
 
   return (
     <div className="bg-zinc-300 dark:bg-zinc-800 text-zinc-900 dark:text-white min-h-screen">
