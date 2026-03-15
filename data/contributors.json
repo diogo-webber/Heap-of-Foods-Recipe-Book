@@ -10,11 +10,6 @@
     "badges": ["contributors.badges.donator"]
   },
   {
-    "name": "别偷我的小摸包Lotic",
-    "image": "/icons/contributors/contributor_lotic.png",
-    "badges": ["contributors.badges.donator"]
-  },
-  {
     "name": "DemonRebuilt",
     "image": "/icons/contributors/contributor_demon_rebuilt.png",
     "badges": ["contributors.badges.contentcreator"]
@@ -96,8 +91,18 @@
     "badges": ["contributors.badges.donator", "contributors.badges.modartist"]
   },
   {
+    "name": "Raccoon",
+    "image": "/icons/contributors/contributor_raccoon.png",
+    "badges": ["contributors.badges.donator"]
+  },
+  {
     "name": "Sir Eugene",
     "image": "/icons/contributors/contributor_sir_eugene.png",
+    "badges": ["contributors.badges.donator"]
+  },
+  {
+    "name": "别偷我的小摸包 Lotic",
+    "image": "/icons/contributors/contributor_lotic.png",
     "badges": ["contributors.badges.donator"]
   },
   {
